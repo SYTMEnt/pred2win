@@ -36,10 +36,10 @@ export class SignupComponent {
         return 'This field is required.'
       } else if (errors['minlength']) {
         const minLength = errors['minlength']?.requiredLength;
-        return `Minimum length is ${minLength} chars.`
+        return `Minimum length is ${minLength} characters.`
       } else if (errors['maxlength']) {
         const maxLength = errors['maxlength']?.requiredLength;
-        return `Maximum length is ${maxLength} chars.`
+        return `Maximum length is ${maxLength} characters.`
       } else if (formField === 'password' && errors['invalidPassword']) {
         return 'A lower case, an upper case, a number and any alphanumeric char from [!,@,#,$] is required.'
       } else if(errors['email']) {
