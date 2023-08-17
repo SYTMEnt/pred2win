@@ -1,0 +1,17 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$p2w-primary: mat.define-palette(mat.$purple-palette, 500);
+$p2w-accent: mat.define-palette(mat.$lime-palette, A200, A100, A400);
+
+$p2w-theme: mat.define-light-theme((
+ color: (
+   primary: $p2w-primary,
+   accent: $p2w-accent,
+ ),
+ typography: mat.define-typography-config(),
+ density: 0,
+));
+
+@include mat.all-component-themes($p2w-theme);
