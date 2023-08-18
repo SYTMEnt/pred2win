@@ -29,10 +29,10 @@ jobs:
       - name: AWS S3 bucket synchronization
         uses: raulanatol/aws-s3-docker-action@v1.0
         with:
-          AWS_ACCESS_KEY_ID: ${{ secret.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secret.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: ${{ secret.AWS_REGION }}
-          AWS_BUCKET_NAME: ${{ secret.AWS_BUCKET_NAME }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          AWS_BUCKET_NAME: ${{ secrets.AWS_BUCKET_NAME }}
           SOURCE: 'dist/pred2win'
           TARGET: '/'
 
