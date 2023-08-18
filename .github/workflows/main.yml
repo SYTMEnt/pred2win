@@ -1,0 +1,41 @@
+name: DeployToAWS
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: actions/checkout@v3
+
+      - name: Setting up Nodejs
+        uses: actions/setup-node@v3.8.1
+        with:
+          node-version: 16.18.0
+
+      - name: Installing dependencies
+        run: |
+          npm install
+          npm run build
+
+      - name: AWS S3 bucket synchronization
+        uses: raulanatol/aws-s3-docker-action@v1.0
+        with:
+          AWS_ACCESS_KEY_ID: ${{ secret.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secret.AWS_ACCESS_KEY_ID }}
+          AWS_REGION: ${{ secret.AWS_ACCESS_KEY_ID }}
+          AWS_BUCKET_NAME: ${{ secret.AWS_ACCESS_KEY_ID }}
+          SOURCE: 'dist/pred2win'
+          TARGET: '/'
+
+
+      
+          
