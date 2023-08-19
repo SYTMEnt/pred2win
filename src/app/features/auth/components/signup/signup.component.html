@@ -19,6 +19,10 @@
             </button>
             <mat-error *ngIf="getFormControlErrors('password')">{{getFormControlErrors('password')}}</mat-error>
         </mat-form-field>
-        <button class="signup-form-submit" color="primary" type="submit" mat-raised-button>Submit</button>
+        <div class="signup-actions">
+            <button class="signup-form-submit" color="primary" type="submit" mat-raised-button>Submit</button>
+            <a routerLink="/auth/login">Already a member? Login</a>
+        </div>
+        
     </form>
 </section>

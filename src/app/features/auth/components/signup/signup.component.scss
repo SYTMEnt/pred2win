@@ -4,13 +4,20 @@
         margin-bottom: 3rem;
     }
 
-    &-form{
+    &-form {
         display: flex;
         flex-direction: column;
 
         &-submit {
-            margin-top: 3rem;
+            width: 50%;
         }
+    }
+
+    &-actions {
+        margin-top: 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     
