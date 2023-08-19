@@ -21,7 +21,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: "home",
+    path: "app",
     component: HomeComponent
   },
   {

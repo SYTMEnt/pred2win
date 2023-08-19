@@ -20,7 +20,7 @@ export class LoginComponent {
 
   onLogin() {
     localStorage.setItem("isLoggedIn", 'true')
-    this.router.navigate(['/home'])
+    this.router.navigate(['/app'])
   }
 
   passwordValidator(control: AbstractControl) {
