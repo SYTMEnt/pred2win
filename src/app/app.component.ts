@@ -27,4 +27,8 @@ export class AppComponent {
   links = ['All', 'Live', 'Upcoming', 'Recent'];
   activeLink = this.links[0];
 
+  logout() {
+    this.router.navigate(['/'])
+  }
+
 }

@@ -7,6 +7,10 @@
     animation-fill-mode: backwards;
 }
 
+.logout {
+    margin-right: 2rem;
+}
+
 .footer {
     background: linear-gradient(#454545, #1f1f1f);
     color: greenyellow;
@@ -32,6 +36,7 @@
         clip-path: none;
         border-radius: 0;
         left: 0;
+
     }
 
     &-nav {
