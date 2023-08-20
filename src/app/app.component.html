@@ -1,9 +1,8 @@
 <ng-container *ngIf="isLoggedIn$ | async">
-    <nav mat-tab-nav-bar backgroundColor="primary" color="accent" class="header">
+    <nav mat-tab-nav-bar backgroundColor="primary" [tabPanel]="tabPanel" color="accent" class="header">
         <a mat-tab-link *ngFor="let link of links"
            (click)="activeLink = link"
            [active]="activeLink == link"> {{link}} </a>
-        <!-- <a mat-tab-link disabled>Disabled Link</a> -->
         <button mat-icon-button class="logout" (click)="logout()" aria-label="Logout">
             <mat-icon color="accent">power_settings_new</mat-icon>
         </button>
@@ -38,5 +37,7 @@
         </ul>
     </nav>
 </ng-container>
-
-<router-outlet></router-outlet>
+<mat-tab-nav-panel #tabPanel>
+    <router-outlet></router-outlet>
+  </mat-tab-nav-panel>
+<!-- <router-outlet ></router-outlet> -->
