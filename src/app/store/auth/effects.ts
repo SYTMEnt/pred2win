@@ -2,7 +2,7 @@ import { HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { catchError, map, of, switchMap } from "rxjs";
-import { AuthService } from "src/app/features/auth/services/auth.service";
+import { AuthService } from "../../features/auth/services/auth.service";
 import * as authActions from "./actions";
 import { User } from "./types";
 
