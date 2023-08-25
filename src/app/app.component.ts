@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { AuthStoreService } from './store/auth/auth-store.service';
-import { loginSuccess, logout } from './store/auth/actions'
+import { loginSuccess } from './store/auth/actions'
 import { Store } from '@ngrx/store';
 import { AuthState } from './store/auth/state';
 
