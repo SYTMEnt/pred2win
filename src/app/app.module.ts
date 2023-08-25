@@ -5,7 +5,6 @@ import { StoreModule } from '@ngrx/store';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './features/home/home.component';
 import { MaterialModule } from './material.module';
 import { AuthModule } from './features/auth/auth.module';
 import { EffectsModule } from '@ngrx/effects';
@@ -13,11 +12,13 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { NavTopComponent } from './shared/components/nav-top/nav-top.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { P2WInterceptor } from './shared/services/p2w-interceptor.service';
+import { NavFooterComponent } from './shared/components/nav-footer/nav-footer.component';
+import { LeaderboardComponent } from './features/leaderboard/leaderboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    LeaderboardComponent
   ],
   imports: [
     BrowserModule,
@@ -27,8 +28,9 @@ import { P2WInterceptor } from './shared/services/p2w-interceptor.service';
     MaterialModule,
     StoreModule.forRoot({}, {}),
     EffectsModule.forRoot([]),
-    StoreDevtoolsModule.instrument({maxAge: 25, logOnly: !isDevMode()}),
-    NavTopComponent
+    StoreDevtoolsModule.instrument({maxAge: 10, logOnly: !isDevMode()}),
+    NavTopComponent,
+    NavFooterComponent
   ],
   providers: [
     {

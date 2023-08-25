@@ -1,0 +1,45 @@
+.tournament-card {
+    width: 100%;
+    height: 20rem;
+    background: linear-gradient(#454545, #1f1f1f);
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 1rem;
+
+    &-image {
+        width: 20%;
+        height: 100%;
+        padding: 4rem;
+    }
+
+    &-details {
+        width: 60%;
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        color: greenyellow;
+        * {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &-actions {
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        color: greenyellow;
+        text-align: center;
+        
+        &-btn {
+            width: 80%; 
+            margin: auto
+        }
+
+        & > * {
+            margin-bottom: 1rem;
+        }
+    }
+}

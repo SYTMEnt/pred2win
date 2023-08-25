@@ -1,0 +1,63 @@
+.footer {
+    background: linear-gradient(#454545, #1f1f1f);
+    color: greenyellow;
+    width: 50%;
+    height: 6rem;
+    position: fixed;
+    bottom: 0;
+    clip-path: polygon(3% 0%, 97% 0%, 100% 100%, 0% 100%);
+    left: 25%;
+    border-radius: 5rem 5rem 0rem 0rem;
+    border: 1px solid grey;
+    animation: moveInBottom .5s ease-out .3s;
+    animation-fill-mode: backwards;
+
+    @media (max-width: 1024px) {
+        width: 80%;
+        left: 10%;
+        clip-path: polygon(5% 0%, 95% 0%, 100% 100%, 0% 100%);
+    }
+
+    @media (max-width: 600px) {
+        width: 100%;
+        clip-path: none;
+        border-radius: 0;
+        left: 0;
+
+    }
+
+    &-nav {
+        display: flex;
+        list-style: none;
+        justify-content: space-around;
+        height: 100%;
+        width: 80%;
+        margin: auto;
+        align-items: center;
+
+        @media (max-width: 600px) {
+            width: 100%;
+        }
+
+        &-item {
+            width: 100%;
+            text-align: center;
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+            }
+            &:active {
+                transform: scale(1);
+            }
+        }
+
+        &-link {
+            color: greenyellow;
+
+            &-icon {
+                font-size: 2.5rem;
+            }
+        }
+        
+    }
+}

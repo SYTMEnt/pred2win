@@ -1,6 +1,6 @@
 module.exports = [
     {
-        context: ["/login", "/user", "/tournament"],
+        context: ["/login", "/user"],
         target: "https://dev.pred2win.com:6060",
         secure: false
     }

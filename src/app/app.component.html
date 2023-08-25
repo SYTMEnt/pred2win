@@ -4,16 +4,8 @@
             <mat-icon color="accent">power_settings_new</mat-icon>
         </button>
     </nav-top>
-    <nav class="footer">
-        <ul class="footer-nav">
-            <li class="footer-nav-item" *ngFor="let nav of footerNavLinks">
-                <a class="footer-nav-link" mat-icon-button [routerLink]="nav.name">
-                    <mat-icon class="footer-nav-link-icon">{{nav.icon}}</mat-icon>
-                </a>
-            </li>
-        </ul>
-    </nav>
-
+    <nav-footer [links]="footerNavLinks" [show]="isLoggedIn" (clicked)="footerNavClick($event)">
+    </nav-footer>
 
 </ng-container>
 <mat-tab-nav-panel #tabPanel>

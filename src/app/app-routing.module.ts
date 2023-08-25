@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './features/home/home.component';
+import { LeaderboardComponent } from './features/leaderboard/leaderboard.component';
 
 const routes: Routes = [
   {
-    path: "app",
-    component: HomeComponent
+    path: "tournaments",
+    loadChildren: () => import('./features/tournaments/tournaments.module').then(m => m.TournamentsModule)
+  },
+  {
+    path: "leaderboard",
+    component: LeaderboardComponent
   },
   {
     path: "",

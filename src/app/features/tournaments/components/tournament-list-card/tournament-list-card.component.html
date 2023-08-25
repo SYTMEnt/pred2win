@@ -1,0 +1,22 @@
+<ng-container *ngFor="let data of data$ | async">
+    <div class="tournament-card">
+        <img class="tournament-card-image" [src]="data.tournamentLogo" [alt]="data.tournamentName">
+        <div class="tournament-card-details">
+            <span>{{data.tournamentCategory}}</span>
+            <span>{{data.tournamentName}}, {{data.tournamentYear}}</span>
+            <div>
+                <ng-container *ngFor="let country of data.tournamentLocation">
+                    <span>{{country}} </span>
+                </ng-container>
+            </div>
+        </div>
+        <div class="tournament-card-actions">
+            <span>Members joined</span>
+            <span>{{data.tournamentMembers || 0}}</span>
+            <button class="tournament-card-actions-btn" mat-fab extended color="primary">
+                <mat-icon>subdirectory_arrow_right</mat-icon>
+                Join
+            </button>
+        </div>
+    </div>
+</ng-container>

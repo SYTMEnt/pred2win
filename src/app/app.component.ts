@@ -5,6 +5,7 @@ import { AuthStoreService } from './store/auth/auth-store.service';
 import { loginSuccess } from './store/auth/actions'
 import { Store } from '@ngrx/store';
 import { AuthState } from './store/auth/state';
+import { FooterNav } from './shared/components/nav-footer/nav-footer.component';
 
 @Component({
   selector: 'app-root',
@@ -15,21 +16,21 @@ export class AppComponent implements OnInit {
 
   isLoggedIn$ = new BehaviorSubject(false)
   topNavlinks = ['All', 'Live', 'Upcoming', 'Recent'];
-  footerNavLinks = [
+  footerNavLinks: FooterNav[] = [
     {
-      name: 'tournaments',
+      route: 'tournaments',
       icon: 'sports_soccer'
     },
     {
-      name: 'leaderboard',
+      route: 'leaderboard',
       icon: 'leaderboard'
     },
     {
-      name: 'forum',
+      route: 'forum',
       icon: 'forum'
     },
     {
-      name: 'profile',
+      route: 'profile',
       icon: 'account_circle'
     }
   ]
@@ -40,7 +41,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.authStoreService.userProfile$.subscribe((user) => {
       if(user) {
-        this.router.navigate(['/app'])
+        this.router.navigate(['/tournaments'])
         this.isLoggedIn$.next(true)
       } else {
         const userFromLocalStorage = localStorage.getItem('user');
@@ -54,6 +55,10 @@ export class AppComponent implements OnInit {
         }
       }
     })
+  }
+
+  footerNavClick(route: string) {
+    this.router.navigate([`/${route}`])
   }
 
   logout() {
