@@ -21,7 +21,7 @@ const authReducer = createReducer(
         }
     })),
     on(authActions.signupHttpError, (currentState, { httpError }) => ({
-        ...currentState,
+        data: undefined,
         actions: {
             processing: false,
             httpError,
@@ -45,7 +45,7 @@ const authReducer = createReducer(
         }
     })),
     on(authActions.loginHttpError, (currentState, { httpError }) => ({
-        ...currentState,
+        data: undefined,
         actions: {
             processing: false,
             httpError,

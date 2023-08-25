@@ -20,7 +20,10 @@ export class AuthEffects {
                 password: action.password
             };
             return this.authService.signup(user).pipe(
-                map((user: User) => authActions.signupSuccess(user)),
+                map((user: User) => {
+                    localStorage.setItem('user', JSON.stringify(user))
+                    return authActions.signupSuccess(user)
+                }),
                 catchError((httpError: HttpErrorResponse) => of(authActions.signupHttpError({httpError})))
             )
         })
@@ -30,11 +33,14 @@ export class AuthEffects {
         ofType(authActions.login),
         switchMap((action) => {
             const loginData = {
-                email: action.email,
+                userName: action.userName,
                 password: action.password
             };
             return this.authService.login(loginData).pipe(
-                map((user) => authActions.loginSuccess(user)),
+                map((user) => { 
+                    localStorage.setItem('user', JSON.stringify(user))
+                    return authActions.loginSuccess(user)
+                }),
                 catchError((httpError: HttpErrorResponse) => of(authActions.loginHttpError({httpError})))
             )
         })

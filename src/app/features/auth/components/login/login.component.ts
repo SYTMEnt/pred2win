@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { map } from 'rxjs/operators';
+import { AuthStoreService } from 'src/app/store/auth/auth-store.service';
+import { Login } from '../../../../store/auth/types';
 
 @Component({
   selector: 'app-login',
@@ -10,17 +13,22 @@ import { Router } from '@angular/router';
 export class LoginComponent {
 
   form = this.fb.group({
-    email: ['', [Validators.required]],
+    userName: ['', [Validators.required]],
     password: ['', [Validators.required]]
   })
 
   hidePassword = true;
 
-  constructor(private fb: FormBuilder, private router: Router) {}
+  isAuthLoading$ = this.authStoreService.userProfileActions$.pipe(
+    map(data => data.processing)
+  )
+
+  constructor(private fb: FormBuilder, private router: Router, private authStoreService: AuthStoreService) {}
 
   onLogin() {
-    localStorage.setItem("isLoggedIn", 'true')
-    this.router.navigate(['/app'])
+    if(this.form.valid) {
+      this.authStoreService.login(this.form.value as Login)
+    }
   }
 
   passwordValidator(control: AbstractControl) {

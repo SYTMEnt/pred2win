@@ -1,43 +1,21 @@
-<ng-container *ngIf="isLoggedIn$ | async">
-    <nav mat-tab-nav-bar backgroundColor="primary" [tabPanel]="tabPanel" color="accent" class="header">
-        <a mat-tab-link *ngFor="let link of links"
-           (click)="activeLink = link"
-           [active]="activeLink == link"> {{link}} </a>
+<ng-container *ngIf="isLoggedIn$ | async as isLoggedIn">
+    <nav-top [links]="topNavlinks" [tabPanel]="tabPanel" [show]="isLoggedIn">
         <button mat-icon-button class="logout" (click)="logout()" aria-label="Logout">
             <mat-icon color="accent">power_settings_new</mat-icon>
         </button>
-    </nav>
+    </nav-top>
     <nav class="footer">
         <ul class="footer-nav">
-            <li class="footer-nav-item">
-                <a class="footer-nav-link" >
-                    <mat-icon class="footer-nav-link-icon">home</mat-icon>
-                </a>
-            </li>
-            <li class="footer-nav-item">
-                <a class="footer-nav-link">
-                    <mat-icon class="footer-nav-link-icon">sports_soccer</mat-icon>
-                </a>
-            </li>
-            <li class="footer-nav-item">
-                <a class="footer-nav-link">
-                    <mat-icon class="footer-nav-link-icon">leaderboard</mat-icon>
-                </a>
-            </li>
-            <li class="footer-nav-item">
-                <a class="footer-nav-link">
-                    <mat-icon class="footer-nav-link-icon">forum</mat-icon>
-                </a>
-            </li>
-            <li class="footer-nav-item">
-                <a class="footer-nav-link">
-                    <mat-icon class="footer-nav-link-icon">account_circle</mat-icon>
+            <li class="footer-nav-item" *ngFor="let nav of footerNavLinks">
+                <a class="footer-nav-link" mat-icon-button [routerLink]="nav.name">
+                    <mat-icon class="footer-nav-link-icon">{{nav.icon}}</mat-icon>
                 </a>
             </li>
         </ul>
     </nav>
+
+
 </ng-container>
 <mat-tab-nav-panel #tabPanel>
     <router-outlet></router-outlet>
-  </mat-tab-nav-panel>
-<!-- <router-outlet ></router-outlet> -->
+</mat-tab-nav-panel>

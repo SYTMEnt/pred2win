@@ -4,7 +4,7 @@ import { select, Store } from "@ngrx/store";
 import { AuthState } from "./state";
 import * as authSelectors from "./selectors";
 import * as authActions from "./actions";
-import { Auth } from "./types";
+import { Signup, Login, User } from "./types";
 
 @Injectable()
 export class AuthStoreService {
@@ -14,11 +14,11 @@ export class AuthStoreService {
 
     constructor(private store$: Store<AuthState>) {}
 
-    login(user: Pick<Auth, 'email' | 'password'>): void {
+    login(user: Login): void {
         this.store$.dispatch(authActions.login(user));
     }
     
-    signup(user: Auth): void {
+    signup(user: Signup): void {
         this.store$.dispatch(authActions.signup(user));
     }
 
@@ -26,4 +26,7 @@ export class AuthStoreService {
         this.store$.dispatch(authActions.logout());
     }
 
+    // storeUserFromLS(user: User) {
+    //     this.store$.dispatch()
+    // }
 }

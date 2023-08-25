@@ -3,9 +3,9 @@
     <h3 class="login-header">Login</h3>
     <form (ngSubmit)="onLogin()" class="login-form" [formGroup]="form">
         <mat-form-field>
-            <mat-label>Email</mat-label>
-            <input formControlName="email" type="email" matInput placeholder="Email">
-            <mat-error *ngIf="getFormControlErrors('email')">{{getFormControlErrors('email')}}</mat-error>
+            <mat-label>Username</mat-label>
+            <input formControlName="userName" type="text" matInput placeholder="Display Name / Email">
+            <mat-error *ngIf="getFormControlErrors('userName')">{{getFormControlErrors('userName')}}</mat-error>
         </mat-form-field>
         <mat-form-field>
             <mat-label>Password</mat-label>
@@ -16,7 +16,9 @@
             <mat-error *ngIf="getFormControlErrors('password')">{{getFormControlErrors('password')}}</mat-error>
         </mat-form-field>
         <div class="login-actions">
-            <button class="login-form-submit" color="primary" type="submit" mat-raised-button>Submit</button>
+            <button class="login-form-submit" color="primary" type="submit" [class.button-spinner]="isAuthLoading$ | async" mat-raised-button>
+                Submit
+            </button>
             <a routerLink="/auth/signup">Become a member</a>
         </div>
     </form>

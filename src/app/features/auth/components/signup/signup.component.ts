@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
+import { map } from 'rxjs/operators';
+import { AuthStoreService } from 'src/app/store/auth/auth-store.service';
+import { Signup } from '../../../../store/auth/types';
 
 @Component({
   selector: 'app-signup',
@@ -7,18 +10,23 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors,
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent {
-
   form = this.fb.group({
-    name: ['', [Validators.required, Validators.minLength(3)]],
+    displayName: ['', [Validators.required, Validators.minLength(3)]],
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(16), this.passwordValidator]]
   })
   hidePassword = true;
-  
-  constructor(private fb: FormBuilder) {}
+
+  isAuthLoading$ = this.authStoreService.userProfileActions$.pipe(
+    map(data => data.processing)
+  )
+
+  constructor(private fb: FormBuilder, private authStoreService: AuthStoreService) {}
 
   onSubmit() {
-    console.log(this.getFormControlErrors('email'))
+    if(this.form.valid) {
+      this.authStoreService.signup(this.form.value as Signup)
+    }
   }
 
   passwordValidator(control: AbstractControl) {

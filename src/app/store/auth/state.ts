@@ -8,15 +8,12 @@ export interface AuthActionState {
 }
 
 export interface AuthState {
-    data: User,
+    data: User | undefined,
     actions: AuthActionState
 }
 
 export const initialState: AuthState = {
-    data: {
-        displayName: '',
-        memberId: ''
-    },
+    data: undefined,
     actions: {
         httpError: undefined,
         processing: false,

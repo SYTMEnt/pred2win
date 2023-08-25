@@ -1,12 +1,3 @@
-.header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    box-shadow: 1px 1px 5px #1f1919;
-    animation: moveInTop .5s ease-out .3s;
-    animation-fill-mode: backwards;
-}
-
 .logout {
     margin-right: 2rem;
 }
@@ -65,14 +56,10 @@
         }
 
         &-link {
-            height: 100%;
-            width: 100%;
-            padding: 0;
+            color: greenyellow;
 
             &-icon {
-                font-size: 3.5rem;
-                width: 100%;
-                height: 100%;
+                font-size: 2.5rem;
             }
         }
         

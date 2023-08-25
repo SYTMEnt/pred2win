@@ -1,34 +1,64 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { BehaviorSubject, filter, map } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
+import { AuthStoreService } from './store/auth/auth-store.service';
+import { loginSuccess, logout } from './store/auth/actions'
+import { Store } from '@ngrx/store';
+import { AuthState } from './store/auth/state';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'pred2win';
-  isLoggedIn$ = new BehaviorSubject(false)
+export class AppComponent implements OnInit {
 
-  constructor(private router: Router, private route: ActivatedRoute) {
-    this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd),
-      map(a => a as NavigationEnd)
-    ).subscribe((navEnd: NavigationEnd) => {
-      if(navEnd.url === "/" || navEnd.url.startsWith('/auth') ) {
-        this.isLoggedIn$.next(false);
+  isLoggedIn$ = new BehaviorSubject(false)
+  topNavlinks = ['All', 'Live', 'Upcoming', 'Recent'];
+  footerNavLinks = [
+    {
+      name: 'tournaments',
+      icon: 'sports_soccer'
+    },
+    {
+      name: 'leaderboard',
+      icon: 'leaderboard'
+    },
+    {
+      name: 'forum',
+      icon: 'forum'
+    },
+    {
+      name: 'profile',
+      icon: 'account_circle'
+    }
+  ]
+  
+
+  constructor(private router: Router, private authStoreService: AuthStoreService, private store$: Store<AuthState>) {}
+
+  ngOnInit(): void {
+    this.authStoreService.userProfile$.subscribe((user) => {
+      if(user) {
+        this.router.navigate(['/app'])
+        this.isLoggedIn$.next(true)
       } else {
-        this.isLoggedIn$.next(true);
+        const userFromLocalStorage = localStorage.getItem('user');
+        const parsedUserFromLocalStorage = userFromLocalStorage ? JSON.parse(userFromLocalStorage) : undefined;
+        if (parsedUserFromLocalStorage) {
+          this.store$.dispatch(loginSuccess(parsedUserFromLocalStorage));
+        } else {
+          this.isLoggedIn$.next(false)
+          localStorage.removeItem('user')
+          this.router.navigate(['/auth/login'])
+        }
       }
     })
   }
 
-  links = ['All', 'Live', 'Upcoming', 'Recent'];
-  activeLink = this.links[0];
-
   logout() {
-    this.router.navigate(['/'])
+    localStorage.removeItem('user')
+    this.authStoreService.logout()
   }
 
 }

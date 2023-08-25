@@ -1,0 +1,8 @@
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 1px 1px 5px #1f1919;
+    animation: moveInTop .5s ease-out .3s;
+    animation-fill-mode: backwards;
+}
