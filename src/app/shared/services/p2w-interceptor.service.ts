@@ -24,7 +24,8 @@ export class P2WInterceptor implements HttpInterceptor {
             req = req.clone({
                 setHeaders: {
                     Authorization: token ? `Bearer ${token}` : ''
-                }
+                },
+                withCredentials: true
             })
         })
 
