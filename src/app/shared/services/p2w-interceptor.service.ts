@@ -17,18 +17,6 @@ export class P2WInterceptor implements HttpInterceptor {
             withCredentials: true
         })
 
-        this.authStoreService.userProfile$.pipe(
-            take(1),
-            map(user => user?.token)
-        ).subscribe(token => {
-            req = req.clone({
-                setHeaders: {
-                    Authorization: token ? `Bearer ${token}` : ''
-                },
-                withCredentials: true
-            })
-        })
-
         return next.handle(req)
     }
 }

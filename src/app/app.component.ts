@@ -44,17 +44,12 @@ export class AppComponent implements OnInit {
         this.router.navigate(['/tournaments'])
         this.isLoggedIn$.next(true)
       } else {
-        const userFromLocalStorage = localStorage.getItem('user');
-        const parsedUserFromLocalStorage = userFromLocalStorage ? JSON.parse(userFromLocalStorage) : undefined;
-        if (parsedUserFromLocalStorage) {
-          this.store$.dispatch(loginSuccess(parsedUserFromLocalStorage));
-        } else {
-          this.isLoggedIn$.next(false)
-          localStorage.removeItem('user')
-          this.router.navigate(['/auth/login'])
-        }
+        this.isLoggedIn$.next(false)
+        this.router.navigate(['/auth/login'])
       }
     })
+
+    this.authStoreService.getUser()
   }
 
   footerNavClick(route: string) {

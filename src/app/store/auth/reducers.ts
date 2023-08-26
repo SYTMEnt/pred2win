@@ -13,7 +13,7 @@ const authReducer = createReducer(
         }
     })),
     on(authActions.signupSuccess, (currentState, actionsData) => ({
-        data: actionsData,
+        ...currentState,
         actions: {
             processing: false,
             httpError: undefined,
@@ -37,7 +37,7 @@ const authReducer = createReducer(
         }
     })),
     on(authActions.loginSuccess, (currentState, actionsData) => ({
-        data: actionsData,
+        ...currentState,
         actions: {
             processing: false,
             httpError: undefined,
@@ -50,6 +50,30 @@ const authReducer = createReducer(
             processing: false,
             httpError,
             success: false
+        }
+    })),
+    on(authActions.getUser, (currentState, actionsData) => ({
+        ...currentState,
+        actions: {
+            processing: true,
+            success: false,
+            httpError: undefined
+        }
+    })),
+    on(authActions.getUserSuccess, (currentState, actionsData) => ({
+        data: actionsData,
+        actions: {
+            processing: false,
+            success: true,
+            httpError: undefined
+        }
+    })),
+    on(authActions.getUserError, (currentState, { httpError }) => ({
+        data: undefined,
+        actions: {
+            processing: false,
+            success: false,
+            httpError
         }
     })),
     on(authActions.reset, () => ({

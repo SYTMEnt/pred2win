@@ -19,7 +19,13 @@ export class AuthService {
         return this.http.post<User>(`/login`, user)
     } 
 
-    logout(): Observable<boolean> {
-        return of(true)
+    logout(): Observable<any> {
+        return this.http.get(`/logout`)
     }
+
+    user(): Observable<User> {
+        return this.http.get<User>(`/user`)
+    }
+
+
 }

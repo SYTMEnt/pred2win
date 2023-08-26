@@ -20,9 +20,8 @@ export class AuthEffects {
                 password: action.password
             };
             return this.authService.signup(user).pipe(
-                map((user: User) => {
-                    localStorage.setItem('user', JSON.stringify(user))
-                    return authActions.signupSuccess(user)
+                map(() => {
+                    return authActions.signupSuccess()
                 }),
                 catchError((httpError: HttpErrorResponse) => of(authActions.signupHttpError({httpError})))
             )
@@ -37,11 +36,22 @@ export class AuthEffects {
                 password: action.password
             };
             return this.authService.login(loginData).pipe(
-                map((user) => { 
-                    localStorage.setItem('user', JSON.stringify(user))
-                    return authActions.loginSuccess(user)
+                map(() => { 
+                    return authActions.loginSuccess()
                 }),
                 catchError((httpError: HttpErrorResponse) => of(authActions.loginHttpError({httpError})))
+            )
+        })
+    ))
+
+    user$ = createEffect(() => this.actions$.pipe(
+        ofType(authActions.getUser, authActions.loginSuccess, authActions.signupSuccess),
+        switchMap(() => {
+            return this.authService.user().pipe(
+                map((user) => {
+                    return authActions.getUserSuccess(user)
+                }),
+                catchError((httpError: HttpErrorResponse) => of(authActions.getUserError({httpError})))
             )
         })
     ))
@@ -50,7 +60,8 @@ export class AuthEffects {
         ofType(authActions.logout),
         switchMap((action) => {
             return this.authService.logout().pipe(
-                map(() => authActions.reset())
+                map(() => authActions.reset()),
+                catchError(() => of(authActions.reset()))
             )
         })
     ))

@@ -26,7 +26,7 @@ export class AuthStoreService {
         this.store$.dispatch(authActions.logout());
     }
 
-    // storeUserFromLS(user: User) {
-    //     this.store$.dispatch()
-    // }
+    getUser(): void {
+        this.store$.dispatch(authActions.getUser());
+    }
 }

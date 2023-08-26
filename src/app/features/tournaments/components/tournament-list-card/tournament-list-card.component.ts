@@ -1,20 +1,19 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-tournament-list-card',
   templateUrl: './tournament-list-card.component.html',
   styleUrls: ['./tournament-list-card.component.scss']
 })
-export class TournamentListCardComponent implements OnInit {
+export class TournamentListCardComponent {
 
-  data$!: Observable<any>;
-
-  constructor(private http: HttpClient) {}
-
-  ngOnInit(): void {
-    this.data$ = this.http.get('assets/tournamentList.json')
+  @Input() data!: {
+    tournamentLogo: string, 
+    tournamentName: string, 
+    tournamentCategory: string, 
+    tournamentYear: string,
+    tournamentLocation: string[],
+    tournamentMembers: number
   }
 
 }

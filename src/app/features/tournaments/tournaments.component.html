@@ -1,5 +1,7 @@
 <div class="tournaments">
     <section class="tournaments-list">
-        <app-tournament-list-card></app-tournament-list-card>
+        <ng-container *ngFor="let obj of data">
+            <app-tournament-list-card [data]="obj"></app-tournament-list-card>
+        </ng-container>
     </section>
 </div>

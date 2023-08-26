@@ -1,4 +1,4 @@
-<ng-container *ngFor="let data of data$ | async">
+<ng-container *ngIf="data">
     <div class="tournament-card">
         <img class="tournament-card-image" [src]="data.tournamentLogo" [alt]="data.tournamentName">
         <div class="tournament-card-details">
@@ -19,4 +19,6 @@
             </button>
         </div>
     </div>
+    
+    
 </ng-container>

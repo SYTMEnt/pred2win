@@ -1,6 +1,6 @@
 <section class="signup">
     <h3 class="signup-header">Sign up</h3>
-    <form (ngSubmit)="onSubmit()" class="signup-form" [formGroup]="form">
+    <form class="signup-form" [formGroup]="form">
         <mat-form-field>
             <mat-label>Name</mat-label>
             <input formControlName="displayName" type="text" matInput placeholder="Display Name">
@@ -20,7 +20,7 @@
             <mat-error *ngIf="getFormControlErrors('password')">{{getFormControlErrors('password')}}</mat-error>
         </mat-form-field>
         <div class="signup-actions">
-            <button class="signup-form-submit" color="primary" type="submit" [class.button-spinner]="isAuthLoading$ | async" mat-raised-button>
+            <button class="signup-form-submit" color="primary" type="submit" (click)="onSubmit()" [class.button-spinner]="isAuthLoading$ | async" mat-raised-button>
                 Submit 
             </button>
             <a routerLink="/auth/login">Already a member? Login</a>
