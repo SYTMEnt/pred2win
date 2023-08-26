@@ -12,5 +12,14 @@
         margin: auto;
         margin-top: 15vh;
         overflow-y: scroll;
+
+        @media (max-width: 1024px) {
+            width: 90%;
+        }
+
+        @media (max-width: 1024px) {
+            width: 95%;
+            margin-top: 8vh;
+        }
     }
 }
