@@ -4,6 +4,7 @@ import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { catchError, map, of, switchMap } from "rxjs";
 import { TournamentService } from "src/app/features/tournaments/services/tournaments.service";
 import * as tournamentActons from "./actions";
+import { TournamentParams } from "../../features/tournaments/services/tournaments.service";
 
 @Injectable()
 export class TournamentsEffects {
@@ -13,7 +14,11 @@ export class TournamentsEffects {
     tournaments$ = createEffect(() => this.actions$.pipe(
         ofType(tournamentActons.tournaments),
         switchMap((action) => {
-            return this.tournamentService.tournaments().pipe(
+            const tournamentParams: TournamentParams = {
+                userId: action.userId, 
+                tournamentStatus: action.tournamentStatus 
+            }
+            return this.tournamentService.tournaments(tournamentParams).pipe(
                 map((tournaments) => {
                     return tournamentActons.tournamentsSuccess({tournaments})
                 }),

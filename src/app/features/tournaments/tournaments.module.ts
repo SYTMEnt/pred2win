@@ -10,6 +10,7 @@ import { TournamentsMaterialModule } from "./tournaments-material.module";
 import { TournamentsEffects } from "../../store/tournaments/effects";
 import { reducer as tournamentReducer} from "../../store/tournaments/reducer"
 import { TournamentStoreService } from "../../store/tournaments/tournament-store.service";
+import { NavTopComponent } from "../../shared/components/nav-top/nav-top.component";
 
 
 
@@ -22,6 +23,7 @@ import { TournamentStoreService } from "../../store/tournaments/tournament-store
         CommonModule,
         TournamentsRoutingModule,
         TournamentsMaterialModule,
+        NavTopComponent,
         StoreModule.forFeature('tournaments', tournamentReducer ),
         EffectsModule.forFeature(TournamentsEffects)
     ],

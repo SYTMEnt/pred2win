@@ -3,6 +3,7 @@ import { select, Store } from "@ngrx/store";
 import { TournamentState } from "./state";
 import * as tournamentSelectors from "./selectors";
 import * as tournamentActions from "./actions";
+import { TournamentParams } from "../../features/tournaments/services/tournaments.service";
 
 @Injectable()
 export class TournamentStoreService {
@@ -12,8 +13,8 @@ export class TournamentStoreService {
 
     constructor(private store$: Store<TournamentState>) {}
 
-    tournaments() {
-        this.store$.dispatch(tournamentActions.tournaments())
+    tournaments(params: TournamentParams) {
+        this.store$.dispatch(tournamentActions.tournaments(params))
     }
 
     reset() {

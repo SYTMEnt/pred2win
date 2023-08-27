@@ -1,9 +1,20 @@
+<nav-top [links]="filters" [show]="true" (clicked)="onFilterSelect($event)"></nav-top>
 <div class="tournaments">
     <section class="tournaments-list">
-        <ng-container *ngFor="let obj of (tournaments$ | async); else loadingTpl">
-            <app-tournament-list-card [data]="obj"></app-tournament-list-card>
+        <ng-container *ngIf="tournaments$ | async as tournaments">
+            <ng-container *ngIf="tournaments.length; else emptyTpl">
+                <app-tournament-list-card  *ngFor="let obj of tournaments" [data]="obj"></app-tournament-list-card>
+            </ng-container>
         </ng-container>
-        
         <mat-spinner class="loader" color="accent" *ngIf="tournamenntActions$ | async"></mat-spinner>
     </section>
 </div>
+
+<ng-template #emptyTpl>
+    <div class="empty-data">
+        <img class="empty-data-ball ball" width="100" height="100" src="https://clipart-library.com/images/gieEeGL4T.png" alt="">
+        <h1 class="empty-data-header">
+            No data found here !
+        </h1>
+    </div>
+</ng-template>

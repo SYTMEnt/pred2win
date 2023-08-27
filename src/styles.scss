@@ -50,6 +50,31 @@ mat-form-field {
     top: 40%;
 }
 
+.empty-data {
+    height: 100%;
+    
+    &-header {
+        text-align: center;
+        color: greenyellow;
+        font-family: "Bangers", cursive;
+        position: relative;
+        top: 30rem;
+        font-size: 4rem;
+    }
+}
+
+.ball {
+    position: relative;
+    left: 45%;
+    animation: bounce 1s;
+    transform: translateY(0px);
+    animation-iteration-count: infinite;
+
+    @media (max-width: 600px) {
+        left: 40%;
+    }
+}
+
 // ANIMATIONS
 
 @keyframes spinner {
@@ -112,4 +137,26 @@ mat-form-field {
     }
 }
 
-
+@keyframes bounce {
+	0% {top: 9rem;
+		-webkit-animation-timing-function: ease-in;
+	}
+	40% {}
+	50% {top: 20rem;
+		// height: 140px;
+		-webkit-animation-timing-function: ease-out;
+	}
+	55% {top: 24rem; 
+        // height: 120px; 
+		-webkit-animation-timing-function: ease-in;}
+	65% {top: 19rem; 
+        // height: 140px; 
+		-webkit-animation-timing-function: ease-out;}
+	95% {
+		top: 9rem;		
+		-webkit-animation-timing-function: ease-in;
+	}
+	100% {top: 9rem;
+		-webkit-animation-timing-function: ease-in;
+	}
+}

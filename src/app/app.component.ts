@@ -15,7 +15,6 @@ import { FooterNav } from './shared/components/nav-footer/nav-footer.component';
 export class AppComponent implements OnInit {
 
   isLoggedIn$ = new BehaviorSubject(false)
-  topNavlinks = ['All', 'Live', 'Upcoming', 'Recent'];
   footerNavLinks: FooterNav[] = [
     {
       route: 'tournaments',
@@ -35,7 +34,6 @@ export class AppComponent implements OnInit {
     }
   ]
   
-
   constructor(private router: Router, private authStoreService: AuthStoreService, private store$: Store<AuthState>) {}
 
   ngOnInit(): void {

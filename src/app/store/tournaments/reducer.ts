@@ -5,7 +5,7 @@ import * as tournamentActions from "./actions";
 const tournamentsReducer = createReducer(
     initialState,
     on(tournamentActions.tournaments, (currentState, actionData) => ({
-        ...currentState,
+        data: undefined,
         actions: {
             processing: true,
             success: false,
