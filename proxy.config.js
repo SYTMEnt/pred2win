@@ -1,7 +1,8 @@
 module.exports = [
     {
-        context: ["/login", "/user", "/logout"],
+        context: ["/login", "/user", "/logout", "/gui"],
         target: "https://dev.pred2win.com:6060",
-        secure: false
+        secure: false,
+        changeOrigin: true
     }
 ]

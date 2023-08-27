@@ -1,15 +1,9 @@
-import { HttpErrorResponse } from "@angular/common/http";
+import { ActionState } from "../types";
 import { User } from "./types";
-
-export interface AuthActionState {
-    processing: boolean,
-    httpError: HttpErrorResponse | undefined,
-    success?: boolean
-}
 
 export interface AuthState {
     data: User | undefined,
-    actions: AuthActionState
+    actions: ActionState
 }
 
 export const initialState: AuthState = {

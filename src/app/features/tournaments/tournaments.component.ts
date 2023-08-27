@@ -1,12 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TournamentStoreService } from 'src/app/store/tournaments/tournament-store.service';
 
 @Component({
   selector: 'app-tournaments',
   templateUrl: './tournaments.component.html',
   styleUrls: ['./tournaments.component.scss']
 })
-export class TournamentsComponent {
-  data = [
+export class TournamentsComponent implements OnInit {
+
+    constructor(private tournamentStoreService: TournamentStoreService) {}
+
+    tournaments$ = this.tournamentStoreService.tournaments$;
+
+    ngOnInit() {
+        this.tournamentStoreService.tournaments()
+    }
+
+    data = [
       {
           tournamentTeams: [],
           tournamentStreaks: [],

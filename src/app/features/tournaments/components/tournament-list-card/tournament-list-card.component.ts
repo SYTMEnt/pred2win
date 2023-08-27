@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Tournament } from '../../../../store/tournaments/types';
 
 @Component({
   selector: 'app-tournament-list-card',
@@ -7,13 +8,6 @@ import { Component, Input } from '@angular/core';
 })
 export class TournamentListCardComponent {
 
-  @Input() data!: {
-    tournamentLogo: string, 
-    tournamentName: string, 
-    tournamentCategory: string, 
-    tournamentYear: string,
-    tournamentLocation: string[],
-    tournamentMembers: number
-  }
+  @Input() data!: Tournament
 
 }

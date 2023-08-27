@@ -1,4 +1,4 @@
-import { createFeatureSelector, createSelector, MemoizedSelector } from "@ngrx/store";
+import { createFeatureSelector, createSelector } from "@ngrx/store";
 import { AuthState } from './state'
 
 export const authSelector = createFeatureSelector<AuthState>('auth')
