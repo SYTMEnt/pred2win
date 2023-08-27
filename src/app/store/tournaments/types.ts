@@ -10,6 +10,7 @@ export interface Tournament {
     tournamentCategory: string,
     tournamentStartTime: string,
     tournamentMembers: number,
+    tournamentEntryStatus: boolean,
     tournamentLocation: string[]
 }
 

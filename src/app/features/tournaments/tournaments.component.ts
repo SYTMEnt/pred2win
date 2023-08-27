@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs';
 import { TournamentStoreService } from 'src/app/store/tournaments/tournament-store.service';
 
 @Component({
@@ -11,6 +12,9 @@ export class TournamentsComponent implements OnInit {
     constructor(private tournamentStoreService: TournamentStoreService) {}
 
     tournaments$ = this.tournamentStoreService.tournaments$;
+    tournamenntActions$ = this.tournamentStoreService.tournamentsActions$.pipe(
+        map((data) => data.processing)
+    )
 
     ngOnInit() {
         this.tournamentStoreService.tournaments()
