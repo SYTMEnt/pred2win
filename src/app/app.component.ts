@@ -57,7 +57,6 @@ export class AppComponent implements OnInit {
   }
 
   logout() {
-    localStorage.removeItem('user')
     this.authStoreService.logout()
   }
 
