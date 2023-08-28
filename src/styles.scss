@@ -144,19 +144,23 @@ mat-form-field {
 	40% {}
 	50% {top: 20rem;
 		// height: 140px;
+        transform: rotate(80deg);
 		-webkit-animation-timing-function: ease-out;
 	}
-	55% {top: 24rem; 
+	55% {top: 24rem;
+         
         // height: 120px; 
 		-webkit-animation-timing-function: ease-in;}
 	65% {top: 19rem; 
         // height: 140px; 
+        transform: rotate(120deg);
 		-webkit-animation-timing-function: ease-out;}
 	95% {
 		top: 9rem;		
 		-webkit-animation-timing-function: ease-in;
 	}
 	100% {top: 9rem;
+        transform: rotate(360deg);
 		-webkit-animation-timing-function: ease-in;
 	}
 }
