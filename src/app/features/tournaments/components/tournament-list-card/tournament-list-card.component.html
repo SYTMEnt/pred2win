@@ -14,7 +14,6 @@
             <span>Members</span>
             <span>{{data.tournamentMembers || 0}}</span>
             <button class="tournament-card-actions-btn" mat-fab extended [color]="data.tournamentEntryStatus ? 'accent' : 'primary' ">
-                <mat-icon>subdirectory_arrow_right</mat-icon>
                 {{ data.tournamentEntryStatus ? 'Continue' : 'Join'}}
             </button>
         </div>

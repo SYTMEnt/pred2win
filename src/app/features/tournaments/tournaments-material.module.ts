@@ -6,12 +6,10 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 @NgModule({
     imports: [
         MatButtonModule,
-        MatIconModule,
         MatProgressSpinnerModule
     ],
     exports: [
         MatButtonModule,
-        MatIconModule,
         MatProgressSpinnerModule
     ]
 })

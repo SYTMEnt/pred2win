@@ -3,7 +3,7 @@
     <section class="tournaments-list">
         <ng-container *ngIf="tournaments$ | async as tournaments">
             <ng-container *ngIf="tournaments.length; else emptyTpl">
-                <app-tournament-list-card  *ngFor="let obj of tournaments" [data]="obj"></app-tournament-list-card>
+                <app-tournament-list-card *ngFor="let tournament of tournaments" [data]="tournament"></app-tournament-list-card>
             </ng-container>
         </ng-container>
         <mat-spinner class="loader" color="accent" *ngIf="tournamenntActions$ | async"></mat-spinner>
@@ -12,7 +12,7 @@
 
 <ng-template #emptyTpl>
     <div class="empty-data">
-        <img class="ball" src="https://clipart-library.com/images/gieEeGL4T.png" alt="">
+        <img class="ball" src="assets/ball.png" alt="">
         <div class="ball-shadow"></div>
         <h1 class="empty-data-header">
             No data found here !

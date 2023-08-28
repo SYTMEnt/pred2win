@@ -154,13 +154,14 @@ mat-form-field {
 }
 
 @keyframes bounce {
-	0% {top: 9rem;
+	0% {
+        top: 9rem;
         transform: rotate(0deg);
 		-webkit-animation-timing-function: ease-in;
 	}
 	40% {}
-	50% {top: 20rem;
-		// height: 140px;
+	50% {
+        top: 20rem;
         transform: rotate(80deg);
 		-webkit-animation-timing-function: ease-out;
 	}
@@ -185,7 +186,7 @@ mat-form-field {
         transform: scale(-.9);
         opacity: 0;
 	}
-    40% {
+    48% {
         transform: scale(-.7);
         opacity: 0.1;
 	}
@@ -199,7 +200,7 @@ mat-form-field {
 	}
     65% {
         transform: scale(-.7);
-        opacity: 0.5;
+        opacity: 0.2;
     }
 	95% {
 		transform: scale(-.9);
