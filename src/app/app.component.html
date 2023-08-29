@@ -4,8 +4,5 @@
     </button>
     <nav-footer [links]="footerNavLinks" [show]="isLoggedIn" (clicked)="footerNavClick($event)">
     </nav-footer>
-
 </ng-container>
-<mat-tab-nav-panel #tabPanel>
-    <router-outlet></router-outlet>
-</mat-tab-nav-panel>
+<router-outlet></router-outlet>

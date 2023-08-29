@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { AuthStoreService } from './store/auth/auth-store.service';
-import { loginSuccess } from './store/auth/actions'
 import { Store } from '@ngrx/store';
 import { AuthState } from './store/auth/state';
 import { FooterNav } from './shared/components/nav-footer/nav-footer.component';
@@ -39,7 +38,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.authStoreService.userProfile$.subscribe((user) => {
       if(user) {
-        this.router.navigate(['/tournaments'])
+        this.router.navigate(['/profile'])
         this.isLoggedIn$.next(true)
       } else {
         this.isLoggedIn$.next(false)

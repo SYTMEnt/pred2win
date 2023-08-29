@@ -1,6 +1,6 @@
 import { NgFor, NgIf } from "@angular/common";
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
-import { MatTabNavPanel, MatTabsModule } from "@angular/material/tabs";
+import { MatTabsModule } from "@angular/material/tabs";
 
 @Component({
     selector: 'nav-top',
@@ -12,6 +12,8 @@ import { MatTabNavPanel, MatTabsModule } from "@angular/material/tabs";
             [active]="activeLink == link"> {{link}} </a>
             <ng-content></ng-content>
         </nav>
+        <mat-tab-nav-panel #tabPanel>
+        </mat-tab-nav-panel>
     `,
     imports: [
         NgFor,
@@ -23,7 +25,6 @@ import { MatTabNavPanel, MatTabsModule } from "@angular/material/tabs";
 export class NavTopComponent implements OnInit {
     @Input() show = false;
     @Input() links: string[] = []
-    @Input() tabPanel!: MatTabNavPanel;
 
     @Output() clicked = new EventEmitter<string>()
 

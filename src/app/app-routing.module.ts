@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ForumComponent } from './features/forum/forum.component';
 import { LeaderboardComponent } from './features/leaderboard/leaderboard.component';
 
 const routes: Routes = [
@@ -9,7 +10,15 @@ const routes: Routes = [
   },
   {
     path: "leaderboard",
-    component: LeaderboardComponent
+    loadChildren: () => import('./features/leaderboard/leaderboard.module').then(m => m.LeaderboardModule)
+  },
+  {
+    path: "forum",
+    loadChildren: () => import('./features/forum/forum.module').then(m => m.ForumModule)
+  },
+  {
+    path: "profile",
+    loadChildren: () => import('./features/profile/profile.module').then(m => m.ProfileModule)
   },
   {
     path: "",

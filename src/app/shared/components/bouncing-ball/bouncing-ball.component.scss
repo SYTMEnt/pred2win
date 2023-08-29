@@ -1,0 +1,102 @@
+
+.ball-set {
+    display: flex;
+    justify-content: center;
+
+    &-ball {
+        height: 10rem;
+        width: 10rem;
+        animation: bounce1 1s;
+        position: absolute;
+        animation-iteration-count: infinite;
+    }
+
+    &-shadow {
+        position: absolute;
+        width: 100px;
+        height: 20px;
+        top: 50%;
+        background: radial-gradient(#000f,#fff0 72%);
+        border-radius: 694px / 208px;
+        animation: shadow 1s;
+        animation-iteration-count: infinite;
+
+        @media (max-height: 600px) {
+            top: 60%;
+        }
+    }
+
+    &-text {
+        text-align: center;
+        color: greenyellow;
+        font-family: "Bangers", cursive;
+        position: absolute;
+        top: 55%;
+        font-size: 4rem;
+        @media (max-height: 600px) {
+            top: 70%;
+        }
+    }
+}
+
+@keyframes shadow {
+    0% {
+        transform: scale(-.9);
+        opacity: 0;
+	}
+    48% {
+        transform: scale(-.7);
+        opacity: 0.1;
+	}
+	50% {
+        transform: scale(-.7);
+        opacity: 0.6;
+	}
+	55% {
+        transform: scale(-0.5);
+        opacity: 0.8;
+	}
+    65% {
+        transform: scale(-.7);
+        opacity: 0.2;
+    }
+	95% {
+		transform: scale(-.9);
+        opacity: 0.1;
+	}
+	100% {
+        transform: scale(-.9);
+        opacity: 0;
+	}
+}
+
+
+@keyframes bounce1 {
+	0% {
+        top: 20%;
+        transform: rotate(0deg);
+		-webkit-animation-timing-function: ease-in;
+	}
+	40% {}
+	50% {
+        top: 35%;
+        transform: rotate(80deg);
+		-webkit-animation-timing-function: ease-out;
+	}
+	55% {
+        top: 40%;
+		-webkit-animation-timing-function: ease-in;}
+	65% {
+        top: 30%; 
+        transform: rotate(120deg);
+		-webkit-animation-timing-function: ease-out;}
+	95% {
+		top: 20%;	
+		-webkit-animation-timing-function: ease-in;
+	}
+	100% {
+        top: 20%;
+        transform: rotate(360deg);
+		-webkit-animation-timing-function: ease-in;
+	}
+}

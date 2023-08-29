@@ -12,8 +12,6 @@ import { reducer as tournamentReducer} from "../../store/tournaments/reducer"
 import { TournamentStoreService } from "../../store/tournaments/tournament-store.service";
 import { NavTopComponent } from "../../shared/components/nav-top/nav-top.component";
 
-
-
 @NgModule({
     declarations: [    
         TournamentsComponent,
