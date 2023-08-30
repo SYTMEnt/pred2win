@@ -22,5 +22,11 @@
             width: 95%;
             margin-top: 8vh;
         }
+
+        @media screen and (max-width: 600px), 
+                screen and (max-height: 600px) {
+            height: 70vh;
+            margin-top: 15vh;
+        }
     }
 }

@@ -13,16 +13,22 @@
     }
 
     &-card {
-        width: 100rem;
-        height: 55rem;
+        width: 120rem;
+        height: 70rem;
         margin: auto;
         background: white;
         box-shadow: -6px 6px 16px #453e3e;
         display: flex;
+        border-radius: 1rem;
 
         @media (max-width: 1024px) {
             width: 100%;
             height: 100%;
+            border-radius: 0;
+        }
+
+        @media (max-height: 1024px) {
+            box-shadow: none;
         }
 
         &-left {
@@ -37,6 +43,15 @@
                 overflow: hidden;
                 margin: 5rem auto;
 
+                @media (max-width: 1024px) {
+                    width: 10rem;
+                    height: 10rem;
+                }
+
+                @media screen and (max-height: 600px) {
+                    margin: 2rem auto;
+                }
+
                 &-img {
                     width: inherit;
                     height: inherit;
@@ -46,6 +61,10 @@
             &-links {
                 display: flex;
                 flex-direction: column;
+
+                @media screen and (max-height: 600px) {
+                    height: 50%;
+                }
 
                 & > * {
                     height: 5rem;
@@ -60,6 +79,14 @@
             width: 70%;
             height: 100%;
             padding: 5rem;
+
+            @media (max-width: 1024px) {
+                padding: 5rem 1rem;
+            }
+
+            @media screen and (max-height: 600px) {
+                padding-top: 2rem;
+            }
         }
     }
 }
