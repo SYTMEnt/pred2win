@@ -31,7 +31,11 @@
             left: 10%;
             @media (max-width: 600px) {
                 display: inline-block;
-             }
+            }
+
+            @media (max-height: 600px) {
+                top: 10%;
+            }
         }
 
         &-header {
@@ -114,6 +118,10 @@
 
             @media (max-width: 600px) {
                 width: 95%;
+            }
+
+            @media (max-height: 600px) {
+                top: 15%;
             }
         }
     }

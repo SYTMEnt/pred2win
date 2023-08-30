@@ -60,6 +60,10 @@ mat-form-field {
         position: relative;
         top: 30rem;
         font-size: 4rem;
+
+        @media (max-height: 600px) {
+            top: 7rem;
+        }
     }
 }
 
@@ -75,6 +79,7 @@ mat-form-field {
     @media (max-width: 600px) {
         left: 40%;
     }
+
     &-shadow {
         width: 100px;
         height: 20px;
@@ -87,6 +92,10 @@ mat-form-field {
         animation-iteration-count: infinite;
         @media (max-width: 600px) {
             left: 40%;
+        }
+
+        @media (max-height: 600px) {
+            top: 5rem;
         }
     }
 }
@@ -179,6 +188,36 @@ mat-form-field {
         transform: rotate(360deg);
 		-webkit-animation-timing-function: ease-in;
 	}
+}
+
+@media (max-height: 600px) {
+    @keyframes bounce {
+        0% {
+            top: 2rem;
+            transform: rotate(0deg);
+            -webkit-animation-timing-function: ease-in;
+        }
+        40% {}
+        50% {
+            top: 6rem;
+            transform: rotate(80deg);
+            -webkit-animation-timing-function: ease-out;
+        }
+        55% {
+            top: 7rem;
+            -webkit-animation-timing-function: ease-in;}
+        65% {top: 5rem; 
+            transform: rotate(120deg);
+            -webkit-animation-timing-function: ease-out;}
+        95% {
+            top: 2rem;	
+            -webkit-animation-timing-function: ease-in;
+        }
+        100% {top: 2rem;
+            transform: rotate(360deg);
+            -webkit-animation-timing-function: ease-in;
+        }
+    }
 }
 
 @keyframes shadow {

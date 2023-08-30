@@ -14,17 +14,12 @@
         overflow-y: scroll;
 
         @media (max-width: 1024px) {
-            width: 90%;
+            width: 95%;
+            margin-top: 8vh;
             height: 85vh;
         }
 
-        @media (max-width: 1024px) {
-            width: 95%;
-            margin-top: 8vh;
-        }
-
-        @media screen and (max-width: 600px), 
-                screen and (max-height: 600px) {
+        @media screen and (max-height: 600px) {
             height: 70vh;
             margin-top: 15vh;
         }
