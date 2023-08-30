@@ -1,1 +1,9 @@
-<p>contact works!</p>
+<h1>Contact</h1>
+<section class="contact">
+    <form (ngSubmit)="onSubmit()" class="contact-form" [formGroup]="form"> 
+        <mat-form-field class="contact-form-field">
+            <textarea matInput placeholder="Your Issue..." ></textarea>
+        </mat-form-field>
+    </form>
+</section>
+<button mat-raised-button (click)="onSubmit()" color="primary">Update</button>
