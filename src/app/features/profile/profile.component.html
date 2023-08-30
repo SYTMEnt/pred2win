@@ -5,10 +5,10 @@
                 <img class="profile-card-left-pic-img" src="assets/profile.jpg" alt="profile pic">
             </div>
             <div class="profile-card-left-links">
-                <a mat-flat-button routerLink="account">Account</a>
-                <a mat-flat-button routerLink="password">Password</a>
-                <a mat-flat-button routerLink="contact">Contact</a>
-                <a mat-flat-button routerLink="terms-conditions">Legal</a>
+                <a mat-flat-button (click)="activeLink = 'account'" [class.active-link]="activeLink == 'account'" routerLink="account">Account</a>
+                <a mat-flat-button (click)="activeLink = 'password'" [class.active-link]="activeLink == 'password'" routerLink="password">Password</a>
+                <a mat-flat-button (click)="activeLink = 'contact'" [class.active-link]="activeLink == 'contact'" routerLink="contact">Contact</a>
+                <a mat-flat-button (click)="activeLink = 'legal'" [class.active-link]="activeLink == 'legal'" routerLink="legal">Legal</a>
                 <button mat-flat-button (click)="logout()">Logout</button>
             </div>
         </div>

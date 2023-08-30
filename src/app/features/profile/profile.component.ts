@@ -8,9 +8,12 @@ import { AuthStoreService } from 'src/app/store/auth/auth-store.service';
 })
 export class ProfileComponent {
 
+  activeLink = "account"
+
   constructor(private authStoreService: AuthStoreService) {}
 
   logout() {
     this.authStoreService.logout()
   }
+  
 }
