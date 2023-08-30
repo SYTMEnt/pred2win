@@ -20,6 +20,7 @@
         box-shadow: -6px 6px 16px #453e3e;
         display: flex;
         border-radius: 1rem;
+        animation: splashIn .5s ease-in;
 
         @media (max-width: 1024px) {
             width: 100%;
@@ -93,5 +94,29 @@
     .active-link {
         background: purple;
         color: greenyellow;
+    }
+}
+
+@keyframes splashIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+        -webkit-animation-timing-function: ease-in;
+    }
+
+    60% {
+        transform: scale(1.1);
+        -webkit-animation-timing-function: ease-out;
+        opacity: 1;
+    }
+
+    85% {
+        transform: scale(.95);
+        -webkit-animation-timing-function: ease-in;
+    }
+
+    100% {
+        transform: scale(1);
+        -webkit-animation-timing-function: ease-out;
     }
 }
