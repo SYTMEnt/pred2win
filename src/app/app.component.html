@@ -1,7 +1,4 @@
 <ng-container *ngIf="isLoggedIn$ | async as isLoggedIn">
-    <button mat-icon-button class="logout" (click)="logout()" aria-label="Logout">
-        <mat-icon color="accent">power_settings_new</mat-icon>
-    </button>
     <nav-footer [links]="footerNavLinks" [show]="isLoggedIn" (clicked)="footerNavClick($event)">
     </nav-footer>
 </ng-container>

@@ -1,0 +1,20 @@
+<h1>Account</h1>
+<section class="account">
+    <form (ngSubmit)="onSubmit()" class="account-form" [formGroup]="form">
+        <mat-form-field class="account-form-field">
+          <mat-label>Member Id</mat-label>
+          <input matInput formControlName="memberId" placeholder="Member id">
+        </mat-form-field>
+    
+        <mat-form-field class="account-form-field">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" placeholder="Email">
+        </mat-form-field>
+    
+        <mat-form-field class="account-form-field">
+            <mat-label>Display Name</mat-label>
+            <input matInput formControlName="displayName" placeholder="Display Name">
+        </mat-form-field>
+    </form>
+</section>
+<button mat-raised-button (click)="onSubmit()" color="primary">Update</button>

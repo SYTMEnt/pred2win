@@ -38,7 +38,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.authStoreService.userProfile$.subscribe((user) => {
       if(user) {
-        this.router.navigate(['/profile'])
+        this.router.navigate(['/tournaments'])
         this.isLoggedIn$.next(true)
       } else {
         this.isLoggedIn$.next(false)
@@ -51,10 +51,6 @@ export class AppComponent implements OnInit {
 
   footerNavClick(route: string) {
     this.router.navigate([`/${route}`])
-  }
-
-  logout() {
-    this.authStoreService.logout()
   }
 
 }
