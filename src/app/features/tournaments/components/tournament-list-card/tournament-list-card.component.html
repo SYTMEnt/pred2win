@@ -13,7 +13,9 @@
         <div class="tournament-card-actions">
             <span>Members</span>
             <span>{{data.tournamentMembers || 0}}</span>
-            <button class="tournament-card-actions-btn" mat-fab extended [color]="data.tournamentEntryStatus ? 'accent' : 'primary' ">
+            <button class="tournament-card-actions-btn" mat-fab extended 
+                [color]="data.tournamentEntryStatus ? 'accent' : 'primary'"
+                (click)="onClick()">
                 {{ data.tournamentEntryStatus ? 'Continue' : 'Join'}}
             </button>
         </div>

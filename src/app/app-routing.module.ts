@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ForumComponent } from './features/forum/forum.component';
-import { LeaderboardComponent } from './features/leaderboard/leaderboard.component';
 
 const routes: Routes = [
   {
@@ -19,6 +17,10 @@ const routes: Routes = [
   {
     path: "profile",
     loadChildren: () => import('./features/profile/profile.module').then(m => m.ProfileModule)
+  },
+  {
+    path: "matches",
+    loadChildren: () => import('./features/matches/matches.module').then(m => m.MatchesModule)
   },
   {
     path: "",

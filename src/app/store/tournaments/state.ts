@@ -1,16 +1,32 @@
 import { ActionState } from "../types";
-import { TournamentList } from "./types";
+import { TournamentList, JoinTournament } from "./types";
 
 export interface TournamentState {
-    data: TournamentList | undefined,
-    actions: ActionState
+    tournaments: {
+        data: TournamentList | undefined,
+        actions: ActionState
+    },
+    join: {
+        data: JoinTournament | undefined,
+        actions: ActionState
+    }
 }
 
 export const initialState: TournamentState = {
-    data: undefined,
-    actions: {
-        httpError: undefined,
-        processing: false,
-        success: false
+    tournaments: {
+        data: undefined,
+        actions: {
+            httpError: undefined,
+            processing: false,
+            success: false
+        }
+    },
+    join: {
+        data: undefined,
+        actions: {
+            httpError: undefined,
+            processing: false,
+            success: false
+        }
     }
 }

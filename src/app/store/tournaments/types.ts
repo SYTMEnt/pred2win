@@ -14,4 +14,8 @@ export interface Tournament {
     tournamentLocation: string[]
 }
 
+export interface JoinTournament {
+    tournamentId: string
+}
+
 export type TournamentList = Array<Tournament>

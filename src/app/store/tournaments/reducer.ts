@@ -5,27 +5,69 @@ import * as tournamentActions from "./actions";
 const tournamentsReducer = createReducer(
     initialState,
     on(tournamentActions.tournaments, (currentState, actionData) => ({
-        data: undefined,
-        actions: {
-            processing: true,
-            success: false,
-            httpError: undefined
+        ...currentState,
+        tournaments: {
+            data: undefined,
+            actions: {
+                processing: true,
+                success: false,
+                httpError: undefined
+            }
         }
     })),
     on(tournamentActions.tournamentsSuccess, (currentState, actionsData) => ({
-        data: actionsData.tournaments,
-        actions: {
-            processing: false,
-            httpError: undefined,
-            success: true
+        ...currentState,
+        tournaments: {
+            data: actionsData.tournaments,
+            actions: {
+                processing: false,
+                httpError: undefined,
+                success: true
+            }
         }
     })),
     on(tournamentActions.tournamentsError, (currentState, { httpError }) => ({
-        data: undefined,
-        actions: {
-            processing: false,
-            httpError,
-            success: false
+        ...currentState,
+        tournaments: {
+            data: undefined,
+            actions: {
+                processing: false,
+                httpError,
+                success: false
+            }
+        }
+    })),
+    on(tournamentActions.join, (currentStatus, actionData) => ({
+        ...currentStatus,
+        join: {
+            data: undefined,
+            actions: {
+                processing: true,
+                success: false,
+                httpError: undefined
+            }
+        }
+    })),
+    on(tournamentActions.joinSuccess, (currentStatus, actionData) => ({
+        ...currentStatus,
+        join: {
+            data: actionData,
+            actions: {
+                processing: false,
+                success: true,
+                httpError: undefined
+            }
+        }
+    })),
+    on(tournamentActions.joinError, (currentStatus, { httpError }) => ({
+        ...currentStatus,
+        join: {
+            data: undefined,
+            actions: {
+                processing: false,
+                success: false,
+                httpError
+            }
         }
     })),
     on(tournamentActions.reset, () => ({

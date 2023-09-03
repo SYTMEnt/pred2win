@@ -3,7 +3,11 @@
     <section class="tournaments-list">
         <ng-container *ngIf="tournaments$ | async as tournaments">
             <ng-container *ngIf="tournaments.length; else emptyTpl">
-                <app-tournament-list-card *ngFor="let tournament of tournaments" [data]="tournament"></app-tournament-list-card>
+                <app-tournament-list-card *ngFor="let tournament of tournaments" 
+                    [data]="tournament" 
+                    (join)="join($event)" 
+                    (continue)="continue($event)">
+                </app-tournament-list-card>
             </ng-container>
         </ng-container>
         <mat-spinner class="loader" color="accent" *ngIf="tournamenntActions$ | async"></mat-spinner>
