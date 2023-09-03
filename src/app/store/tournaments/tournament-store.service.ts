@@ -11,8 +11,8 @@ export class TournamentStoreService {
     readonly tournaments$ = this.store$.pipe(select(tournamentSelectors.tournaments))
     readonly tournamentsActions$ = this.store$.pipe(select(tournamentSelectors.tournamentsActions));
 
-    readonly joinTournament$ = this.store$.pipe(select(tournamentSelectors.joinTournament))
-    readonly joinTournamentActions$ = this.store$.pipe(select(tournamentSelectors.joinTournamentActions))
+    readonly joinTournament$ = this.store$.pipe(select(tournamentSelectors.joinedTournament))
+    readonly joinTournamentActions$ = this.store$.pipe(select(tournamentSelectors.joinedTournamentActions))
 
     constructor(private store$: Store<TournamentState>) {}
 

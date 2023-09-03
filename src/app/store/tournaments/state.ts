@@ -6,7 +6,7 @@ export interface TournamentState {
         data: TournamentList | undefined,
         actions: ActionState
     },
-    join: {
+    joined: {
         data: JoinTournament | undefined,
         actions: ActionState
     }
@@ -21,7 +21,7 @@ export const initialState: TournamentState = {
             success: false
         }
     },
-    join: {
+    joined: {
         data: undefined,
         actions: {
             httpError: undefined,

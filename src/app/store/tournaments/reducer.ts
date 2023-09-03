@@ -39,7 +39,7 @@ const tournamentsReducer = createReducer(
     })),
     on(tournamentActions.join, (currentStatus, actionData) => ({
         ...currentStatus,
-        join: {
+        joined: {
             data: undefined,
             actions: {
                 processing: true,
@@ -50,7 +50,7 @@ const tournamentsReducer = createReducer(
     })),
     on(tournamentActions.joinSuccess, (currentStatus, actionData) => ({
         ...currentStatus,
-        join: {
+        joined: {
             data: actionData,
             actions: {
                 processing: false,
@@ -61,7 +61,7 @@ const tournamentsReducer = createReducer(
     })),
     on(tournamentActions.joinError, (currentStatus, { httpError }) => ({
         ...currentStatus,
-        join: {
+        joined: {
             data: undefined,
             actions: {
                 processing: false,
