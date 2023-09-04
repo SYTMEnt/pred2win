@@ -4,6 +4,11 @@ import { MatchesMaterialModule } from "./matches-material.module";
 import { MatchesRouterModule } from "./matches-routing.module";
 import { MatchesComponent } from "./matches.component";
 import { MatchComponent } from './components/match/match.component';
+import { Store, StoreModule } from "@ngrx/store";
+import { EffectsModule } from "@ngrx/effects";
+import { reducer as matchesReducer } from "../../store/matches/reducer";
+import { MatchesEffects } from "../../store/matches/effects";
+import { MatchesStoreService } from "src/app/store/matches/matches-store.service";
 
 @NgModule({
     declarations: [
@@ -13,7 +18,15 @@ import { MatchComponent } from './components/match/match.component';
     imports: [
         CommonModule,
         MatchesRouterModule,
-        MatchesMaterialModule
+        MatchesMaterialModule,
+        StoreModule.forFeature('matches', matchesReducer ),
+        EffectsModule.forFeature(MatchesEffects)
+    ],
+    providers: [
+        {
+            provide: MatchesStoreService,
+            deps: [Store]
+        }
     ]
 })
 export class MatchesModule {

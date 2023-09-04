@@ -10,7 +10,7 @@ export interface Match {
     },
     matchNo: number,
     group: string,
-    matchStartTime: Date,
+    matchStartTime: string,
     volatility: string,
     teamA: Team,
     teamB: Team,
@@ -18,8 +18,8 @@ export interface Match {
     displayMatchNo: boolean,
     appendNumber: string,
     polls?: any[],
-    createdAt: Date,
-    updatedAt: Date,
+    createdAt: string,
+    updatedAt: string,
     __v: string
 }
 
@@ -36,8 +36,8 @@ export interface Team {
     eventType: string,
     teamType: string,
     teamCategory: string,
-    createdAt: Date,
-    updatedAt: Date,
+    createdAt: string,
+    updatedAt: string,
     __v: string,
 }
 

@@ -1,8 +1,16 @@
-<div class="match">
-    <div class="match-team__A">
-
+<div *ngIf="match" class="match">
+    <div class="match-team--A">
+        <img width="30px" class="match-team-flag" [src]="match.teamA.teamFlag">
+        <span class="match-team-name">{{match.teamA.teamName}}</span>
     </div>
-    <div class="match-team_B">
-        
+    <div class="match-info">
+        <span class="match-info__1">{{match.matchStartTime | date :'medium'}}</span>
+        <span class="match-info__2"><span *ngIf="match.displayMatchNo">Match No. {{match.matchNo}},</span> Group {{match.group}}</span>
+        <span class="match-info__3"><mat-icon>pin_drop</mat-icon>{{match.stadium}}</span>
     </div>
+    <div class="match-team--B">
+        <img width="30px" class="match-team-flag" [src]="match.teamB.teamFlag">
+        <span class="match-team-name">{{match.teamB.teamName}}</span>
+    </div>
+    <div class="match-volatility" [style.background]="match.volatility === 'cold' ? '#6fe9d5' : 'rgb(248 23 23)'"></div>
 </div>

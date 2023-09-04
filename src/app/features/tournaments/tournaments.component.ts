@@ -22,7 +22,7 @@ export class TournamentsComponent implements OnInit, OnDestroy {
                 private route: Router) {}
 
     tournaments$ = this.tournamentStoreService.tournaments$;
-    tournamenntActions$ = this.tournamentStoreService.tournamentsActions$.pipe(
+    tournamenntProcessing$ = this.tournamentStoreService.tournamentsActions$.pipe(
         map((data) => data.processing)
     )
 

@@ -68,6 +68,7 @@
                 animation: moveInBottom .5s ease-out .75s;
                 animation-delay: 1s;
                 animation-fill-mode: backwards;
+                background-image: url("/assets/pred2winball.svg");
 
                 @media (max-width: 1024px) {
                     width: 5rem;

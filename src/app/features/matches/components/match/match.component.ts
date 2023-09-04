@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Match } from 'src/app/store/matches/types';
 
 @Component({
   selector: 'app-match',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./match.component.scss']
 })
 export class MatchComponent {
-
+    @Input() match!: Match;
 }

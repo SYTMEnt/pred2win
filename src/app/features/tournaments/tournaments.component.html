@@ -10,7 +10,7 @@
                 </app-tournament-list-card>
             </ng-container>
         </ng-container>
-        <mat-spinner class="loader" color="accent" *ngIf="tournamenntActions$ | async"></mat-spinner>
+        <mat-spinner class="loader" color="accent" *ngIf="tournamenntProcessing$ | async"></mat-spinner>
     </section>
 </div>
 

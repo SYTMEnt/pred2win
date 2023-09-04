@@ -12,8 +12,8 @@ export class MatchesStoreService {
 
     constructor(private store$: Store<MatchesState>) {}
 
-    matches(matchId: string) {
-        this.store$.dispatch(matchesActions.matches({matchId}))
+    matches(tournamentId: string) {
+        this.store$.dispatch(matchesActions.matches({tournamentId}))
     }
 
     reset() {
