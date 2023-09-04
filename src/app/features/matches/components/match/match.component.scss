@@ -29,7 +29,12 @@
         }
     }
 
+    [class^="match-team--"] {
+        width: 30%;
+    }
+
     &-info {
+        width: 40%;
         mat-icon {
             @media (max-width: 600px) {
                 display: none;
@@ -53,5 +58,11 @@
         z-index: 2;
         cursor: pointer;
         transition: all .2s;
+    }
+
+    &:active {
+        transform: scale(1.01);
+        z-index: 2;
+        cursor: pointer;
     }
 }

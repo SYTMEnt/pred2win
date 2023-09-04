@@ -9,6 +9,8 @@ import { MatchesStoreService } from '../../store/matches/matches-store.service';
   styleUrls: ['./matches.component.scss']
 })
 export class MatchesComponent {
+    filters = ['all', 'scheduled', 'allocated', 'ongoing', 'completed'];
+    tournamentId = '';
 
     constructor(private route: ActivatedRoute, private router: Router, private matchStoreService: MatchesStoreService) {
         this.route.paramMap.pipe(
@@ -17,8 +19,8 @@ export class MatchesComponent {
             if(!param.has("tournamentId")) {
                 this.router.navigate(['tournaments'])
             } else {
-                const tournamentId = param.get("tournamentId") as string;
-                this.matchStoreService.matches(tournamentId);
+                this.tournamentId = param.get("tournamentId") as string;
+                this.matchStoreService.matches(this.tournamentId);
             }
         })
     }
@@ -27,4 +29,8 @@ export class MatchesComponent {
     matchesProcessing$ = this.matchStoreService.matchesActions$.pipe(
         map((data) => data.processing)
     )
+
+    onFilterSelect(matchStatus: string) {
+        this.matchStoreService.matches(this.tournamentId, matchStatus)
+    }
 }

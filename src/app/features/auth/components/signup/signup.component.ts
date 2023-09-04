@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { map } from 'rxjs/operators';
-import { AuthStoreService } from 'src/app/store/auth/auth-store.service';
+import { AuthStoreService } from '../../../../store/auth/auth-store.service';
 import { Signup } from '../../../../store/auth/types';
 import { passwordValidator } from '../../../../shared/services/password-validator.service'
 

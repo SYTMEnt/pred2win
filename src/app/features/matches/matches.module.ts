@@ -8,7 +8,8 @@ import { Store, StoreModule } from "@ngrx/store";
 import { EffectsModule } from "@ngrx/effects";
 import { reducer as matchesReducer } from "../../store/matches/reducer";
 import { MatchesEffects } from "../../store/matches/effects";
-import { MatchesStoreService } from "src/app/store/matches/matches-store.service";
+import { MatchesStoreService } from "../../store/matches/matches-store.service";
+import { NavTopComponent } from "../../shared/components/nav-top/nav-top.component";
 
 @NgModule({
     declarations: [
@@ -20,7 +21,8 @@ import { MatchesStoreService } from "src/app/store/matches/matches-store.service
         MatchesRouterModule,
         MatchesMaterialModule,
         StoreModule.forFeature('matches', matchesReducer ),
-        EffectsModule.forFeature(MatchesEffects)
+        EffectsModule.forFeature(MatchesEffects),
+        NavTopComponent
     ],
     providers: [
         {

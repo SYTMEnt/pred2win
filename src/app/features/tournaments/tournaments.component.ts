@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { map, Subject, take, takeUntil, tap } from 'rxjs';
-import { User } from 'src/app/store/auth/types';
+import { User } from '../../store/auth/types';
 import { AuthStoreService } from '../../store/auth/auth-store.service';
 import { TournamentStoreService } from '../../store/tournaments/tournament-store.service';
 import { TournamentJoinParams, TournamentStatus } from './services/tournaments.service';

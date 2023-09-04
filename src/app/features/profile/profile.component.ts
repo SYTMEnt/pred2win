@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthStoreService } from 'src/app/store/auth/auth-store.service';
+import { AuthStoreService } from '../../store/auth/auth-store.service';
 
 @Component({
   selector: 'app-profile',

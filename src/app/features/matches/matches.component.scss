@@ -7,9 +7,9 @@
     z-index: -1;
 
     &-list {
-        width: 60%;
-        margin: 10rem auto;
-        height: 75vh;
+        width: 70%;
+        margin: 8rem auto;
+        height: 80%;
         overflow-x: visible;
         overflow-y: scroll;
         padding: 2rem;
@@ -23,7 +23,6 @@
         @media (max-width: 600px) {
             width: 98%;
             padding: 0;
-            margin: 1rem auto;
             height: 90vh;
         }
         

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
-import { AuthStoreService } from 'src/app/store/auth/auth-store.service';
+import { AuthStoreService } from '../../../../store/auth/auth-store.service';
 import { Login } from '../../../../store/auth/types';
 
 @Component({

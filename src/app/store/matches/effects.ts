@@ -13,7 +13,7 @@ export class MatchesEffects {
     matches$ = createEffect(() => this.actions$.pipe(
         ofType(matchesActions.matches),
         switchMap((action) => {
-            return this.matchesService.matches(action.tournamentId).pipe(
+            return this.matchesService.matches(action.tournamentId, action.matchStatus).pipe(
                 map((matches) => {
                     return matchesActions.matchesSuccess({matches})
                 }),

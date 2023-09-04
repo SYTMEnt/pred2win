@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { take } from 'rxjs';
-import { AuthStoreService } from 'src/app/store/auth/auth-store.service';
-import { User } from 'src/app/store/auth/types';
+import { AuthStoreService } from '../../../store/auth/auth-store.service';
+import { User } from '../../../store/auth/types';
 
 @Component({
   selector: 'app-account',
