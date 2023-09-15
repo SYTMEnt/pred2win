@@ -7,14 +7,6 @@ const routes: Routes = [
     loadChildren: () => import('./features/tournaments/tournaments.module').then(m => m.TournamentsModule)
   },
   {
-    path: "leaderboard",
-    loadChildren: () => import('./features/leaderboard/leaderboard.module').then(m => m.LeaderboardModule)
-  },
-  {
-    path: "forum",
-    loadChildren: () => import('./features/forum/forum.module').then(m => m.ForumModule)
-  },
-  {
     path: "profile",
     loadChildren: () => import('./features/profile/profile.module').then(m => m.ProfileModule)
   },
