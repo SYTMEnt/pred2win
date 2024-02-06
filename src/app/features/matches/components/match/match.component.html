@@ -1,6 +1,6 @@
 <div *ngIf="match" class="match">
     <div class="match-team--A">
-        <img width="30px" class="match-team-flag" [src]="match.teamA.teamFlag">
+        <img width="30px" class="match-team-flag" [src]="match.teamA.teamFlag" loading="lazy">
         <span class="match-team-name">{{match.teamA.teamName}}</span>
     </div>
     <div class="match-info">

@@ -14,10 +14,11 @@ export class MatchesService {
         let params;
         if(matchStatus) {
             params = {
+                tournamentId,
                 matchStatus
             }
         }
-        return this.http.get<Matches>(`/gui/tournament/${tournamentId}/schedule`, {params}).pipe(
+        return this.http.get<Matches>(`/gui/schedule`, {params}).pipe(
             map(matches => matches.map((match) => {
                 delete match.polls;
                 return match;
