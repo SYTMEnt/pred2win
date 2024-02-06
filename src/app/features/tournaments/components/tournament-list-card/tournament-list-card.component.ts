@@ -13,7 +13,7 @@ export class TournamentListCardComponent {
   @Output() continue = new EventEmitter<string>()
 
   onClick(): void {
-    if(this.data.tournamentEntryStatus) {
+    if(this.data.joined) {
       this.continue.emit(this.data.tournamentId)
     } else {
       this.join.emit(this.data.tournamentId)

@@ -46,7 +46,8 @@ export class TournamentsComponent implements OnInit, OnDestroy {
         const params: TournamentJoinParams = {
             tournamentId,
             displayName: this.loggedInUser.displayName,
-            userId: this.loggedInUser.memberId
+            userId: this.loggedInUser.memberId,
+            league: "prediction" // TODO: Get rid of this hardcoding using real business logic.
         }
         this.tournamentStoreService.join(params)
     }

@@ -35,7 +35,8 @@ export class TournamentsEffects {
             const params: TournamentJoinParams = {
                 userId: action.userId,
                 displayName: action.displayName,
-                tournamentId: action.tournamentId
+                tournamentId: action.tournamentId,
+                league: action.league
             }
             return this.tournamentService.join(params).pipe(
                 map((msg) => {

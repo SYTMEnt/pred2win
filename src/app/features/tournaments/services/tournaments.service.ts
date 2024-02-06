@@ -21,7 +21,8 @@ export interface TournamentParams {
 export interface TournamentJoinParams {
     userId: string,
     displayName: string,
-    tournamentId: string
+    tournamentId: string,
+    league: string
 }
 
 @Injectable({
@@ -47,14 +48,6 @@ export class TournamentService {
     // TODO - Api should return some success or error message.
     // TODO - Api should not require userId or display name for joining, should be decoded from JWT
     join(params: TournamentJoinParams): Observable<any> {
-        const body = {
-            userId : params.userId,
-            displayName: params.displayName,
-            tournament: {
-                tournamentId : params.tournamentId,
-                tournamentPolls: {}
-            }
-        }
-        return this.http.post<any>("/userpttour", body)
+        return this.http.post<any>("/user/tournamentRegister", params)
     }
 }

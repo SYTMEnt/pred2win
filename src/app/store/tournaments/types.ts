@@ -1,6 +1,4 @@
 export interface Tournament {
-    _id: string,
-    eventType: string
     tournamentId: string,
     tournamentStatus: string,
     tournamentOrg: string, 
@@ -8,10 +6,11 @@ export interface Tournament {
     tournamentYear: string,
     tournamentLogo: string,
     tournamentCategory: string,
-    tournamentStartTime: string,
     tournamentMembers: number,
-    tournamentEntryStatus: boolean,
-    tournamentLocation: string[]
+    tournamentLocation: string[],
+    joined: boolean,
+    numberOfTeams: number,
+    tournamentShortName: string
 }
 
 export interface JoinTournament {
