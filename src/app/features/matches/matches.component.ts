@@ -31,6 +31,7 @@ export class MatchesComponent {
     )
 
     onFilterSelect(matchStatus: string) {
-        this.matchStoreService.matches(this.tournamentId, matchStatus)
+        const matchStatusValue = matchStatus !== 'all' ? matchStatus : undefined
+        this.matchStoreService.matches(this.tournamentId, matchStatusValue)
     }
 }

@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { map, Observable } from "rxjs";
 import { Matches } from "../../../store/matches/types";
@@ -11,12 +11,9 @@ export class MatchesService {
     constructor(private http: HttpClient) {}
 
     matches(tournamentId: string, matchStatus?: string): Observable<Matches>{
-        let params;
+        let params = new HttpParams().set('tournamentId', tournamentId);
         if(matchStatus) {
-            params = {
-                tournamentId,
-                matchStatus
-            }
+            params = params.set('matchStatus', matchStatus)
         }
         return this.http.get<Matches>(`/gui/schedule`, {params}).pipe(
             map(matches => matches.map((match) => {
