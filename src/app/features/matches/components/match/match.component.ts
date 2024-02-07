@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Match } from '../../../../store/matches/types';
 
 @Component({
@@ -8,4 +8,5 @@ import { Match } from '../../../../store/matches/types';
 })
 export class MatchComponent {
     @Input() match!: Match;
+    @Output() selected = new EventEmitter<Match>()
 }

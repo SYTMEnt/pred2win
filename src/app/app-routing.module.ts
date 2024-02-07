@@ -15,6 +15,10 @@ const routes: Routes = [
     loadChildren: () => import('./features/matches/matches.module').then(m => m.MatchesModule)
   },
   {
+    path: "polls",
+    loadChildren: () => import('./features/polls/polls.module').then(m => m.PollsModule)
+  },
+  {
     path: "",
     redirectTo: "auth/login",
     pathMatch: 'full'

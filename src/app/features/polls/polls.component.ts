@@ -1,4 +1,7 @@
 import { Component } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
+import { map, take } from "rxjs/operators";
+import { PollStoreService } from "src/app/store/polls/poll-store.service";
 
 @Component({
     selector: 'polls',
@@ -6,5 +9,24 @@ import { Component } from "@angular/core";
     styleUrls: ['polls.component.scss']
 })
 export class PollsComponent {
-    
+
+    matchId: string = '';
+
+    constructor(private route: ActivatedRoute, private router: Router, private pollStoreService: PollStoreService) {
+        this.route.paramMap.pipe(
+            take(1),
+        ).subscribe(param => {
+            if(!param.has("matchId")) {
+                this.router.navigate(['tournaments'])
+            } else {
+                this.matchId = param.get("matchId") as string;
+                this.pollStoreService.polls(this.matchId);
+            }
+        })
+    }
+
+    polls$ = this.pollStoreService.polls$;
+    pollsProcessing$ = this.pollStoreService.pollsActions$.pipe(
+        map((data) => data.processing)
+    )
 }

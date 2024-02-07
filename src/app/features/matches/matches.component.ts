@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map, take } from 'rxjs';
+import { Match } from 'src/app/store/matches/types';
 import { MatchesStoreService } from '../../store/matches/matches-store.service';
 
 @Component({
@@ -33,5 +34,9 @@ export class MatchesComponent {
     onFilterSelect(matchStatus: string) {
         const matchStatusValue = matchStatus !== 'all' ? matchStatus : undefined
         this.matchStoreService.matches(this.tournamentId, matchStatusValue)
+    }
+
+    onMatchSelected(match: Match) {
+        this.router.navigate(['polls', {matchId: match.matchId}])
     }
 }

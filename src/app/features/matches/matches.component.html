@@ -3,7 +3,7 @@
     <ng-container *ngIf="matches$ | async as matches">
         <ul class="matches-list" *ngIf="matches.length; else emptyTpl">
             <li class="matches-list-item" *ngFor="let match of matches">
-                <app-match [match]="match"></app-match>
+                <app-match [match]="match" (selected)="onMatchSelected($event)"></app-match>
             </li>
         </ul>
     </ng-container>

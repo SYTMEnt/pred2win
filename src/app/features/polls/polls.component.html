@@ -1,0 +1,25 @@
+<div class="polls">
+    <button mat-icon-button class="polls-close-btn">
+        <mat-icon color="accent">close</mat-icon>
+    </button>
+    <ng-container *ngIf="polls$ | async as polls">
+        <ul class="polls-list" *ngIf="polls.length; else emptyTpl">
+            <li class="polls-list-item" *ngFor="let poll of polls">
+                <poll-view></poll-view>
+            </li>
+        </ul>
+    </ng-container>
+    <mat-spinner class="loader" color="accent" *ngIf="pollsProcessing$ | async"></mat-spinner>
+</div>
+
+<!-- TODO - MAKE THIS REUSABLE -->
+<!-- TODO - Create Data Loader directive to show LOADING, ERROR and EMPTY states-->
+<ng-template #emptyTpl>
+    <div class="empty-data">
+        <img class="ball" src="assets/ball.png" alt="">
+        <div class="ball-shadow"></div>
+        <h1 class="empty-data-header">
+            No data found here !
+        </h1>
+    </div>
+</ng-template>
