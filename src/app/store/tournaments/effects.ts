@@ -1,5 +1,4 @@
 import { Injectable } from "@angular/core";
-import { Router } from "@angular/router";
 import { HttpErrorResponse } from "@angular/common/http";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { EMPTY, of } from "rxjs";
@@ -11,7 +10,7 @@ import { TournamentParams } from "../../features/tournaments/services/tournament
 @Injectable()
 export class TournamentsEffects {
 
-    constructor(private actions$: Actions, private tournamentService: TournamentService, private router: Router) {}
+    constructor(private actions$: Actions, private tournamentService: TournamentService) {}
 
     tournaments$ = createEffect(() => this.actions$.pipe(
         ofType(tournamentActons.tournaments),

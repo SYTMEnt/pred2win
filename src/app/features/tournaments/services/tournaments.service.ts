@@ -1,10 +1,7 @@
-import { HttpClient, HttpParams } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable, of } from "rxjs";
+import { Observable } from "rxjs";
 import { TournamentList } from "../../../store/tournaments/types";
-
-// hardcode for testing
-const USER_ID = "glo1889407"
 
 export enum TournamentStatus {
     NEW = "new",
