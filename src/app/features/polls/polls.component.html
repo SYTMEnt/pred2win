@@ -1,16 +1,21 @@
 <div class="polls">
-    <button mat-icon-button class="polls-close-btn">
+    <button mat-icon-button class="polls-close-btn" (click)="onClose()">
         <mat-icon color="accent">close</mat-icon>
     </button>
-    <ng-container *ngIf="polls$ | async as polls">
-        <ul class="polls-list" *ngIf="polls.length; else emptyTpl">
-            <li class="polls-list-item" *ngFor="let poll of polls">
-                <poll-view [poll]="poll"></poll-view>
-            </li>
-        </ul>
+    <ng-container *ngIf="!(pollsProcessing$ | async); else loadingTpl">
+        <ng-container *ngIf="polls$ | async as polls">
+            <ul class="polls-list" *ngIf="polls.length; else emptyTpl">
+                <li class="polls-list-item" *ngFor="let poll of polls">
+                    <poll-view [poll]="poll"></poll-view>
+                </li>
+            </ul>
+        </ng-container>
     </ng-container>
-    <mat-spinner class="loader" color="accent" *ngIf="pollsProcessing$ | async"></mat-spinner>
 </div>
+
+<ng-template #loadingTpl>
+    <mat-spinner class="loader" color="accent" ></mat-spinner>
+</ng-template>
 
 <!-- TODO - MAKE THIS REUSABLE -->
 <!-- TODO - Create Data Loader directive to show LOADING, ERROR and EMPTY states-->

@@ -1,5 +1,8 @@
 <div class="matches">
     <nav-top [links]="filters" [show]="true" (clicked)="onFilterSelect($event)"></nav-top>
+    <button mat-icon-button class="matches-close-btn" (click)="onClose()">
+        <mat-icon color="accent">close</mat-icon>
+    </button>
     <ng-container *ngIf="matches$ | async as matches">
         <ul class="matches-list" *ngIf="matches.length; else emptyTpl">
             <li class="matches-list-item" *ngFor="let match of matches">

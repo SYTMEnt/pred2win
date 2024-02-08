@@ -24,6 +24,7 @@
             width: 98%;
             padding: 0;
             height: 90vh;
+            margin: 10rem auto;
         }
         
         &::-webkit-scrollbar {
@@ -39,4 +40,15 @@
             }
         }
     }
+
+    &-close-btn {
+        position: absolute;
+        top: 5rem;
+        right: 1rem;
+    
+        mat-icon {
+            font-weight: bold;
+        }
+    }
 }
+

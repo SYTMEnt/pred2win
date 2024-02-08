@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Location } from '@angular/common';
 import { map, take } from 'rxjs';
 import { Match } from 'src/app/store/matches/types';
 import { MatchesStoreService } from '../../store/matches/matches-store.service';
@@ -13,7 +14,7 @@ export class MatchesComponent {
     filters = ['all', 'scheduled', 'allocated', 'ongoing', 'completed'];
     tournamentId = '';
 
-    constructor(private route: ActivatedRoute, private router: Router, private matchStoreService: MatchesStoreService) {
+    constructor(private route: ActivatedRoute, private router: Router, private matchStoreService: MatchesStoreService, private location: Location) {
         this.route.paramMap.pipe(
             take(1),
         ).subscribe(param => {
@@ -38,5 +39,9 @@ export class MatchesComponent {
 
     onMatchSelected(match: Match) {
         this.router.navigate(['polls', {matchId: match.matchId}])
+    }
+
+    onClose() {
+        this.location.back()
     }
 }

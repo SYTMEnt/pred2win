@@ -15,9 +15,17 @@
         overflow: auto;
         list-style: none;
         
+        @media (max-width: 900px) {
+            margin-top: 7vh;
+            height: 80vh;
+        }
+        
         &-item {
             width: 50%;
 
+            @media (max-width: 900px) {
+                width: 90%
+            }
         }
     }
 
