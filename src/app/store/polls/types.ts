@@ -18,13 +18,16 @@ export interface Poll {
     winningOption: {
         key: string;
         value: string;
-    }
+    },
+    submitted:{status: boolean, selectedOption: string},
+    totalCount: number;
 }
 
 export interface PollOption {
     key: string;
     valueString: string;
     valueImage: string;
+    predictedCount?: number;
     _id: string;
 }
 

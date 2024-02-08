@@ -1,1 +1,10 @@
-hi
+<article *ngIf="__poll" class="poll">
+    <div class="poll-info poll-info--right">
+        <p>Cost: <span class="poll-info-text">{{__poll.pollInputCoin}}</span></p>
+        <p>Win: <span class="poll-info-text">{{__poll.pollOutputCoin}}</span></p>
+    </div>
+    <hr>
+    <ng-voting  *ngIf="ngVotingData" [data]="ngVotingData" [showScale]="showScale()" [disable]="isVotingDisabled()" (selected)="optionSelected($event)"></ng-voting>
+    <div class="poll-info poll-info--left">Total predictions till now <span class="poll-info-text">{{__poll.totalCount}}</span></div>
+    <button class="poll-submit-btn" mat-raised-button color="primary">Submit</button>
+</article>

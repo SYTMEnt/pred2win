@@ -1,0 +1,38 @@
+.poll {
+    margin: 1rem;
+    background-color: white;
+    padding: 2rem;
+    display: flex;
+    border-radius: 10px;
+    flex-direction: column;
+    filter: drop-shadow(2px 4px 6px black);
+
+    hr {
+        margin-top: 2rem;
+    }
+
+    &-info {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        margin-top: 1rem;
+
+        &--right {
+            justify-content: end;
+        }
+        &--left {
+            justify-content: start;   
+        }
+        &-text {
+            background-color: black;
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+    }
+
+    &-submit-btn {
+        width: fit-content;
+        align-self: end;
+    }
+}

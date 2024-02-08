@@ -25,7 +25,9 @@ export class PollsComponent {
         })
     }
 
-    polls$ = this.pollStoreService.polls$;
+    polls$ = this.pollStoreService.polls$.pipe(
+        map(polls => polls ? Object.values(polls) : [])
+    );
     pollsProcessing$ = this.pollStoreService.pollsActions$.pipe(
         map((data) => data.processing)
     )

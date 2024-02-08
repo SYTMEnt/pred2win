@@ -18,7 +18,7 @@ const pollsReducer = createReducer(
     on(pollActions.pollsSuccess, (currentState, actionsData) => ({
         ...currentState,
         polls: {
-            data: actionsData.polls,
+            data: actionsData.polls.reduce((accumulator, currentPoll) => accumulator = {...accumulator, [currentPoll.pollId]: currentPoll} , {}),
             actions: {
                 processing: false,
                 httpError: undefined,

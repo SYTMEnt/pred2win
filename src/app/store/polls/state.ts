@@ -1,9 +1,11 @@
 import { ActionState } from "../types";
-import { PollList,  } from "./types";
+import { Poll,  } from "./types";
 
 export interface PollsState {
     polls: {
-        data: PollList | undefined,
+        data: {
+            [pollId: string]: Poll
+        } | undefined,
         actions: ActionState
     },
 }
