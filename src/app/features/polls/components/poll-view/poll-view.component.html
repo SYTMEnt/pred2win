@@ -1,10 +1,23 @@
 <article *ngIf="__poll" class="poll">
     <div class="poll-info poll-info--right">
-        <p>Cost: <span class="poll-info-text">{{__poll.pollInputCoin}}</span></p>
-        <p>Win: <span class="poll-info-text">{{__poll.pollOutputCoin}}</span></p>
+        <div class="poll-info-container">Cost: <span class="poll-info-text">{{__poll.pollInputCoin}} <mat-icon fontIcon="toll"></mat-icon></span></div>
+        <div class="poll-info-container">Win: <span class="poll-info-text">{{__poll.pollOutputCoin}} <mat-icon fontIcon="toll"></mat-icon></span></div>
     </div>
     <hr>
-    <ng-voting  *ngIf="ngVotingData" [data]="ngVotingData" [showScale]="showScale()" [disable]="isVotingDisabled()" (selected)="optionSelected($event)"></ng-voting>
+    <div class="poll-body">
+        <ng-voting class="poll-body-actions" *ngIf="ngVotingData" [data]="ngVotingData" [showScale]="showScale()" [disable]="isVotingDisabled()" (selected)="optionSelected($event)"></ng-voting>
+        <div class="poll-body-features">
+            <mat-icon class="material-symbols-outlined" aria-hidden="false" aria-label="refresh">
+                {{ __poll.pollFeatures.retractable ? "sync" : "sync_disabled"}}
+            </mat-icon>
+            <mat-icon class="material-symbols-outlined" aria-hidden="false" aria-label="anonymous">
+                {{ __poll.pollFeatures.anonymous ? "account_circle" : "no_accounts"}}
+            </mat-icon>
+            <mat-icon class="material-symbols-outlined" aria-hidden="false" aria-label="retractable">
+                {{ __poll.pollFeatures.showTrend ? "flash_on" : "flash_off"}}
+            </mat-icon>
+        </div>
+    </div>
     <div class="poll-info poll-info--left">Total predictions till now <span class="poll-info-text">{{__poll.totalCount}}</span></div>
     <button class="poll-submit-btn" mat-raised-button color="primary">Submit</button>
 </article>
