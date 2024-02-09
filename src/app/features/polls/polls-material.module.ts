@@ -7,7 +7,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
     imports: [
         MatButtonModule,
         MatProgressSpinnerModule,
-        MatIconModule
+        MatIconModule,
     ],
     exports: [
         MatButtonModule,

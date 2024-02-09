@@ -6,11 +6,12 @@ import { map, switchMap, catchError } from "rxjs/operators"
 import { TournamentJoinParams, TournamentService } from "../../features/tournaments/services/tournaments.service";
 import * as tournamentActons from "./actions";
 import { TournamentParams } from "../../features/tournaments/services/tournaments.service";
+import { NotificationService } from "../../shared/services/notification.service";
 
 @Injectable()
 export class TournamentsEffects {
 
-    constructor(private actions$: Actions, private tournamentService: TournamentService) {}
+    constructor(private actions$: Actions, private tournamentService: TournamentService, private notificationService: NotificationService) {}
 
     tournaments$ = createEffect(() => this.actions$.pipe(
         ofType(tournamentActons.tournaments),
@@ -23,7 +24,10 @@ export class TournamentsEffects {
                 map((tournaments) => {
                     return tournamentActons.tournamentsSuccess({tournaments})
                 }),
-                catchError((httpError: HttpErrorResponse) => of(tournamentActons.tournamentsError({httpError})))
+                catchError((httpError: HttpErrorResponse) => {
+                    this.notificationService.notify(httpError.message)
+                    return of(tournamentActons.tournamentsError({httpError}))
+                })
             )
         })
     ))
@@ -41,7 +45,10 @@ export class TournamentsEffects {
                 map((msg) => {
                     return tournamentActons.joinSuccess({tournamentId: params.tournamentId});
                 }),
-                catchError((httpError: HttpErrorResponse) => of(tournamentActons.joinError({httpError})))
+                catchError((httpError: HttpErrorResponse) => {
+                    this.notificationService.notify(httpError.message)
+                    return of(tournamentActons.joinError({httpError}))
+                })
             )
         })
     ))

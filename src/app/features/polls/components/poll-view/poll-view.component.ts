@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { Voting, Option} from "ng-voting"
 import { Poll, PollOption } from "../../../../store/polls/types";
 
@@ -9,6 +9,11 @@ import { Poll, PollOption } from "../../../../store/polls/types";
 })
 export class PollViewComponent {
     __poll?: Poll;
+    __isLoading = false;
+    selectedOption: string = ""
+
+    // TODO - Create type for data
+    @Output() submitted = new EventEmitter<{poll: Poll, selectedOption: string, type: 'submit' | 'retract'}>()
     @Input() 
     set poll(data: Poll) {
         this.__poll = data;
@@ -24,28 +29,50 @@ export class PollViewComponent {
                     bgColor: data.winningOption.key === option.key ? '#1699168f' : undefined,
                 } as Option))
             }
-            console.log(this.ngVotingData)
+            this.selectedOption = data.submitted.selectedOption;
         }
-        
     }
+    @Input() 
+    set loading(isLoading: boolean) {
+        this.__isLoading = isLoading
+        console.log(this.__isLoading);
+    }
+    
     ngVotingData?: Voting;
 
     optionSelected(optionId: string) {
-        if(!this.ngVotingData) return;
-        const updatedOptions = this.ngVotingData.options.map((option => {
-            option.value === optionId && option.votesCount++
-            return option
-        }))
-        this.ngVotingData = {...this.ngVotingData, options: updatedOptions}
-        console.log(this.ngVotingData)
+        if(this.__poll && !["calculated", "closed", "ongoing"].includes(this.__poll.status)) {
+            this.selectedOption = optionId;
+        }
+    }
+
+    submit() {
+        if(this.__poll && this.selectedOption) {
+            this.submitted.emit({
+                poll: this.__poll, 
+                selectedOption: this.selectedOption, 
+                type: this.isRetractMode() ? 'retract' : 'submit'
+            })
+        }
     }
 
     isVotingDisabled() {
-        return !!(this.__poll && (this.__poll.status === "calculated" || this.__poll.submitted.status));
+        return !!(this.__poll?.status !== 'active'
+            || (this.__poll?.submitted.status && !this.__poll?.pollFeatures.retractable ))
+            || (this.__poll?.submitted.status && this.__poll?.pollFeatures.retractable && this.__poll.submitted.isRetract)
+    
     }
 
     showScale() {
-        return !!(this.__poll && (this.__poll.status === "calculated" || this.__poll.submitted.status));
+        return !!(this.__poll && 
+            (!['active', 'created'].includes(this.__poll.status) 
+            || this.__poll.submitted.status 
+            || this.__poll.pollFeatures.showTrend)
+        );
     } 
+
+    isRetractMode() {
+        return this.__poll?.pollFeatures.retractable && this.__poll.submitted.status 
+    }
     
 }

@@ -6,7 +6,7 @@
         <ng-container *ngIf="polls$ | async as polls">
             <ul class="polls-list" *ngIf="polls.length; else emptyTpl">
                 <li class="polls-list-item" *ngFor="let poll of polls">
-                    <poll-view [poll]="poll"></poll-view>
+                    <poll-view (submitted)="onPollSubmit($event)" [poll]="poll.data" [loading]="poll.actions.processing"></poll-view>
                 </li>
             </ul>
         </ng-container>

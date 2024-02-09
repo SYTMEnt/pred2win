@@ -5,7 +5,14 @@
     </div>
     <hr>
     <div class="poll-body">
-        <ng-voting class="poll-body-actions" *ngIf="ngVotingData" [data]="ngVotingData" [showScale]="showScale()" [disable]="isVotingDisabled()" (selected)="optionSelected($event)"></ng-voting>
+        <ng-voting class="poll-body-actions" *ngIf="ngVotingData" 
+            [selectedOptionValue]="selectedOption" 
+            [data]="ngVotingData" 
+            [showScale]="showScale()" 
+            [isLoading]="__isLoading"
+            [disable]="isVotingDisabled()" 
+            (selected)="optionSelected($event)">
+        </ng-voting>
         <div class="poll-body-features">
             <mat-icon class="material-symbols-outlined" aria-hidden="false" aria-label="refresh">
                 {{ __poll.pollFeatures.retractable ? "sync" : "sync_disabled"}}
@@ -19,5 +26,7 @@
         </div>
     </div>
     <div class="poll-info poll-info--left">Total predictions till now <span class="poll-info-text">{{__poll.totalCount}}</span></div>
-    <button class="poll-submit-btn" mat-raised-button color="primary">Submit</button>
+    <button *ngIf="!isVotingDisabled()" class="poll-submit-btn" mat-raised-button [disabled]="!selectedOption" color="primary" (click)="submit()">
+        {{isRetractMode() ? 'Retract' : 'Submit'}}
+    </button>
 </article>

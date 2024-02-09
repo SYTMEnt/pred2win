@@ -2,13 +2,14 @@ import { HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { catchError, map, of, switchMap } from "rxjs";
+import { NotificationService } from "../../shared/services/notification.service";
 import { AuthService } from "../../features/auth/services/auth.service";
 import * as authActions from "./actions";
 
 @Injectable()
 export class AuthEffects {
 
-    constructor(private actions$: Actions, private authService: AuthService) {}
+    constructor(private actions$: Actions, private authService: AuthService, private notificationService: NotificationService) {}
 
     signup$ = createEffect(() => this.actions$.pipe(
         ofType(authActions.signup),
@@ -22,7 +23,10 @@ export class AuthEffects {
                 map(() => {
                     return authActions.signupSuccess()
                 }),
-                catchError((httpError: HttpErrorResponse) => of(authActions.signupHttpError({httpError})))
+                catchError((httpError: HttpErrorResponse) => {
+                    this.notificationService.notify(httpError.message)
+                    return of(authActions.signupHttpError({httpError}))
+                })
             )
         })
     ))
@@ -38,7 +42,10 @@ export class AuthEffects {
                 map(() => { 
                     return authActions.loginSuccess()
                 }),
-                catchError((httpError: HttpErrorResponse) => of(authActions.loginHttpError({httpError})))
+                catchError((httpError: HttpErrorResponse) => {
+                    this.notificationService.notify(httpError.message)
+                    return of(authActions.loginHttpError({httpError}))
+                })
             )
         })
     ))
@@ -50,7 +57,10 @@ export class AuthEffects {
                 map((user) => {
                     return authActions.getUserSuccess(user)
                 }),
-                catchError((httpError: HttpErrorResponse) => of(authActions.getUserError({httpError})))
+                catchError((httpError: HttpErrorResponse) => {
+                    this.notificationService.notify(httpError.message)
+                    return of(authActions.getUserError({httpError}))
+                })
             )
         })
     ))
@@ -60,7 +70,10 @@ export class AuthEffects {
         switchMap((action) => {
             return this.authService.logout().pipe(
                 map(() => authActions.reset()),
-                catchError(() => of(authActions.reset()))
+                catchError((httpError) => {
+                    this.notificationService.notify(httpError.message)
+                    return of(authActions.reset())
+                })
             )
         })
     ))

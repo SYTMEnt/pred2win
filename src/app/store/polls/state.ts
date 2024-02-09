@@ -4,7 +4,10 @@ import { Poll,  } from "./types";
 export interface PollsState {
     polls: {
         data: {
-            [pollId: string]: Poll
+            [pollId: string]: {
+                data: Poll,
+                actions: ActionState
+            }
         } | undefined,
         actions: ActionState
     },

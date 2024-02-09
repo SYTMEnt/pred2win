@@ -19,7 +19,7 @@ export interface Poll {
         key: string;
         value: string;
     },
-    submitted:{status: boolean, selectedOption: string},
+    submitted:{status: boolean, selectedOption: string, isRetract: boolean},
     totalCount: number;
 }
 
