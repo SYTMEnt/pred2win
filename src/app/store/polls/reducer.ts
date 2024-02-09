@@ -1,8 +1,6 @@
 import { createReducer, on, Action } from "@ngrx/store";
 import { PollsState, initialState } from "./state";
 import * as pollActions from "./actions";
-import { getCurrentScope } from "immer/dist/internal";
-import { polls } from "./selectors";
 
 const pollsReducer = createReducer(
     initialState,
