@@ -6,7 +6,7 @@
     <hr>
     <div class="poll-body">
         <ng-voting class="poll-body-actions" *ngIf="ngVotingData" 
-            [selectedOptionValue]="selectedOption" 
+            [selectedOptionValue]="selectedOption || ''" 
             [data]="ngVotingData" 
             [showScale]="showScale()" 
             [isLoading]="__isLoading"
@@ -26,7 +26,7 @@
         </div>
     </div>
     <div class="poll-info poll-info--left">Total predictions till now <span class="poll-info-text">{{__poll.totalCount}}</span></div>
-    <button *ngIf="!isVotingDisabled()" class="poll-submit-btn" mat-raised-button [disabled]="!selectedOption" color="primary" (click)="submit()">
+    <button *ngIf="!hideSubmitButton()" class="poll-submit-btn" mat-raised-button [disabled]="!selectedOption" color="primary" (click)="submit()">
         {{isRetractMode() ? 'Retract' : 'Submit'}}
     </button>
 </article>

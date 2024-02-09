@@ -10,7 +10,7 @@ import { Poll, PollOption } from "../../../../store/polls/types";
 export class PollViewComponent {
     __poll?: Poll;
     __isLoading = false;
-    selectedOption: string = ""
+    selectedOption?: string;
 
     // TODO - Create type for data
     @Output() submitted = new EventEmitter<{poll: Poll, selectedOption: string, type: 'submit' | 'retract'}>()
@@ -57,10 +57,7 @@ export class PollViewComponent {
     }
 
     isVotingDisabled() {
-        return !!(this.__poll?.status !== 'active'
-            || (this.__poll?.submitted.status && !this.__poll?.pollFeatures.retractable ))
-            || (this.__poll?.submitted.status && this.__poll?.pollFeatures.retractable && this.__poll.submitted.isRetract)
-    
+        return !!(this.__poll?.status !== 'active' || this.__poll?.submitted.status)
     }
 
     showScale() {
@@ -73,6 +70,11 @@ export class PollViewComponent {
 
     isRetractMode() {
         return this.__poll?.pollFeatures.retractable && this.__poll.submitted.status 
+    }
+
+    hideSubmitButton() {
+        return this.__poll?.status !== 'active' ||
+        (this.__poll.submitted.status && !this.__poll.pollFeatures.retractable)
     }
     
 }
