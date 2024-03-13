@@ -19,6 +19,11 @@
                 {{ data.joined ? 'Continue' : 'Join'}}
             </button>
         </div>
+        <div class="tournament-card-actions">
+            <button mat-icon-button (click)="showLeaderboard.emit(data.tournamentId)" >
+                <mat-icon>leaderboard</mat-icon>
+            </button>
+        </div>
     </div>
     
     

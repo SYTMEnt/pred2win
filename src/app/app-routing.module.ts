@@ -19,6 +19,10 @@ const routes: Routes = [
     loadChildren: () => import('./features/polls/polls.module').then(m => m.PollsModule)
   },
   {
+    path: "leaderboard",
+    loadChildren: () => import('./features/leaderboard/leaderboard.module').then(m => m.LeaderboardModule)
+  },
+  {
     path: "",
     redirectTo: "auth/login",
     pathMatch: 'full'

@@ -11,6 +11,7 @@ export class TournamentListCardComponent {
   @Input() data!: Tournament
   @Output() join = new EventEmitter<string>();
   @Output() continue = new EventEmitter<string>()
+  @Output() showLeaderboard = new EventEmitter<string>()
 
   onClick(): void {
     if(this.data.joined) {

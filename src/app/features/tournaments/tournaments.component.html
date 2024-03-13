@@ -6,7 +6,8 @@
                 <app-tournament-list-card *ngFor="let tournament of tournaments" 
                     [data]="tournament" 
                     (join)="join($event)" 
-                    (continue)="continue($event)">
+                    (continue)="continue($event)"
+                    (showLeaderboard)="onShowLeaderboard($event)">
                 </app-tournament-list-card>
             </ng-container>
         </ng-container>

@@ -56,6 +56,10 @@ export class TournamentsComponent implements OnInit, OnDestroy {
         this.route.navigate(['matches', {tournamentId}])
     }
 
+    onShowLeaderboard(tournamentId: string) {
+        this.route.navigate(['leaderboard', {tournamentId}])
+    }
+ 
     onFilterSelect(filter: string): void {
         this.authStoreService.userProfile$.pipe(
             take(1),
