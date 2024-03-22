@@ -13,6 +13,7 @@
         </ng-container>
         <mat-spinner class="loader" color="accent" *ngIf="tournamenntProcessing$ | async"></mat-spinner>
     </section>
+    <router-outlet></router-outlet>
 </div>
 
 <ng-template #emptyTpl>
@@ -24,3 +25,4 @@
         </h1>
     </div>
 </ng-template>
+

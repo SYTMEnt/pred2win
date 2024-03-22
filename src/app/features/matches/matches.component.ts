@@ -11,7 +11,7 @@ import { MatchesStoreService } from '../../store/matches/matches-store.service';
   styleUrls: ['./matches.component.scss']
 })
 export class MatchesComponent {
-    filters = ['all', 'scheduled', 'allocated', 'ongoing', 'completed'];
+    filters = ['all', 'scheduled', 'allocated', 'ongoing', 'calculated'];
     tournamentId = '';
 
     constructor(private route: ActivatedRoute, private router: Router, private matchStoreService: MatchesStoreService, private location: Location) {

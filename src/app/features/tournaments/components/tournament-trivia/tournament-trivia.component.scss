@@ -1,0 +1,83 @@
+.tournament-content {
+    margin: 0 auto;
+    background-color: purple;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+}
+
+.card {
+    width: 50%;
+    max-width: 400px; 
+    height: auto; 
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    margin: 10px;
+    overflow:hidden;
+
+}
+@media screen and (max-width: 768px) {
+    .card {
+        width: 80%; 
+        height: auto;
+    }
+}
+
+.trivia-category p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    text-shadow: #333;
+    font-style: italic;
+    color: white; 
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    background-color: purple;
+    animation: shine 1s infinite alternate; 
+}
+
+.card-header {
+    font-family: 'Roboto', sans-serif; 
+    font-size: 18px; 
+    color: purple; 
+    padding: 20px;
+    text-align: left;
+
+}
+
+.trivia-card-body {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+@keyframes shine {
+    from {
+        background-color: rgb(196, 20, 196); 
+    }
+    to {
+        background-color: purple; 
+    }
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 800px) {
+    .card {
+        width: calc(100% - 40px); 
+        margin: 10px;
+    }
+}

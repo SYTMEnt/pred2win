@@ -1,5 +1,4 @@
 import { Component, Input } from "@angular/core";
-import { LeaderboardValue } from "../../../../store/leaderboard/types";
 
 @Component({
     selector: 'app-leaderboard-user',
@@ -7,5 +6,5 @@ import { LeaderboardValue } from "../../../../store/leaderboard/types";
     styleUrls: ['leaderboard-user.component.scss']
 })
 export class LeaderboardUserComponent {
-    @Input() value!: LeaderboardValue
+    @Input() user!: any;
 }

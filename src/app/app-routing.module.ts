@@ -23,6 +23,10 @@ const routes: Routes = [
     loadChildren: () => import('./features/leaderboard/leaderboard.module').then(m => m.LeaderboardModule)
   },
   {
+    path: "awards",
+    loadChildren: () => import('./features/awards/awards.module').then(m => m.AwardsModule)
+  },
+  {
     path: "",
     redirectTo: "auth/login",
     pathMatch: 'full'

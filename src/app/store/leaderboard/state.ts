@@ -3,15 +3,21 @@ import { Leaderboard } from "./types";
 
 
 export interface LeaderboardState {
-    data: Leaderboard | undefined,
-    actions: ActionState
+    leaderboard : {
+        data: Leaderboard | undefined,
+        actions: ActionState
+    }
+
 }
 
 export const initialState: LeaderboardState = {
-    data: undefined,
-    actions: {
-        httpError: undefined,
-        processing: false,
-        success: false
+    leaderboard: {
+        data: undefined,
+        actions: {
+            httpError: undefined,
+            processing: false,
+            success: false
+        }
     }
+
 }

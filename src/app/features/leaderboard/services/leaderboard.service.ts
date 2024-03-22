@@ -11,7 +11,8 @@ export class LeaderboardService {
     constructor(private http: HttpClient) {}
 
     leaderboard(tournamentId: string): Observable<Leaderboard>{
-        let params = new HttpParams().set('tournamentId', tournamentId);
+        let params = new HttpParams()
+            .set('tournamentId', tournamentId);
         
         return this.http.get<Leaderboard>(`/gui/leaderboard`, {params});
     }

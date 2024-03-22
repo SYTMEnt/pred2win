@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { TournamentList } from "../../../store/tournaments/types";
+import { TournamentDetails, TournamentList } from "../../../store/tournaments/types";
 
 export enum TournamentStatus {
     NEW = "new",
@@ -46,5 +46,9 @@ export class TournamentService {
     // TODO - Api should not require userId or display name for joining, should be decoded from JWT
     join(params: TournamentJoinParams): Observable<any> {
         return this.http.post<any>("/user/tournamentRegister", params)
+    }
+
+    getTournamentDetails(tournamentId: string): Observable<TournamentDetails> {
+        return this.http.get<TournamentDetails>(`/gui/tournament/tournamentDetails?tournamentId=${tournamentId}`);
     }
 }
