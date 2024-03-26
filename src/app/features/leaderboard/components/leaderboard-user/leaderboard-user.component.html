@@ -3,19 +3,15 @@
             {{user.rank}}
         </div>
         <div class="leaderboard-user-name">
-            {{user.displayName}}
+            <a [routerLink]="['/userstat', user.userId]">{{ user.displayName }}</a>
+        </div>        
+        <div class="leaderboard-user-val">
+            <p> {{user.correctPredictions}} of {{user.totalPredictions}} ({{user.predictionAccuracy}}%) </p>
+            <p class="small-text">match predictions</p>
         </div>
         <div class="leaderboard-user-val">
-            <p>{{user.totalPredictions}} match predictions</p>
-        </div>
-        <div class="leaderboard-user-val">
-            <p>{{user.predictionAccuracy}} %</p><p>accuracy</p>
-        </div>
-        <div class="leaderboard-user-val">
-            <p>{{user.bonusPredictions}} bonus predictions</p>
-        </div>
-        <div class="leaderboard-user-val">
-            <p>{{user.bonusAccuracy}}% bonus</p><p>accuracy</p>
+            <p> {{user.correctBonusPredictions}} of {{user.bonusPredictions}} ({{user.bonusAccuracy| number: '1.0-0'}}% ) </p>
+            <p class="small-text">bonus predictions</p>
         </div>
         <div class="rank-change">
             <span [style.color]="user.rankChange.indicator === 'u' ? 'green' : (user.rankChange.indicator === 'd' ? 'red' : 'inherit')">{{user.rankChange.value}}</span>

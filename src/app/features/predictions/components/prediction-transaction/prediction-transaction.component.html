@@ -1,0 +1,41 @@
+<div class="prediction-transaction">
+    <div class="match-details row">
+        <!-- Tournament Logo -->
+        <div class="col-auto">
+            <img [src]="prediction.tournamentLogo" alt="Tournament Logo" class="tournament-logo">
+        </div>
+    
+        <!-- Date and Time -->
+        <div class="date">
+            <p>Match {{ prediction.matchNo }}</p>
+            <p>Date: {{ prediction.matchStartTime | date: 'mediumDate' }}</p>
+            <p>Time: {{ prediction.matchStartTime | date: 'shortTime' }}</p>
+        </div>
+
+        <div class="team">
+            <img [src]="prediction.teamA.teamFlag" alt="Team A Flag" class="team-flag">
+            <p>{{ prediction.teamA.teamCode }}</p>
+        </div>
+    
+        <div class="team">
+            <img [src]="prediction.teamB.teamFlag" alt="Team B Flag" class="team-flag">
+            <p>{{ prediction.teamB.teamCode }}</p>
+        </div>
+    </div>
+    
+    <div class="poll-details">
+        <div class = "poll-question">
+            <p>{{prediction.pollQuestion}}</p>
+        </div>
+        <hr class="horizontal-line">
+        <div class="poll-options">
+            <div class = "poll-option" *ngFor="let option of prediction.pollOption">
+                {{ option.option }} {{ option.valueString }}
+            </div>
+        </div>
+        <div class="won" *ngIf="prediction.won">
+            {{ prediction.won }}
+        </div>
+    </div>
+
+</div>

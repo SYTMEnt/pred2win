@@ -1,0 +1,184 @@
+<div class="user-stats">
+    <div class="user-stats-card">
+      <div class="user-stats-details">
+        <div class="tournament-details">
+          <img src="https://sytm-dev.s3.amazonaws.com/tournament/football/country/EURO24.png" alt="Euro24"  class="user-stats-image">
+          <div class="tournament-info">
+            <h2>UEFA EURO 2024</h2>
+          </div>
+        </div>
+        <div class="user-stats-detail">
+          <div class ="favorite-team">
+            <div class ="stat-header">
+              <h4>Favorite team</h4>
+            </div>
+            <div class ="user-stat">
+              <div class = "team-container">
+                <div>
+                  <img src="https://sytm-dev.s3.us-east-1.amazonaws.com/team/cricket/country/flag/ENG.png" alt="England"  class="user-team-image">
+                </div>
+                <p>England (ENG)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="user-stats-detail">
+          <div class ="stat-header">
+            <h4>Rank</h4>
+          </div>
+          <div class = "user-stat">
+            <div class="stat-detail">
+              <span>
+                <p>Best</p>
+                <hr class="horizontal-line">
+                <h2>{{ userStats.rank.best }}</h2>
+              </span>
+            </div>
+            <div class="stat-detail">
+              <span>
+                <p>Current</p>
+                <hr class="horizontal-line">
+                <h2>{{ userStats.rank.current }}</h2>
+              </span>
+            </div>
+            <div class="stat-detail">
+              <span>
+                <p>Previous</p>
+                <hr class="horizontal-line">
+                <h2>{{ userStats.rank.previous }}</h2>
+              </span>
+            </div>
+          </div>
+          <hr class="horizontal-line">
+          <div class="accuracy-container">
+            <div class ="stat-header">
+              <h4>Coins</h4>
+            </div>
+            <div class = "user-stat">
+              <div class="stat-detail">
+                <span>
+                  <p>Match</p>
+                  <hr class="horizontal-line">
+                  <h2></h2>
+                </span>
+              </div>
+              <div class="stat-detail">
+                <span>
+                  <p>Bonus</p>
+                  <hr class="horizontal-line">
+                  <h2></h2>
+                </span>
+              </div>
+              <div class="stat-detail">
+                <span>
+                  <p>Total </p>
+                  <hr class="horizontal-line">
+                  <h2></h2>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="user-stats-detail">
+            <div class ="stat-header">
+              <h4>Match Predictions</h4>
+            </div>
+            <div class = "user-stat">
+              <div class="stat-detail">
+                <span>
+                  <p>Total</p>
+                  <hr class="horizontal-line">
+                  <h2>{{ userStats.predictions.total }}</h2>
+              </span>
+              </div>
+              <div class="stat-detail">
+                <span>
+                  <p>Correct</p>
+                  <hr class="horizontal-line">
+                  <h2>{{ userStats.predictions.correct }}</h2>
+                </span>
+              </div>
+              <div class="stat-detail">
+                <span>
+                  <p>Accuracy </p>
+                  <hr class="horizontal-line">
+                  <h2>{{ userStats.predictions.predictionAccuracy }}%</h2>
+                </span>
+              </div>
+            </div>
+          <hr class="horizontal-line">
+          <div class="accuracy-container">
+            <div class ="stat-header">
+              <h4>Bonus Predictions</h4>
+            </div>
+            <div class = "user-stat">
+              <div class="stat-detail">
+                <span>
+                  <p>Total</p>
+                  <hr class="horizontal-line">
+                  <h2>{{ userStats.predictions.bonusTotal }}</h2>
+                </span>
+              </div>
+              <div class="stat-detail">
+                <span>
+                  <p>Correct</p>
+                  <hr class="horizontal-line">
+                  <h2>{{ userStats.predictions.bonusCorrect }}</h2>
+                </span>
+              </div>
+              <div class="stat-detail">
+                <span>
+                  <p>Accuracy </p>
+                  <hr class="horizontal-line">
+                  <h2>{{ userStats.predictions.bonusPredAccuracy }}%</h2>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="user-stats-detail wider">
+            <div class ="stat-header">
+              <h4>Streaks</h4>
+            </div>
+            <div class ="user-stat">
+              <div class ="stat-detail">
+                <span>
+                  <p>Current</p>
+                  <hr class="horizontal-line">
+                  <h2>{{ userStats.currentStreak }}</h2>
+                </span>
+              </div>
+              <div class ="stat-detail">
+                <span>
+                  <p>Highest</p>
+                  <hr class="horizontal-line">
+                  <h2>{{ userStats.highestStreak }}</h2>
+                </span>
+              </div>
+              <div class ="stat-detail">
+                <span>
+                  <p>Regular</p>
+                  <hr class="horizontal-line">
+                  <h2>{{ userStats.regularStreak }}</h2>
+                </span>
+              </div>
+              <div class ="stat-detail">
+                <span>
+                  <p>Bonus</p>
+                  <hr class="horizontal-line">
+                  <h2>{{ userStats.bonusStreak }}</h2>
+                </span>
+              </div>
+              <div class ="stat-detail">
+                <span>
+                  <p>Streaks won</p>
+                  <hr class="horizontal-line">
+                  <h2>{{ userStats.streaksWon.name }}</h2>
+                </span>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

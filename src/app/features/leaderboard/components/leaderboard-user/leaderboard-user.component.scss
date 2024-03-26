@@ -31,6 +31,11 @@
     margin-left: 10px;
   }
 
+  .leaderboard-user-name a {
+    color: inherit; /* Use the same color as the parent element */
+    text-decoration: none; /* Remove the underline */
+}
+
 .leaderboard-user-val {
     flex-grow: 1;
     width: 12%; 
@@ -70,4 +75,10 @@
 .leaderboard-user-val p{
     font-size: 14px;
     font-family: 'Roboto', sans-serif;
+}
+
+.leaderboard-user-val .small-text {
+    font-size: 8px;
+    font-family: "Lato", sans-serif;
+    color: purple;
 }

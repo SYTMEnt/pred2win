@@ -10,11 +10,22 @@
     align-items: center; 
     flex-wrap: wrap;
     overflow-y: auto;
+
+    &-close-btn {
+        position: absolute;
+        top: 5rem;
+        right: 1rem;
+    
+        mat-icon {
+            font-weight: bold;
+        }
+    }
 }
 
 
 .leaderboard-body {
-    margin-top: 30px;
+    margin-top: 10px;
     display: flex;
     flex-direction: column; 
 }
+

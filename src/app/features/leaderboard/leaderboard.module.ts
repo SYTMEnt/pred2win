@@ -8,6 +8,8 @@ import { LeaderboardComponent } from "./leaderboard.component";
 import { LeaderboardStoreService } from "src/app/store/leaderboard/leaderboard-store.service";
 import { LeaderboardEffects } from "../../store/leaderboard/effects";
 import * as leaderboardReducer from "../../store/leaderboard/reducer";
+import { LeaderboardMaterialModule } from "./leaderboard-material.module";
+import { UserstatsModule } from "../userstats/userstats.module";
 
 
 @NgModule({
@@ -18,8 +20,10 @@ import * as leaderboardReducer from "../../store/leaderboard/reducer";
     imports: [
         CommonModule,
         LeaderboardRoutingModule,
+        LeaderboardMaterialModule,
         StoreModule.forFeature('leaderboard', leaderboardReducer ),
         EffectsModule.forFeature(LeaderboardEffects),
+        UserstatsModule,
     ],
     providers: [
         {

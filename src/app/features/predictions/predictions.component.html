@@ -1,0 +1,22 @@
+<div class="predictions">
+    <ng-container *ngIf="predictions">
+        <div class="leaderboard-body" *ngIf="predictions.length; else emptyTpl">
+            <div class="prediction-transaction" *ngFor="let prediction of predictions">
+                <app-prediction-transaction [prediction]="prediction" ></app-prediction-transaction>
+            </div>
+        </div>
+    </ng-container>
+    <mat-spinner class="loader" color="accent" *ngIf="loading"></mat-spinner>
+</div>
+
+
+
+<ng-template #emptyTpl>
+    <div class="empty-data">
+        <img class="ball" src="assets/ball.png" alt="">
+        <div class="ball-shadow"></div>
+        <h1 class="empty-data-header">
+            No data found here !
+        </h1>
+    </div>
+</ng-template>
