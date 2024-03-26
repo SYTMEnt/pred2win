@@ -3,7 +3,7 @@
             {{user.rank}}
         </div>
         <div class="leaderboard-user-name">
-            <a [routerLink]="['/userstat', user.userId]">{{ user.displayName }}</a>
+            <a (click)="activeLink = 'userstats'" [class.active-link]="activeLink == 'userstats'" [routerLink] ="'userstats'">{{ user.displayName }}</a>
         </div>        
         <div class="leaderboard-user-val">
             <p> {{user.correctPredictions}} of {{user.totalPredictions}} ({{user.predictionAccuracy}}%) </p>

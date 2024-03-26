@@ -1,4 +1,7 @@
 <div class="user-stats">
+  <button mat-icon-button class="matches-close-btn" (click)="onClose()">
+    <mat-icon color="accent">close</mat-icon>
+  </button>
     <div class="user-stats-card">
       <div class="user-stats-details">
         <div class="tournament-details">
@@ -102,7 +105,7 @@
                 <span>
                   <p>Accuracy </p>
                   <hr class="horizontal-line">
-                  <h2>{{ userStats.predictions.predictionAccuracy }}%</h2>
+                  <h2>{{ userStats.predictions.predictionAccuracy| number: '1.2-2' }}%</h2>
                 </span>
               </div>
             </div>
@@ -130,7 +133,7 @@
                 <span>
                   <p>Accuracy </p>
                   <hr class="horizontal-line">
-                  <h2>{{ userStats.predictions.bonusPredAccuracy }}%</h2>
+                  <h2>{{ userStats.predictions.bonusPredAccuracy| number: '1.2-2' }}%</h2>
                 </span>
               </div>
             </div>

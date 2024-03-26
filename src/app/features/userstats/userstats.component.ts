@@ -17,26 +17,27 @@ export class UserstatsComponent implements OnInit {
     userStats: any;
     loading = false;
     error: string | undefined;
+    userId: string | null = null;
 
     constructor(
         private userstatService: UserstatService,
         private route: ActivatedRoute,
         private router: Router, 
-        private authStoreService: AuthStoreService
+        private authStoreService: AuthStoreService,
+        private location: Location
         ) {}
 
         ngOnInit(): void {
-            this.authStoreService.userProfile$
-              .pipe(
-                take(1) 
-              )
-              .subscribe(userProfile => {
-                if (userProfile) {
-                  const userId = userProfile.memberId;
+          this.route.params.pipe(
+              map(params => params['userId']),
+              take(1) 
+          ).subscribe(userId => {
+              this.userId = userId;
+              if (userId) {
                   this.fetchUserStats(userId);
-                }
-              });
-          }
+              }
+          });
+      }
       
           fetchUserStats(userId: string) {
             this.loading = true;
@@ -55,4 +56,8 @@ export class UserstatsComponent implements OnInit {
                 }
               );
           }
+
+          onClose() {
+            this.location.back()
+        }
   }

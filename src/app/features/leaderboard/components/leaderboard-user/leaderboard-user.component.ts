@@ -8,4 +8,5 @@ import { Component, Input } from "@angular/core";
 })
 export class LeaderboardUserComponent {
     @Input() user!: any;
+    activeLink: string | null = null;
 }

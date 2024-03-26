@@ -8,8 +8,8 @@ const routes: Routes = [
     component: LeaderboardComponent,
     children :[
       {
-        path: "user-stats/:userId", 
-        loadChildren: () => import('./../userstats/userstats.module').then(m => m.UserstatsModule) // Load the UserstatsModule
+        path:  'userstats',
+        loadChildren: () => import('./../userstats/userstats.module').then(m => m.UserstatsModule)
       },
     ]
   }

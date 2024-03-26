@@ -15,7 +15,7 @@ import { UserstatsModule } from "../userstats/userstats.module";
 @NgModule({
     declarations: [
         LeaderboardComponent,
-        LeaderboardUserComponent
+        LeaderboardUserComponent,
     ],
     imports: [
         CommonModule,
@@ -23,7 +23,7 @@ import { UserstatsModule } from "../userstats/userstats.module";
         LeaderboardMaterialModule,
         StoreModule.forFeature('leaderboard', leaderboardReducer ),
         EffectsModule.forFeature(LeaderboardEffects),
-        UserstatsModule,
+        UserstatsModule
     ],
     providers: [
         {
