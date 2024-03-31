@@ -25,6 +25,10 @@ const routes: Routes = [
         component: ContactComponent
       },
       {
+        path: "transactions",
+        loadChildren: () => import('./../transactions/transactions.module').then(m => m.TransactionsModule)
+      },
+      {
         path: "predictions",
         loadChildren: () => import('./../predictions/predictions.module').then(m => m.PredictionsModule)
       },

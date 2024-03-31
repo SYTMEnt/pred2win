@@ -29,9 +29,8 @@
         </div>
         <hr class="horizontal-line">
         <div class="poll-options">
-            <div class = "poll-option" *ngFor="let option of prediction.pollOption">
-                {{ option.option }} {{ option.valueString }}
-            </div>
+           <p> {{prediction.finalPollOption.option}} : {{prediction.finalPollOption.valueString}} </p> 
+           <p>{{prediction.finalPollOption.time | date: 'yyyy-MM-dd'}} {{ prediction.finalPollOption.time | date: 'HH:mm:ss' }}</p>
         </div>
         <div class="won" *ngIf="prediction.won">
             {{ prediction.won }}

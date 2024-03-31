@@ -1,0 +1,87 @@
+.transactions {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+  }
+  
+  .transaction-header, .transaction-body {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .transaction-header {
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  
+  .transaction-header p {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-size: small;
+    text-transform: uppercase;
+    color: purple;
+  }
+  
+  .transaction-header .header-content {
+    flex: 1;
+  }
+
+  .header-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .account-balance{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    padding-left: 10px;
+  }
+
+  .coin-image{
+    width: 30px;
+  }
+  
+  .transaction-body table {
+    width: 100%;
+  }
+  
+  .transaction-body table th, .transaction-body table td {
+    padding: 8px;
+    font-family: "Lato", sans-serif;
+    font-size: small;
+    text-align: center;
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideIn {
+    from { transform: translateY(-10px); }
+    to { transform: translateY(0); }
+  }
+  
+  .transaction-header, .transaction-body {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .transaction-body tr {
+    animation: slideIn 0.5s ease-in-out;
+  }
+  
+  /* Media Queries */
+  @media only screen and (max-width: 768px) {
+    .transaction-header, .transaction-body {
+      margin: 10px;
+    }
+  }
+  
