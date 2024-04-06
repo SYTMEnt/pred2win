@@ -5,31 +5,36 @@
 
 
 <div class="awards" *ngIf="!loading">
-  <!-- Award cards -->
   <div class="award-cards">
-    <!-- Loop through each award and display its details -->
     <div *ngFor="let award of awardDetails" class="award-card">
-      <!-- Award icon -->
       <img *ngIf="award.icon" [src]="award.icon" class="award-icon" alt="Award Icon">
       <div class="award-details">
-        <!-- Award category -->
         <h2>{{ award.category }}</h2>
-        <!-- Award description -->
         <p>{{ award.description }}</p>
-        <!-- Other details such as condition, coinsAllocated, etc. -->
         <div class="award-info">
           {{ award.condition }}
         </div>
         <div class="coins-info" >
-            Coins Allocated: <strong>{{ award.coinsAllocated }}</strong>
+            Coins to be won: <strong>{{ award.coinsAllocated }}</strong> 
         </div>  
         <hr class="horizontal-line">
       </div>
       <!-- Winners section -->
       <div class="winner-details">
           <div *ngFor="let winner of award.winners">
-            <span>{{ winner.displayName }}</span><br>
-            <span><strong>Coins Earned:</strong> {{ winner.coinsEarned }}</span><br>
+            <div class="user-details">
+              <div class="user-pic-container">
+                <img [src]="winner.pic" alt="Member" class="user-pic">
+              </div>
+              <div class="user-info">
+                <div class="display-name">{{ winner.displayName }}</div>
+                <div class="coins-earned">{{ winner.coinsEarned }}
+                  <img [src]="winner.coinPic" alt="Coins" class="coin-pic">
+                </div>
+              </div>
+            </div>
+            
+         
           </div>
       </div>
     </div>

@@ -50,11 +50,9 @@ export class LeaderboardComponent implements OnDestroy {
             .subscribe({
                 next: (data: Leaderboard) => {
                     this.leaderboardData = data;
-                    // Here you can perform any additional operations on the data if needed
                 },
                 error: (error: any) => {
                     console.error('Error fetching leaderboard data:', error);
-                    // Handle error if necessary
                 }
             });
     }

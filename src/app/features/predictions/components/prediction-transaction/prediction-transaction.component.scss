@@ -35,7 +35,7 @@
     flex: 1;
     margin-bottom: 20px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #ccc; 
 }
 
 .poll-question {
@@ -52,4 +52,8 @@
 }
 .poll-option {
     margin-right: 10px;
+}
+
+.won {
+    background-color: rgb(167, 231, 154);
 }

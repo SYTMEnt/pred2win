@@ -1,112 +1,151 @@
 
-  .awards {
-    background-color: purple;
-    font-family: 'Roboto', sans-serif;
-    color: #fff; /* Text color */
-    padding: 20px;
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    overflow-y: auto;
+.awards {
+  background-color: purple;
+  font-family: 'Roboto', sans-serif;
+  color: #000; 
+  padding: 20px;
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; 
+  justify-content: center;
+  overflow-y: auto;
+}
 
-  }
-  
-  /* Awards heading */
-  .awards h1 {
-    text-align: center;
-  }
-  
-  
-  /* Award card styles */
-  .award-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
+
+.awards h1 {
+  text-align: center;
+}
+
+
+.award-cards {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+}
+
+.award-card {
+  background-color: #fff; 
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  margin: 10px;
+  margin-top: 40px;
+  padding: 15px;
+  width: 200px;
+  transition: transform 0.3s ease-in-out; 
+}
+
+.award-card:hover {
+  transform: translateY(-5px); 
+}
+
+
+.award-icon {
+  display: block;
+  margin: 0 auto 10px; 
+  max-width: 100%;
+}
+
+.award-details h2 {
+  font-size: medium;
+  font-family: "Roboto", sans-serif;
+  color: purple;
+  margin-bottom: 10px;
+  text-transform: uppercase; 
+}
+
+.award-info{
+  font-family: "Lato", sans-serif;
+  color: rgb(47, 47, 47);
+  font-size: small;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.coins-info {
+  font-family: "Roboto", sans-serif;
+  color: rgb(47, 47, 47);
+  font-size: small;
+  margin-bottom: 10px;
+}
+
+.award-details p {
+  margin-bottom: 10px;
+  font-family: "Roboto", sans-serif;
+  color: black;
+  font-size: small;
+}
+
+
+@media screen and (max-width: 768px) {
   .award-card {
-    background-color: #fff; 
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    margin: 10px;
-    margin-top: 40px;
-    padding: 15px;
-    width: 200px;
-    transition: transform 0.3s ease-in-out; 
+    width: calc(50% - 20px); 
   }
-  
-  .award-card:hover {
-    transform: translateY(-5px); /* Hover effect */
-  }
-  
-  /* Award icon styles */
-  .award-icon {
-    display: block;
-    margin: 0 auto 10px; 
-    max-width: 100%;
-  }
-  
-  .award-details h2 {
-    font-size: 1.5rem;
-    font-family: "Roboto", sans-serif;
-    color: purple;
-    margin-bottom: 10px;
-    text-transform: uppercase; 
-  }
-  
-  .award-details p {
-    margin-bottom: 15px;
-    font-family: "Roboto", sans-serif;
-    color: black;
-    font-size: small;
-  }
-  
-  /* Media queries for responsiveness */
-  @media screen and (max-width: 768px) {
-    .award-card {
-      width: calc(50% - 20px); /* Adjust width for smaller screens */
-    }
-  }
-  
-  @media screen and (max-width: 576px) {
-    .award-card {
-      width: calc(100% - 20px); /* Adjust width for smaller screens */
-    }
-  }
+}
 
-  /* Winners section styles */
-.winner-details {
-    color: black;
-    font-size: small;
-    margin-top: 10px;
+@media screen and (max-width: 576px) {
+  .award-card {
+    width: calc(100% - 20px); 
   }
-  
-  .winner-details h3 {
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-  }
-  
-  .winner-details span {
-    display: block;
-    color: black;
-    font-size: small;
-  }
+}
 
-  .award-info {
-    font-family: "Lato", sans-serif;
-    color: rgb(47, 47, 47);
-    font-size: small;
-    font-style: italic;
-    margin-bottom: 10px;
-  }
 
-  .coins-info{
-    font-family: "Lato", sans-serif;
-    color: black;
-    font-size: small;
-    margin-bottom: 10px;
+
+.user-details {
+  color: black;
+  font-size: small;
+  margin-top: 10px;
+  display: flex;
+  align-items: flex-start; 
+  margin-bottom: 10px;
+}
+
+.user-pic-container{
+  margin-right: 20px;
+}
+
+.user-pic {
+  width: 50px;
+  height: auto;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+}
+
+.display-name{
+  margin-bottom: 10px;
+}
+
+.coins-earned {
+  display: flex;
+  font-size: large;
+  align-items: center; 
+}
+
+.coin-pic {
+  width: 20px; 
+  height: auto;
+  margin-left: 10px; 
+}
+
+
+@media screen and (max-width: 576px) {
+  .user-pic {
+    width: 40px; 
   }
   
+  .user-pic-container {
+    margin-right: 10px; 
+  }
   
+  .user-info {
+    font-size: smaller; 
+  }
+  
+  .coin-pic {
+    width: 15px; 
+  }
+}

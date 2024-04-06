@@ -23,17 +23,14 @@
         </div>
     </div>
     
-    <div class="poll-details">
+    <div class="poll-details" [ngClass]="{'won': prediction.won}">
         <div class = "poll-question">
             <p>{{prediction.pollQuestion}}</p>
         </div>
         <hr class="horizontal-line">
-        <div class="poll-options">
-           <p> {{prediction.finalPollOption.option}} : {{prediction.finalPollOption.valueString}} </p> 
-           <p>{{prediction.finalPollOption.time | date: 'yyyy-MM-dd'}} {{ prediction.finalPollOption.time | date: 'HH:mm:ss' }}</p>
-        </div>
-        <div class="won" *ngIf="prediction.won">
-            {{ prediction.won }}
+        <div class="poll-options" >
+            <p>{{prediction.finalPollOption.option}}: {{prediction.finalPollOption.valueString}}</p>
+            <p>{{prediction.finalPollOption.time | date: 'yyyy-MM-dd'}} {{ prediction.finalPollOption.time | date: 'HH:mm:ss' }}</p>
         </div>
     </div>
 

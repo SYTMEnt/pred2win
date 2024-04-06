@@ -11,6 +11,7 @@ export interface LeaderboardValue {
     },
     userId: string
     displayName: string
+    pic:string
     rank: number
     globalRank: number
     totalPredictions: number

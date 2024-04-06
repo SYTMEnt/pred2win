@@ -23,6 +23,7 @@ export interface Predictions {
     matchStartTime: string;
     teamA: Team;
     teamB: Team;
+    tournamentId: string;
     tournamentLogo: string;
     won:string;
 }
