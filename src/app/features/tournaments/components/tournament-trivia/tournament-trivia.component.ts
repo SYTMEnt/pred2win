@@ -11,7 +11,7 @@ import { timer } from 'rxjs';
 })
 export class TournamentTriviaComponent implements OnInit {
 
-  @Input() currentNavLink: string| undefined;
+  @Input() onFilterSelect!: (filter: string) => void;
   triviaItems: { key: string; value: string }[] = [];
   filters = ['tournaments', 'trivia', 'history', 'archive'];
   loading = false; 
@@ -37,9 +37,7 @@ export class TournamentTriviaComponent implements OnInit {
     this.tournamentService.getTournamentDetails(tournamentId).subscribe({
         next: (data: TournamentDetails) => {
           if (data && data.tournamentTrivia) {
-
             this.triviaItems = data.tournamentTrivia;
-            this.currentNavLink = 'trivia'; 
           }
         },
         error: (error) => {

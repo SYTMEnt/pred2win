@@ -1,8 +1,12 @@
 <div class="leaderboard">
-    <ng-container *ngIf="leaderboardData">
+    <button mat-icon-button class="matches-close-btn" (click)="onClose()">
+        <mat-icon color="accent">close</mat-icon>
+    </button>
+    <ng-container *ngIf="leaderboard$ | async as leaderboard">
         <div class="leaderboard-body">
-            <app-leaderboard-user *ngFor="let user of leaderboardData.leaderboard" [user]="user"></app-leaderboard-user>
+            <app-leaderboard-user *ngFor="let user of leaderboard" [user]="user"></app-leaderboard-user>
         </div>
     </ng-container>
+ 
     <router-outlet></router-outlet>
 </div>

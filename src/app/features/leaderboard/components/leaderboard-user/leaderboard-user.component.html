@@ -1,6 +1,9 @@
-    <div class="leaderboard-user">
+<div class="leaderboard-user">
         <div class="leaderboard-user-rank">
             {{user.rank}}
+        </div>
+        <div class="leaderboard-user-pic">
+            {{user.pic}}
         </div>
         <div class="leaderboard-user-name">
             <a (click)="activeLink = 'userstats'" [class.active-link]="activeLink == 'userstats'" [routerLink] ="'userstats'">{{ user.displayName }}</a>
@@ -16,5 +19,4 @@
         <div class="rank-change">
             <span [style.color]="user.rankChange.indicator === 'u' ? 'green' : (user.rankChange.indicator === 'd' ? 'red' : 'inherit')">{{user.rankChange.value}}</span>
         </div>
-        
-    </div>
+    </div>   
