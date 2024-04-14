@@ -1,30 +1,9 @@
+<button mat-icon-button class="matches-close-btn" (click)="onClose()">
+  <mat-icon color="accent">close</mat-icon>
+</button>
 <div class="user-stats">
-  <button mat-icon-button class="matches-close-btn" (click)="onClose()">
-    <mat-icon color="accent">close</mat-icon>
-  </button>
     <div class="user-stats-card">
       <div class="user-stats-details">
-        <div class="tournament-details">
-          <img src="https://sytm-dev.s3.amazonaws.com/tournament/football/country/EURO24.png" alt="Euro24"  class="user-stats-image">
-          <div class="tournament-info">
-            <h2>UEFA EURO 2024</h2>
-          </div>
-        </div>
-        <div class="user-stats-detail">
-          <div class ="favorite-team">
-            <div class ="stat-header">
-              <h4>Favorite team</h4>
-            </div>
-            <div class ="user-stat">
-              <div class = "team-container">
-                <div>
-                  <img src="https://sytm-dev.s3.us-east-1.amazonaws.com/team/cricket/country/flag/ENG.png" alt="England"  class="user-team-image">
-                </div>
-                <p>England (ENG)</p>
-              </div>
-            </div>
-          </div>
-        </div>
         <div class="user-stats-detail">
           <div class ="stat-header">
             <h4>Rank</h4>
@@ -32,16 +11,16 @@
           <div class = "user-stat">
             <div class="stat-detail">
               <span>
-                <p>Best</p>
+                <p>Current</p>
                 <hr class="horizontal-line">
-                <h2>{{ userStats.rank.best }}</h2>
+                <h2>{{ userStats.rank.current }}</h2>
               </span>
             </div>
             <div class="stat-detail">
               <span>
-                <p>Current</p>
+                <p>Best</p>
                 <hr class="horizontal-line">
-                <h2>{{ userStats.rank.current }}</h2>
+                <h2>{{ userStats.rank.best }}</h2>
               </span>
             </div>
             <div class="stat-detail">
@@ -54,30 +33,17 @@
           </div>
           <hr class="horizontal-line">
           <div class="accuracy-container">
-            <div class ="stat-header">
-              <h4>Coins</h4>
-            </div>
-            <div class = "user-stat">
-              <div class="stat-detail">
-                <span>
-                  <p>Match</p>
-                  <hr class="horizontal-line">
-                  <h2></h2>
-                </span>
+            <div class ="favorite-team">
+              <div class ="stat-header">
+                <h4>Favorite team</h4>
               </div>
-              <div class="stat-detail">
-                <span>
-                  <p>Bonus</p>
-                  <hr class="horizontal-line">
-                  <h2></h2>
-                </span>
-              </div>
-              <div class="stat-detail">
-                <span>
-                  <p>Total </p>
-                  <hr class="horizontal-line">
-                  <h2></h2>
-                </span>
+              <div class ="user-stat">
+                <div class = "team-container">
+                  <div>
+                    <img src="https://sytm-dev.s3.us-east-1.amazonaws.com/team/cricket/country/flag/ENG.png" alt="England"  class="user-team-image">
+                  </div>
+                  <p>England (ENG)</p>
+                </div>
               </div>
             </div>
           </div>
@@ -183,5 +149,5 @@
         </div>
       </div>
     </div>
-  </div>
+</div>
   

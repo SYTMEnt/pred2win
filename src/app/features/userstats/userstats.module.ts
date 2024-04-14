@@ -15,6 +15,9 @@ import { UserstatsMaterialModule } from "./userstats-material.module";
         UserstatsMaterialModule,
         NavTopComponent
     ],
+    exports: [
+        UserstatsComponent 
+      ],
     providers: []
 })
 export class UserstatsModule {

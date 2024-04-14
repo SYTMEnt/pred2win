@@ -26,6 +26,10 @@ const routes: Routes = [
     path: "awards",
     loadChildren: () => import('./features/awards/awards.module').then(m => m.AwardsModule)
   },
+    {
+      path:  'userstats/:userId',
+      loadChildren: () => import('./features/userstats/userstats.module').then(m => m.UserstatsModule)
+    },
   {
     path: "",
     redirectTo: "auth/login",

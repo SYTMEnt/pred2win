@@ -6,12 +6,6 @@ const routes: Routes = [
   {
     path: '',
     component: LeaderboardComponent,
-    children :[
-      {
-        path:  'userstats',
-        loadChildren: () => import('./../userstats/userstats.module').then(m => m.UserstatsModule)
-      },
-    ]
   }
 
 ];

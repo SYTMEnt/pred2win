@@ -10,12 +10,13 @@ import { LeaderboardEffects } from "../../store/leaderboard/effects";
 import * as leaderboardReducer from "../../store/leaderboard/reducer";
 import { LeaderboardMaterialModule } from "./leaderboard-material.module";
 import { UserstatsModule } from "../userstats/userstats.module";
-
+import { DrawerComponent } from "./components/drawer/drawer.component";
 
 @NgModule({
     declarations: [
         LeaderboardComponent,
         LeaderboardUserComponent,
+        DrawerComponent, 
     ],
     imports: [
         CommonModule,

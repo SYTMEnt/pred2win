@@ -1,121 +1,104 @@
 .user-stats {
-    width: 100%;
-    padding: 20px;
-  }
-  
-  .user-stats-card {
-    background-color: #fff; /* White background for card */
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+  width: 80%;
+  padding: 10px;
+  background-color: purple;
+}
 
-  .tournament-details {
-    display: flex;
-    align-items: center; 
-  }
+.user-stats-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-  .user-stats-image {
-    width: 80px; 
-    height: auto; 
-    margin-right: 20px;
-  }
+.user-team-image {
+  width: 60px;
+  height: auto;
+  margin-left: 10px;
+  margin-right: 10px;
+}
 
-  .user-team-image {
-    width: 60px; 
-    height: auto; 
-    margin-left: 20px;
-  }
+.user-stats-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.user-stats-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.user-stats-detail {
+  flex: 1 1 calc(50% - 10px);
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+}
+
+.user-stats-detail h3 {
+  margin-top: 0;
+}
+
+.user-stats-detail.wider {
+  flex: 1 1 calc(100% - 10px);
+}
 
 
-  .tournament-info {
-    flex: 1; 
-  }
-
-  .tournament-details h2 {
-    color: #6e42c1;
-    font-family: "Lato", sans-serif;
-  }
-  
-  .user-stats-card:hover {
-    transform: translateY(-5px); /* Lift the card slightly on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
-  }
-  
-  .user-stats-details {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid layout */
-    gap: 20px;
-  }
-
-  .user-stats-detail.wider {
-    grid-column-end: span 2;
-  }
-  
-  .user-stats-detail {
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #f0f0f0; /* Light gray background for detail boxes */
-  }
-  
-  .user-stats-detail h3 {
-    margin-top: 0;
-  }
-  
-  /* Responsive design for smaller screens */
-  @media screen and (max-width: 768px) {
-    .user-stats-details {
-      grid-template-columns: 1fr; /* Display one column on smaller screens */
-    }
-  }
-  
 .user-stat {
-    display: flex;
-    flex-direction: row;
-    width: 30%;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  width: 30%;
+  justify-content: space-between;
 }
 
 .stat-header {
-    font-family: "Roboto", sans-serif;
-    color: purple;
-    text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  color: purple;
+  text-transform: uppercase;
 }
 
 .stat-detail {
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-    border: 1px solid #ff8ef7;
-    border-radius: 10px;
-    padding: 10px; 
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  border: 1px solid #c956c1;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
 }
 
 .stat-detail p {
-    font-family: "Lato", sans-serif;
-    font-size: small;
+  font-family: "Lato", sans-serif;
+  font-size: small;
 }
 
 .stat-detail h2 {
-    font-family: "Roboto", sans-serif;
-    margin: 10px;
+  font-family: "Roboto", sans-serif;
+  font-size: medium;
 }
 
 .accuracy-container {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
-  .team-container {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
+.team-container {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 
-  .team-container p{
-    margin-left: 10px;
-    font-family: "Roboto", sans-serif;
+.team-container p {
+  margin-left: 10px;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+  .user-stats-detail {
+      flex: 1 1 calc(100% - 10px);
   }
+}

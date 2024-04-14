@@ -12,8 +12,9 @@ import { LeaderboardStoreService } from '../../store/leaderboard/leaderboard-sto
 export class LeaderboardComponent {
 
     tournamentId = '';
+    drawerOpen = false;
 
-    constructor(private route: ActivatedRoute, private leaderboardStoreService : LeaderboardStoreService , private location: Location) {
+    constructor(private route: ActivatedRoute, private router:Router, private leaderboardStoreService : LeaderboardStoreService , private location: Location) {
         this.route.paramMap.pipe(
             take(1),
         ).subscribe(param => {
@@ -27,6 +28,17 @@ export class LeaderboardComponent {
      map((data) => data.processing)
    );
 
+   openDrawer(userId: string) {
+        console.log('Opening drawer for user ID:', userId);
+       this.drawerOpen = true;
+       this.router.navigate(['/userstats', userId]);
+       document.querySelector('.drawer')?.classList.add('open');
+   }
+
+   closeDrawer() {
+       this.drawerOpen = false;
+       document.querySelector('.drawer')?.classList.remove('open');
+   }
 
     ngOnDestroy(): void {
         this.leaderboardStoreService.reset();
