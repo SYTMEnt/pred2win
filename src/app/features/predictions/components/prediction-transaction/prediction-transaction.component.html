@@ -8,8 +8,8 @@
         <!-- Date and Time -->
         <div class="date">
             <p>Match {{ prediction.matchNo }}</p>
-            <p>Date: {{ prediction.matchStartTime | date: 'mediumDate' }}</p>
-            <p>Time: {{ prediction.matchStartTime | date: 'shortTime' }}</p>
+            <p>{{ prediction.matchStartTime | date: 'mediumDate' }}</p>
+            <p>{{ prediction.matchStartTime | date: 'shortTime' }}</p>
         </div>
 
         <div class="team">
@@ -29,7 +29,7 @@
         </div>
         <hr class="horizontal-line">
         <div class="poll-options" >
-            <p>{{prediction.finalPollOption.option}}: {{prediction.finalPollOption.valueString}}</p>
+            <p>{{prediction.finalPollOption.valueString}}</p>
             <p>{{prediction.finalPollOption.time | date: 'yyyy-MM-dd'}} {{ prediction.finalPollOption.time | date: 'HH:mm:ss' }}</p>
         </div>
     </div>

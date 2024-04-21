@@ -35,14 +35,14 @@
           <div class="accuracy-container">
             <div class ="favorite-team">
               <div class ="stat-header">
-                <h4>Favorite team</h4>
+                <h4>Supporting</h4>
               </div>
               <div class ="user-stat">
                 <div class = "team-container">
                   <div>
-                    <img src="https://sytm-dev.s3.us-east-1.amazonaws.com/team/cricket/country/flag/ENG.png" alt="England"  class="user-team-image">
+                    <img [src]="userStats.favoriteTeam.teamFlag"  alt="team"  class="user-team-image">
                   </div>
-                  <p>England (ENG)</p>
+                  <p>{{ userStats.favoriteTeam.teamName}}</p>
                 </div>
               </div>
             </div>
@@ -105,30 +105,16 @@
             </div>
           </div>
         </div>
-        <div class="user-stats-detail wider">
+        <div class="user-stats-detail">
             <div class ="stat-header">
               <h4>Streaks</h4>
             </div>
             <div class ="user-stat">
               <div class ="stat-detail">
                 <span>
-                  <p>Current</p>
+                  <p>Match</p>
                   <hr class="horizontal-line">
                   <h2>{{ userStats.currentStreak }}</h2>
-                </span>
-              </div>
-              <div class ="stat-detail">
-                <span>
-                  <p>Highest</p>
-                  <hr class="horizontal-line">
-                  <h2>{{ userStats.highestStreak }}</h2>
-                </span>
-              </div>
-              <div class ="stat-detail">
-                <span>
-                  <p>Regular</p>
-                  <hr class="horizontal-line">
-                  <h2>{{ userStats.regularStreak }}</h2>
                 </span>
               </div>
               <div class ="stat-detail">
@@ -140,11 +126,26 @@
               </div>
               <div class ="stat-detail">
                 <span>
-                  <p>Streaks won</p>
+                  <p>Regular</p>
                   <hr class="horizontal-line">
-                  <h2>{{ userStats.streaksWon.name }}</h2>
+                  <h2>{{ userStats.regularStreak }}</h2>
                 </span>
               </div>
+            </div>
+            <hr class="horizontal-line">
+            <div class="accuracy-container">  
+                <div class ="streak-details">
+                    <p>Highest Streak : {{ userStats.highestStreak }}</p>
+                  <hr class="horizontal-line">
+                  <div *ngFor="let streak of userStats.streaksWon" class = "stat-detail">
+                    <span>
+                      <p>{{ streak.category }} ({{ streak.count }})</p>
+                      <hr class="horizontal-line">
+                      <p>Match No: {{ streak.matchNo }}</p>
+                      <p>{{ streak.date | date: 'mediumDate' }}</p>
+                    </span>
+                </div>
+                </div>
             </div>
         </div>
       </div>

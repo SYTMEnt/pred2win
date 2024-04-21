@@ -40,7 +40,6 @@
 }
 
 .history-card-body {
-    padding: 10px 0;
     display: flex; 
     justify-content: space-between; 
     flex-direction: row;
@@ -50,7 +49,7 @@
 .runner-up-details {
     display: flex; 
     flex-direction: column;
-    margin: 20px;
+    margin: 10px;
     align-items: center;
     flex: 1;
 }
@@ -61,17 +60,13 @@
     margin-right: 10px;
 }
 
-@media screen and (max-width: 768px) {
-    .card {
-        width: 90%; /* Adjust width for smaller screens */
-    }
-}
-
 .typing-label {
     font-family: 'Lato', sans-serif; 
     margin-top: 50px;
     font-size: small;
-    white-space: nowrap;
+    white-space: normal;
+    max-width: 100%;
+    text-align: center;
 }
 
 .blink-caret {
@@ -96,6 +91,7 @@
     text-align: left;
     display:flex;
     justify-content: space-between;
+    flex-direction: column;
 }
 
 .detail {
@@ -113,3 +109,15 @@ p {
     font-size: small;
 }
 
+@media screen and (max-width: 768px) {
+    .card {
+        width: 90%;
+        padding: 10px;
+    }
+    .history-card-body{
+        flex-direction: row;
+    }
+    .other-details{
+        flex-direction: row;
+    }
+}

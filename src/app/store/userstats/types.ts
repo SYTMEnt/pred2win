@@ -20,7 +20,11 @@ export interface Userstats {
     regularStreak: number;
     bonusStreak: number;
     streaksWon: {
-        _id: string;
+        id: string;
+        category: string;
+        count: string;
+        matchNo: string;
+        date: string;
     }[];
     streakSaverOn: boolean;
     locked: boolean;
