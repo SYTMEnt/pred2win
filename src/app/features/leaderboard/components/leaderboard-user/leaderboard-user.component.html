@@ -18,6 +18,10 @@
             <p class="small-text">bonus predictions</p>
         </div>
         <div class="rank-change">
-            <span [style.color]="user.rankChange.indicator === 'u' ? 'green' : (user.rankChange.indicator === 'd' ? 'red' : 'inherit')">{{user.rankChange.value}}</span>
+            <span *ngIf="user.rankChange.indicator === 'u'" class="material-icons" style="color: green;">arrow_upward</span>
+            <span *ngIf="user.rankChange.indicator === 'd'" class="material-icons" style="color: red;">arrow_downward</span>
+            <span *ngIf="user.rankChange.indicator === 'n'" class="material-icons" style="color: grey;">remove</span>
+            <small style="vertical-align: super;">{{ user.rankChange.value }}</small>
         </div>
+        
     </div>   

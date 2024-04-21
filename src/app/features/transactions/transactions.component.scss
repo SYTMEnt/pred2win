@@ -14,6 +14,7 @@
   
   .transaction-header {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     
   }
@@ -28,6 +29,7 @@
   
   .transaction-header .header-content {
     flex: 1;
+    min-width: 50%;
   }
 
   .header-content{
@@ -50,6 +52,7 @@
   
   .transaction-body table {
     width: 100%;
+    border-collapse: collapse;
   }
   
   .transaction-body table th, .transaction-body table td {
@@ -79,9 +82,21 @@
   }
   
   /* Media Queries */
-  @media only screen and (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     .transaction-header, .transaction-body {
-      margin: 10px;
+        padding: 5px; /* Reduce padding in smaller screens */
     }
-  }
-  
+
+    .transaction-header .header-content,
+    .account-balance {
+        flex-basis: 100%; /* Take full width to stack vertically */
+    }
+
+    .transaction-body table, .transaction-body th, .transaction-body td {
+        font-size: smaller; /* Reduce font size for better fit */
+    }
+
+    .transaction-body {
+        overflow-x: auto; /* Allows table to scroll horizontally if too wide */
+    }
+}

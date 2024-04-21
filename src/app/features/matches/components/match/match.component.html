@@ -12,5 +12,9 @@
         <img width="30px" class="match-team-flag" [src]="match.teamB.teamFlag">
         <span class="match-team-name">{{match.teamB.teamName}}</span>
     </div>
-    <div class="match-volatility" [style.background]="match.volatility === 'cold' ? '#6fe9d5' : 'rgb(248 23 23)'"></div>
+    <div class="match-volatility">
+        <span *ngIf="match.volatility === 'cold'" class="material-icons" style="color: #6fe9d5;">ac_unit</span>
+        <span *ngIf="match.volatility === 'hot'" class="material-icons" style="color: rgb(248, 23, 23);">local_fire_department</span>
+    </div>
+    
 </div>

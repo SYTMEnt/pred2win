@@ -11,7 +11,7 @@ import { MatchesStoreService } from '../../store/matches/matches-store.service';
   styleUrls: ['./matches.component.scss']
 })
 export class MatchesComponent {
-    filters = ['all', 'scheduled', 'allocated', 'ongoing', 'calculated'];
+    filters = [ 'allocated', 'ongoing', 'scheduled','calculated'];
     tournamentId = '';
 
     constructor(private route: ActivatedRoute, private router: Router, private matchStoreService: MatchesStoreService, private location: Location) {
@@ -22,7 +22,7 @@ export class MatchesComponent {
                 this.router.navigate(['tournaments'])
             } else {
                 this.tournamentId = param.get("tournamentId") as string;
-                this.matchStoreService.matches(this.tournamentId);
+                this.matchStoreService.matches(this.tournamentId,'allocated');
             }
         })
     }
@@ -33,8 +33,7 @@ export class MatchesComponent {
     )
 
     onFilterSelect(matchStatus: string) {
-        const matchStatusValue = matchStatus !== 'all' ? matchStatus : undefined
-        this.matchStoreService.matches(this.tournamentId, matchStatusValue)
+        this.matchStoreService.matches(this.tournamentId, matchStatus)
     }
 
     onMatchSelected(match: Match) {
