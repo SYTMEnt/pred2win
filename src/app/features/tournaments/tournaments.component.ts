@@ -15,7 +15,7 @@ import { TournamentJoinParams, TournamentStatus } from './services/tournaments.s
 export class TournamentsComponent implements OnInit, OnDestroy {
 
     loggedInUser!: User;
-    filters = ['tournaments', 'trivia', 'history', 'archive'];
+    filters = ['tournaments', 'trivia', 'history'];
     destroy$ = new Subject<boolean>();
 
     constructor(private tournamentStoreService: TournamentStoreService, 
@@ -72,9 +72,9 @@ export class TournamentsComponent implements OnInit, OnDestroy {
             tournamentStatus = null;
             this.tournamentStoreService.tournaments({ userId: memberId });
           } else if (filter === 'trivia') {
-            this.route.navigate(['tournaments', 'trivia', 'focomeeuro24']);
+            this.route.navigate(['trivia', 'Euro Cup']);
           } else if (filter === 'history') {
-            this.route.navigate(['tournaments', 'history', 'focomeeuro24']);
+            this.route.navigate(['history', 'Euro Cup']);
           } else if (filter === 'archive') {
             tournamentStatus = TournamentStatus.ARCHIVED;
             this.tournamentStoreService.tournaments({ userId: memberId, tournamentStatus });

@@ -10,15 +10,11 @@ import { TournamentsEffects } from "../../store/tournaments/effects";
 import { reducer as tournamentReducer} from "../../store/tournaments/reducer"
 import { TournamentStoreService } from "../../store/tournaments/tournament-store.service";
 import { NavTopComponent } from "../../shared/components/nav-top/nav-top.component";
-import { TournamentHistoryComponent } from './components/tournament-history/tournament-history.component';
-import { TournamentTriviaComponent } from "./components/tournament-trivia/tournament-trivia.component";
 
 @NgModule({
     declarations: [    
         TournamentsComponent,
         TournamentListCardComponent,
-        TournamentHistoryComponent,
-        TournamentTriviaComponent,
     ],
     imports: [
         CommonModule,

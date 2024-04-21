@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TournamentsComponent } from './tournaments.component';
+import { TriviaComponent } from './trivia.component';
 
 const routes: Routes = [
   {
     path: "",
-    component: TournamentsComponent,
-  },
+    component: TriviaComponent,
+    pathMatch: 'full'
+  }
 ];
-
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TournamentsRoutingModule { }
+export class TriviaRouterModule {}
