@@ -1,0 +1,123 @@
+.tournament-content {
+    margin: 0 auto;
+    background-color: purple;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+
+.card {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    width: 100%;
+}
+
+.card-header {
+    border-radius: 6px;
+    color:  purple; 
+    padding: 10px;
+    text-align: left;
+    font-family: 'Roboto', sans-serif; 
+}
+
+.horizontal-line {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+}
+
+.history-card-body {
+    display: flex; 
+    justify-content: space-between; 
+    flex-direction: row;
+}
+
+.winner-details,
+.runner-up-details {
+    display: flex; 
+    flex-direction: column;
+    margin: 10px;
+    align-items: center;
+    flex: 1;
+}
+
+.flag-image {
+    width: 60px; 
+    height: auto;
+    margin-right: 10px;
+}
+
+.typing-label {
+    font-family: 'Lato', sans-serif; 
+    margin-top: 50px;
+    font-size: small;
+    white-space: normal;
+    max-width: 100%;
+    text-align: center;
+}
+
+.blink-caret {
+    animation: blink-caret 0.75s infinite;
+}
+
+@keyframes blink-caret {
+    from,
+    to {
+        color: transparent;
+    }
+    50% {
+        color: black;
+    }
+}
+
+.other-details {
+    margin-top: 10px;
+    border: 1px solid #ddd; 
+    border-radius: 6px; 
+    padding: 10px; 
+    text-align: left;
+    display:flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.detail {
+    flex: 1;
+}
+
+a {
+    font-family: 'Lato', sans-serif;
+    font-size: small;
+}
+
+p {
+    color: darkblue;
+    font-family: 'Roboto', sans-serif;
+    font-size: small;
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        width: 90%;
+        padding: 10px;
+    }
+    .history-card-body{
+        flex-direction: row;
+    }
+    .other-details{
+        flex-direction: row;
+    }
+}

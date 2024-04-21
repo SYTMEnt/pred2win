@@ -1,0 +1,70 @@
+.prediction-transaction {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.match-details {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.match-details img {
+    max-width: 60px;
+}
+
+.match-details p {
+    font-family: "Lato", sans-serif;
+    font-size: small;
+}
+
+.date {
+    font-family: "Lato", sans-serif;
+    font-size: small;
+}
+
+.team-flag {
+    width: 30px; 
+    height: auto;
+    margin-top: 5px;
+}
+
+.poll-details {
+    flex: 1;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc; 
+}
+
+.poll-question {
+    font-family: "Roboto", sans-serif;
+    font-size: small;
+}
+
+.poll-options {
+    font-family: "Lato", sans-serif;
+    font-size: small;
+    display: flex;
+    flex-direction: row;
+    margin : 10px;
+}
+.poll-option {
+    margin-right: 10px;
+}
+
+.won {
+    background-color: rgb(167, 231, 154);
+}
+
+
+@media screen and (max-width: 768px) {
+    .prediction-transaction {
+        flex-direction: column; 
+    }
+}

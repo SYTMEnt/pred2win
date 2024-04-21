@@ -1,0 +1,34 @@
+<nav-top [links]="filters" [show]="true" (clicked)="onFilterSelect($event)"></nav-top>
+
+<div class = "tournament-content" *ngIf="loading">
+    <mat-spinner class="loader" color="accent"></mat-spinner>
+  </div>
+
+<div>
+    <div class="tournament-content">
+        <div class="card-container">
+                <div class="card" *ngFor="let item of triviaItems">
+                    <div class="trivia-category">
+                        <p>Did you know?</p>
+                    </div>
+                    <div class="card-header">
+                        {{ item.value }}
+                    </div>
+                    <div class="trivia-card-body">
+                        {{ item.key }}
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<ng-template #emptyTpl>
+    <div class="empty-data">
+        <img class="ball" src="assets/ball.png" alt="">
+        <div class="ball-shadow"></div>
+        <h1 class="empty-data-header">
+            No data found here !
+        </h1>
+    </div>
+</ng-template>

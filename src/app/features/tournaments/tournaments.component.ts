@@ -6,6 +6,7 @@ import { AuthStoreService } from '../../store/auth/auth-store.service';
 import { TournamentStoreService } from '../../store/tournaments/tournament-store.service';
 import { TournamentJoinParams, TournamentStatus } from './services/tournaments.service';
 
+
 @Component({
   selector: 'app-tournaments',
   templateUrl: './tournaments.component.html',
@@ -14,7 +15,7 @@ import { TournamentJoinParams, TournamentStatus } from './services/tournaments.s
 export class TournamentsComponent implements OnInit, OnDestroy {
 
     loggedInUser!: User;
-    filters = ['all', 'live', 'upcoming', 'recent'];
+    filters = ['tournaments', 'trivia', 'history', 'archive'];
     destroy$ = new Subject<boolean>();
 
     constructor(private tournamentStoreService: TournamentStoreService, 
@@ -32,6 +33,7 @@ export class TournamentsComponent implements OnInit, OnDestroy {
             tap(user => this.loggedInUser = user as User),
             map(user => user?.memberId)
         ).subscribe((memberId) => this.tournamentStoreService.tournaments({userId: memberId}))
+
 
         this.tournamentStoreService.joinTournament$.pipe(
             takeUntil(this.destroy$)
@@ -62,23 +64,24 @@ export class TournamentsComponent implements OnInit, OnDestroy {
  
     onFilterSelect(filter: string): void {
         this.authStoreService.userProfile$.pipe(
-            take(1),
-            map(user => user?.memberId)
+          take(1),
+          map(user => user?.memberId)
         ).subscribe((memberId) => {
-            let tournamentStatus;
-            if(filter === 'all') {
-                tournamentStatus = null
-                return this.tournamentStoreService.tournaments({userId: memberId})
-            } else if(filter === 'live') {
-                tournamentStatus = TournamentStatus.ONGOING
-            } else if(filter === 'upcoming') {
-                tournamentStatus = TournamentStatus.SCHEDULED
-            } else if(filter === 'recent') {
-                tournamentStatus = TournamentStatus.ARCHIVED
-            }
-            this.tournamentStoreService.tournaments({userId: memberId, tournamentStatus})
-        })
-    }
+          let tournamentStatus;
+          if (filter === 'tournaments') {
+            tournamentStatus = null;
+            this.tournamentStoreService.tournaments({ userId: memberId });
+          } else if (filter === 'trivia') {
+            this.route.navigate(['tournaments', 'trivia', 'focomeeuro24']);
+          } else if (filter === 'history') {
+            this.route.navigate(['tournaments', 'history', 'focomeeuro24']);
+          } else if (filter === 'archive') {
+            tournamentStatus = TournamentStatus.ARCHIVED;
+            this.tournamentStoreService.tournaments({ userId: memberId, tournamentStatus });
+          }
+        });
+      }
+  
 
     ngOnDestroy(): void {
         this.tournamentStoreService.reset()

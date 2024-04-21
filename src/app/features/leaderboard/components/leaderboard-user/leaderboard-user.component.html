@@ -1,21 +1,23 @@
-<div class="leaderboard-user">
-    <div class="leaderboard-user-val">
-        1
-    </div>
-    <div class="leaderboard-user-val">
-        AV
-    </div>
-    <div class="leaderboard-user-val">
-        soham
-    </div>
-    <div class="leaderboard-user-val">
-        <span>
-            67%
-        </span>
-        <span>accuracy</span>
-    </div>
-    <div class="leaderboard-user-val">
-        <span>22</span>
-        <span>correct preds</span>
-    </div>
-</div>
+    <div class="leaderboard-user">
+        <div class="leaderboard-user-rank">
+            {{user.rank}}
+        </div>
+        <div >
+            <img [src]="user.pic" class="leaderboard-user-pic" alt="pic">
+        </div>
+
+        <div class="leaderboard-user-name" (click)="openDrawer(user.userId)">
+            <a>{{ user.displayName }}</a> 
+        </div>        
+        <div class="leaderboard-user-val">
+            <p> {{user.correctPredictions}} of {{user.totalPredictions}} ({{user.predictionAccuracy}}%) </p>
+            <p class="small-text">match predictions</p>
+        </div>
+        <div class="leaderboard-user-val">
+            <p> {{user.correctBonusPredictions}} of {{user.bonusPredictions}} ({{user.bonusAccuracy| number: '1.0-0'}}% ) </p>
+            <p class="small-text">bonus predictions</p>
+        </div>
+        <div class="rank-change">
+            <span [style.color]="user.rankChange.indicator === 'u' ? 'green' : (user.rankChange.indicator === 'd' ? 'red' : 'inherit')">{{user.rankChange.value}}</span>
+        </div>
+    </div>   

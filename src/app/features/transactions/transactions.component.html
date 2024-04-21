@@ -1,0 +1,56 @@
+<div class ="transactions">
+    <div class = "transaction-header">
+        <div class ="header-content">
+            <div class ="account-balance">
+                <p>Balance : </p>
+            </div>
+            <div class="account-balance">
+                <h2>{{ transactions.accountBalance }}</h2>
+                <img [src]="getCoinImageUrl(transactions.accountBalance)" alt="coins" class="coin-image">
+            </div>            
+        </div>
+        <div class ="header-content">
+            <div class = "account-balance">
+                <p>Created on : </p>
+            </div>
+            <div class = "account-balance">
+                <h4>{{ transactions.creationDate }}</h4>
+            </div>                        
+        </div>
+        <div class ="header-content">
+            <div class = "account-balance">
+                <p>Overdraft :</p>
+            </div>
+            <div class = "account-balance">
+                <p>
+                    <i class="material-icons">{{ transactions.overDraftAllowed ? 'check_circle' : 'cancel' }}</i>
+                    </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class ="transaction-body">
+        <table>
+        <thead>
+            <tr>
+ 
+            <th>Time</th>
+            <th>Event</th>
+            <th>Coins added</th>
+            <th>Coins spent</th>
+            </tr>
+        </thead>
+        <hr class="horizontal-line">
+        <tbody>
+            <tr *ngFor="let transaction of transactions.transactions">
+
+            <td>{{ transaction.transactionTime}}</td>
+            <td>{{ transaction.eventDescription }} {{ transaction.pollDescription }}</td>
+            <td>{{ transaction.debitAmount }}</td>
+            <td>{{ transaction.creditAmount }}</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+      
+</div>

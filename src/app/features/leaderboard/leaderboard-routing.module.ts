@@ -4,10 +4,11 @@ import { LeaderboardComponent } from './leaderboard.component';
 
 const routes: Routes = [
   {
-    path: "",
-    component: LeaderboardComponent
-  },
-]
+    path: '',
+    component: LeaderboardComponent,
+  }
+
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

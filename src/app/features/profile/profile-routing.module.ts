@@ -4,6 +4,7 @@ import { AccountComponent } from './account/account.component';
 import { ContactComponent } from './contact/contact.component';
 import { PasswordComponent } from './password/password.component';
 import { ProfileComponent } from './profile.component';
+import { PredictionsComponent } from '../predictions/predictions.component';
 import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
 
 const routes: Routes = [
@@ -22,6 +23,14 @@ const routes: Routes = [
       {
         path: "contact",
         component: ContactComponent
+      },
+      {
+        path: "transactions",
+        loadChildren: () => import('./../transactions/transactions.module').then(m => m.TransactionsModule)
+      },
+      {
+        path: "predictions",
+        loadChildren: () => import('./../predictions/predictions.module').then(m => m.PredictionsModule)
       },
       {
         path: "legal",

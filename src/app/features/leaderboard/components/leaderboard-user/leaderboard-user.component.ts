@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { LeaderboardValue } from "../../../../store/leaderboard/types";
+import { LeaderboardComponent } from "../../leaderboard.component";
 
 @Component({
     selector: 'app-leaderboard-user',
@@ -7,5 +7,17 @@ import { LeaderboardValue } from "../../../../store/leaderboard/types";
     styleUrls: ['leaderboard-user.component.scss']
 })
 export class LeaderboardUserComponent {
-    @Input() value!: LeaderboardValue
+    @Input() user!: any;
+    activeLink: string | null = null;
+
+    constructor(private leaderboardComponent: LeaderboardComponent) {}
+
+    openDrawer(userId: string) {
+        console.log('Opening drawer for user ID:', userId);
+        this.leaderboardComponent.openDrawer(userId);
+    }
+
+    closeDrawer() {
+        this.leaderboardComponent.closeDrawer();
+    }
 }

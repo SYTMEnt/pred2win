@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
+import { map, Observable } from "rxjs";
 import { Leaderboard } from "../../../store/leaderboard/types";
 
 @Injectable({
@@ -12,7 +12,11 @@ export class LeaderboardService {
 
     leaderboard(tournamentId: string): Observable<Leaderboard>{
         let params = new HttpParams().set('tournamentId', tournamentId);
-        
-        return this.http.get<Leaderboard>(`/gui/leaderboard`, {params});
+
+        return this.http.get<Leaderboard>(`/gui/leaderboard`, {params}).pipe(
+            map(leaderboard => leaderboard.map((user) => {
+                return user;
+            }))
+        )
     }
 }

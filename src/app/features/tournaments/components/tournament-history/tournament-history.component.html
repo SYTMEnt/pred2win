@@ -1,0 +1,53 @@
+<nav-top [links]="filters" [show]="true"></nav-top>
+<div class = "tournament-content" *ngIf="loading">
+    <mat-spinner class="loader" color="accent"></mat-spinner>
+  </div>
+
+<div *ngIf="currentNavLink === 'history'">
+    <div class="tournament-content">
+        <div class="card-container">
+            <div class="card">  
+                <!-- Loop through each tournament in historyItems -->
+                <div *ngFor="let tournament of historyItems">
+                    <div class="card-header">
+                        <h1>{{ tournament.year }}</h1>
+                        <hr class="horizontal-line">
+                    </div>
+                    <div class="history-card-body">
+                        <div class="winner-details" @showChampion>
+                            <img [src]="tournament.winnerFlag" alt="{{ tournament.winnerName }} Flag"  class="flag-image">
+                            <h3>{{ tournament.winnerName }}</h3>
+                            <a>({{ tournament.winnerCode }})</a>
+                        </div>
+                        <div class="typing-label">
+                            <span>{{ typingText }}</span><span class="blink-caret">|</span>
+                        </div>
+                        <div class="runner-up-details" @showRunnersUp>
+                            <img [src]="tournament.runnerupFlag" alt="{{ tournament.runnerupName }} Flag"  class="flag-image">
+                            <h3>{{ tournament.runnerupName }}</h3>
+                            <a>({{ tournament.runnerupCode }})</a>
+                        </div>
+                    </div>
+                    <div class="other-details">
+                        <div class="detail">
+                            <a>Man of the Tournament:</a><p>{{ tournament.manOftheTournament }}</p>
+                        </div>
+                        <div class="detail">
+                            <a>Highest Goal Scorer:</a><p>{{ tournament.highestGoalScorer }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+
+<ng-template #emptyTpl>
+    <div class="empty-data">
+        <img class="ball" src="assets/ball.png" alt="">
+        <div class="ball-shadow"></div>
+        <h1 class="empty-data-header">
+            No data found here !
+        </h1>
+    </div>
+</ng-template>

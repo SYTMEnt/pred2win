@@ -1,0 +1,154 @@
+<button mat-icon-button class="matches-close-btn" (click)="onClose()">
+  <mat-icon color="accent">close</mat-icon>
+</button>
+<div class="user-stats">
+    <div class="user-stats-card">
+      <div class="user-stats-details">
+        <div class="user-stats-detail">
+          <div class ="stat-header">
+            <h4>Rank</h4>
+          </div>
+          <div class = "user-stat">
+            <div class="stat-detail">
+              <span>
+                <p>Current</p>
+                <hr class="horizontal-line">
+                <h2>{{ userStats.rank.current }}</h2>
+              </span>
+            </div>
+            <div class="stat-detail">
+              <span>
+                <p>Best</p>
+                <hr class="horizontal-line">
+                <h2>{{ userStats.rank.best }}</h2>
+              </span>
+            </div>
+            <div class="stat-detail">
+              <span>
+                <p>Previous</p>
+                <hr class="horizontal-line">
+                <h2>{{ userStats.rank.previous }}</h2>
+              </span>
+            </div>
+          </div>
+          <hr class="horizontal-line">
+          <div class="accuracy-container">
+            <div class ="favorite-team">
+              <div class ="stat-header">
+                <h4>Supporting</h4>
+              </div>
+              <div class ="user-stat">
+                <div class = "team-container">
+                  <div>
+                    <img [src]="userStats.favoriteTeam.teamFlag"  alt="team"  class="user-team-image">
+                  </div>
+                  <p>{{ userStats.favoriteTeam.teamName}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="user-stats-detail">
+            <div class ="stat-header">
+              <h4>Match Predictions</h4>
+            </div>
+            <div class = "user-stat">
+              <div class="stat-detail">
+                <span>
+                  <p>Total</p>
+                  <hr class="horizontal-line">
+                  <h2>{{ userStats.predictions.total }}</h2>
+              </span>
+              </div>
+              <div class="stat-detail">
+                <span>
+                  <p>Correct</p>
+                  <hr class="horizontal-line">
+                  <h2>{{ userStats.predictions.correct }}</h2>
+                </span>
+              </div>
+              <div class="stat-detail">
+                <span>
+                  <p>Accuracy </p>
+                  <hr class="horizontal-line">
+                  <h2>{{ userStats.predictions.predictionAccuracy| number: '1.2-2' }}%</h2>
+                </span>
+              </div>
+            </div>
+          <hr class="horizontal-line">
+          <div class="accuracy-container">
+            <div class ="stat-header">
+              <h4>Bonus Predictions</h4>
+            </div>
+            <div class = "user-stat">
+              <div class="stat-detail">
+                <span>
+                  <p>Total</p>
+                  <hr class="horizontal-line">
+                  <h2>{{ userStats.predictions.bonusTotal }}</h2>
+                </span>
+              </div>
+              <div class="stat-detail">
+                <span>
+                  <p>Correct</p>
+                  <hr class="horizontal-line">
+                  <h2>{{ userStats.predictions.bonusCorrect }}</h2>
+                </span>
+              </div>
+              <div class="stat-detail">
+                <span>
+                  <p>Accuracy </p>
+                  <hr class="horizontal-line">
+                  <h2>{{ userStats.predictions.bonusPredAccuracy| number: '1.2-2' }}%</h2>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="user-stats-detail">
+            <div class ="stat-header">
+              <h4>Streaks</h4>
+            </div>
+            <div class ="user-stat">
+              <div class ="stat-detail">
+                <span>
+                  <p>Match</p>
+                  <hr class="horizontal-line">
+                  <h2>{{ userStats.currentStreak }}</h2>
+                </span>
+              </div>
+              <div class ="stat-detail">
+                <span>
+                  <p>Bonus</p>
+                  <hr class="horizontal-line">
+                  <h2>{{ userStats.bonusStreak }}</h2>
+                </span>
+              </div>
+              <div class ="stat-detail">
+                <span>
+                  <p>Regular</p>
+                  <hr class="horizontal-line">
+                  <h2>{{ userStats.regularStreak }}</h2>
+                </span>
+              </div>
+            </div>
+            <hr class="horizontal-line">
+            <div class="accuracy-container">  
+                <div class ="streak-details">
+                    <p>Highest Streak : {{ userStats.highestStreak }}</p>
+                  <hr class="horizontal-line">
+                  <div *ngFor="let streak of userStats.streaksWon" class = "stat-detail">
+                    <span>
+                      <p>{{ streak.category }} ({{ streak.count }})</p>
+                      <hr class="horizontal-line">
+                      <p>Match No: {{ streak.matchNo }}</p>
+                      <p>{{ streak.date | date: 'mediumDate' }}</p>
+                    </span>
+                </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+  
