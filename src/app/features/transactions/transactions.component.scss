@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     margin: 10px;
+    height: 100%;
   }
   
   .transaction-header, .transaction-body {
@@ -16,7 +17,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    
+    height: 10%;
   }
   
   .transaction-header p {
@@ -48,6 +49,11 @@
 
   .coin-image{
     width: 30px;
+  }
+
+  .transaction-body {
+    height: 90%;
+    overflow-y: scroll;
   }
   
   .transaction-body table {
