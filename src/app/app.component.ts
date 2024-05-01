@@ -49,8 +49,9 @@ export class AppComponent implements OnInit {
         this.router.navigate(['/auth/login'])
       }
     })
-
-    this.authStoreService.getUser()
+    if(localStorage.getItem('token')) {
+      this.authStoreService.getUser()
+    }
   }
 
   footerNavClick(route: string) {

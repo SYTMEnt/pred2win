@@ -20,7 +20,8 @@ export class AuthEffects {
                 password: action.password
             };
             return this.authService.signup(user).pipe(
-                map(() => {
+                map((data: any) => {
+                    localStorage.setItem('token', data.token)
                     return authActions.signupSuccess()
                 }),
                 catchError((httpError: HttpErrorResponse) => {
@@ -39,7 +40,8 @@ export class AuthEffects {
                 password: action.password
             };
             return this.authService.login(loginData).pipe(
-                map(() => { 
+                map((data: any) => {
+                    localStorage.setItem('token', data.token)
                     return authActions.loginSuccess()
                 }),
                 catchError((httpError: HttpErrorResponse) => {
@@ -69,7 +71,10 @@ export class AuthEffects {
         ofType(authActions.logout),
         switchMap((action) => {
             return this.authService.logout().pipe(
-                map(() => authActions.reset()),
+                map(() => {
+                    localStorage.removeItem('token')
+                    return authActions.reset()
+                }),
                 catchError((httpError) => {
                     this.notificationService.notify(httpError.message)
                     return of(authActions.reset())
