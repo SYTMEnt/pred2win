@@ -5,6 +5,7 @@ import { AuthStoreService } from './store/auth/auth-store.service';
 import { Store } from '@ngrx/store';
 import { AuthState } from './store/auth/state';
 import { FooterNav } from './shared/components/nav-footer/nav-footer.component';
+import { TokenService } from './shared/services/token.service';
 
 @Component({
   selector: 'app-root',
