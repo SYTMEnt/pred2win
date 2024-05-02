@@ -49,7 +49,7 @@ export class AppComponent implements OnInit {
         this.router.navigate(['/auth/login'])
       }
     })
-    if(localStorage.getItem('token')) {
+    if(this.tokenService.getToken()) {
       this.authStoreService.getUser()
     }
   }

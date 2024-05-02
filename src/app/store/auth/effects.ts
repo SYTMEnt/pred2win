@@ -5,11 +5,12 @@ import { catchError, map, of, switchMap } from "rxjs";
 import { NotificationService } from "../../shared/services/notification.service";
 import { AuthService } from "../../features/auth/services/auth.service";
 import * as authActions from "./actions";
+import { TokenService } from "../../shared/services/token.service";
 
 @Injectable()
 export class AuthEffects {
 
-    constructor(private actions$: Actions, private authService: AuthService, private notificationService: NotificationService) {}
+    constructor(private actions$: Actions, private authService: AuthService, private notificationService: NotificationService, private tokenService: TokenService) {}
 
     signup$ = createEffect(() => this.actions$.pipe(
         ofType(authActions.signup),
@@ -21,7 +22,7 @@ export class AuthEffects {
             };
             return this.authService.signup(user).pipe(
                 map((data: any) => {
-                    localStorage.setItem('token', data.token)
+                    this.tokenService.saveToken(data.token)
                     return authActions.signupSuccess()
                 }),
                 catchError((httpError: HttpErrorResponse) => {
@@ -40,8 +41,8 @@ export class AuthEffects {
                 password: action.password
             };
             return this.authService.login(loginData).pipe(
-                map((data: any) => {
-                    localStorage.setItem('token', data.token)
+                map((data: any) => { 
+                    this.tokenService.saveToken(data.token)
                     return authActions.loginSuccess()
                 }),
                 catchError((httpError: HttpErrorResponse) => {
@@ -72,7 +73,7 @@ export class AuthEffects {
         switchMap((action) => {
             return this.authService.logout().pipe(
                 map(() => {
-                    localStorage.removeItem('token')
+                    this.tokenService.clearToken()
                     return authActions.reset()
                 }),
                 catchError((httpError) => {

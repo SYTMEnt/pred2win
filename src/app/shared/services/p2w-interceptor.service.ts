@@ -2,9 +2,12 @@ import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from "@angular/c
 import { Injectable } from "@angular/core";
 import { Observable,  } from "rxjs";
 import  { environment } from '../../../environments/environment'
+import { TokenService } from "./token.service";
 
 @Injectable()
 export class P2WInterceptor implements HttpInterceptor {
+
+    constructor(private tokenService: TokenService) {}
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         req = req.clone({
@@ -14,7 +17,7 @@ export class P2WInterceptor implements HttpInterceptor {
         if(['/login', '/user'].includes(req.url) && req.method === 'POST') {
             return next.handle(req)
         }
-        const token = localStorage.getItem('token');
+        const token = this.tokenService.getToken()
         req = req.clone({
             setHeaders: {
                 Authorization: `Bearer ${token}`
