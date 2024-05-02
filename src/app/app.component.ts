@@ -38,7 +38,7 @@ export class AppComponent implements OnInit {
     }
   ]
   
-  constructor(private router: Router, private authStoreService: AuthStoreService, private store$: Store<AuthState>) {}
+  constructor(private router: Router, private authStoreService: AuthStoreService, private store$: Store<AuthState>, private tokenService: TokenService) {}
 
   ngOnInit(): void {
     this.authStoreService.userProfile$.subscribe((user) => {
