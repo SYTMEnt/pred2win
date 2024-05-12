@@ -2,7 +2,11 @@ export interface User {
     _id: string,
     displayName: string,
     memberId: string,
-    email: string
+    email: string,
+    mobile: string,
+    name: string,
+    location: string,
+    pic: string,
 }
 
 export interface Signup {

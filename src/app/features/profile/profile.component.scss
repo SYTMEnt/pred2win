@@ -38,15 +38,15 @@
             border-right: 1px solid #d6d6d6;
 
             &-pic {
-                width: 15rem;
-                height: 15rem;
+                width: 12rem;
+                height: 12rem;
                 border-radius: 102px;
                 overflow: hidden;
                 margin: 5rem auto;
 
                 @media (max-width: 1024px) {
-                    width: 10rem;
-                    height: 10rem;
+                    width: 8rem;
+                    height: 8rem;
                 }
 
                 @media screen and (max-height: 600px) {

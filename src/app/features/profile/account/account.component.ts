@@ -20,7 +20,11 @@ export class AccountComponent implements OnInit {
     form = this.fb.group({
         displayName: '',
         email: '',
-        memberId: ''
+        memberId: '',
+        name: '', 
+        mobile: '',
+        location: '',
+        pic:'',
     })
 
     ngOnInit(): void {
@@ -32,7 +36,11 @@ export class AccountComponent implements OnInit {
                 this.form.setValue({
                     displayName: user.displayName,
                     memberId: user.memberId,
-                    email: user.email
+                    email: user.email,
+                    name: user.name || '', 
+                    mobile: user.mobile || '',
+                    location: user.location || '',
+                    pic: user.pic || ''
                 })
             }
         })
@@ -41,7 +49,10 @@ export class AccountComponent implements OnInit {
     onSubmit() {
         if(
             this.currentUserData?.displayName === this.form.value.displayName &&
-            this.currentUserData?.email === this.form.value.email
+            this.currentUserData?.email === this.form.value.email &&
+            this.currentUserData?.name === this.form.value.name &&
+            this.currentUserData?.mobile === this.form.value.mobile &&
+            this.currentUserData?.location === this.form.value.location
         ) {
             alert("Not Edited")
         } else {
