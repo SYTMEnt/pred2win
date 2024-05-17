@@ -1,0 +1,52 @@
+.poll-member-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7); 
+}
+
+.poll-option {
+  width: 75%;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #f5f5f5; 
+  border-radius: 10px;
+  text-align: center; 
+}
+
+.option-header {
+  display: flex;
+  align-items: center;
+  background-color: #efdcfc; 
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.option-image {
+  width: 40px; 
+  height: 40px; 
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.option-details {
+  flex-grow: 1; 
+}
+
+.predicted-members {
+  text-align: left; 
+}
+
+.predicted-member {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.member-image {
+  width: 30px; 
+  height: 30px; 
+  margin-right: 10px;
+}

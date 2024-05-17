@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { map, Observable } from "rxjs";
-import { PollList, Poll } from "../../../store/polls/types";
+import { PollList, Poll, PollOption } from "../../../store/polls/types";
 
 export interface PollSubmitParams {
     predictionType: "submit" | "retract",
@@ -36,4 +36,9 @@ export class PollsService {
     submitPoll(params: PollSubmitParams) {
         return this.http.post('/user/prediction', params);
     }
+
+    getPollOptions(pollId: string, userId: string): Observable<PollOption[]> {
+        const params = new HttpParams().set('pollId', pollId).set('userId', userId);
+        return this.http.get<PollOption[]>('/gui/pollMembers', { params });
+      }
 }

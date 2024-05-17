@@ -1,7 +1,12 @@
 <article *ngIf="__poll" class="poll">
-    <div class="poll-info poll-info--right">
-        <div class="poll-info-container">Cost: <span class="poll-info-text">{{__poll.pollInputCoin}} <mat-icon fontIcon="toll"></mat-icon></span></div>
-        <div class="poll-info-container">Win: <span class="poll-info-text">{{__poll.pollOutputCoin}} <mat-icon fontIcon="toll"></mat-icon></span></div>
+    <div class="poll-grid">
+        <div class="poll-info poll-info--left" *ngIf="__poll.status === 'active'">
+            <span class="poll-info-time">{{__poll.pollEndTime| date: 'HH:mm' }}</span>
+        </div>
+        <div class="poll-info poll-info--right">
+            <div class="poll-info-container">Cost: <span class="poll-info-text">{{__poll.pollInputCoin}} <mat-icon fontIcon="toll"></mat-icon></span></div>
+            <div class="poll-info-container">Win: <span class="poll-info-text">{{__poll.pollOutputCoin}} <mat-icon fontIcon="toll"></mat-icon></span></div>
+        </div>
     </div>
     <hr>
     <div class="poll-body">
@@ -26,7 +31,11 @@
         </div>
     </div>
     <div class="poll-info poll-info--left">Total predictions till now <span class="poll-info-text">{{__poll.totalCount}}</span></div>
+    <div class="poll-info poll-info--left" *ngIf="showMembers()">
+        <a class="link" (click)="openMemberPage(__poll.pollId)">View predictions</a>
+    </div>
     <button *ngIf="!hideSubmitButton()" class="poll-submit-btn" mat-raised-button [disabled]="!selectedOption" color="primary" (click)="submit()">
         {{isRetractMode() ? 'Retract' : 'Submit'}}
     </button>
+
 </article>

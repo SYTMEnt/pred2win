@@ -19,3 +19,8 @@ export interface Login {
     userName: string,
     password: string
 }
+
+export interface Password {
+    userId: string,
+    password: string
+}

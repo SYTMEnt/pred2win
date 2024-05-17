@@ -28,7 +28,7 @@ export interface PollOption {
     valueString: string;
     valueImage: string;
     predictedCount?: number;
-    _id: string;
+    predictedMembers: PollMember[];
 }
 
 export interface PollQuestion {
@@ -37,6 +37,12 @@ export interface PollQuestion {
     appendName: boolean;
     overwriteOptions: boolean;
     suppressNote: boolean;
+}
+
+export interface PollMember {
+    userId: string;
+    displayName: string;
+    pic: string;
 }
 
 export type PollList = Array<Poll>

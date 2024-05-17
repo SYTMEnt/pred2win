@@ -1,0 +1,29 @@
+<div class="poll-member-container">
+    <button mat-icon-button class="polls-close-btn" (click)="onClose()">
+      <mat-icon color="accent">close</mat-icon>
+    </button>
+    <ng-container *ngIf="!loading; else loadingTpl">
+      <div *ngFor="let option of pollOptions" class="poll-option">
+        <div class="option-header">
+          <img [src]="option.valueImage" alt="{{ option.valueString }}" class="option-image">
+          <div class="option-details">
+            <h3 class="option-title">{{ option.valueString }}</h3>
+            <p class="predicted-count">Total: {{ option.predictedCount }}</p>
+          </div>
+        </div>
+        <div *ngIf="option.predictedMembers && option.predictedMembers.length > 0" class="predicted-members">
+          <div *ngFor="let member of option.predictedMembers" class="predicted-member">
+            <img [src]="member.pic" alt="{{ member.displayName }}" class="member-image">
+            <p>{{ member.displayName }}</p>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  
+  <ng-template #loadingTpl>
+    <div class="loader-container">
+      <mat-spinner class="loader" color="accent"></mat-spinner>
+    </div>
+  </ng-template>
+  

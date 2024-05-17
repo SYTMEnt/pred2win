@@ -8,12 +8,14 @@ import { AuthRoutingModule } from "./auth-routing.module";
 import { AuthComponent } from "./auth.component";
 import { LoginComponent } from "./components/login/login.component";
 import { SignupComponent } from "./components/signup/signup.component";
+import { PasswordComponent } from './components/password/password.component';
 import { AuthStoreModule } from "../../store/auth/auth-store.module";
 
 @NgModule({
     declarations: [
         LoginComponent,
         SignupComponent,
+        PasswordComponent,
         AuthComponent
     ],
     imports: [

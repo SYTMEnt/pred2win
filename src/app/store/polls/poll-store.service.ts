@@ -29,5 +29,6 @@ export class PollStoreService {
         this.store$.dispatch(pollsActions.reset())
     }
 
+    
 
 }

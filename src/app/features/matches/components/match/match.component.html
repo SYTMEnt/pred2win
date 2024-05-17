@@ -4,8 +4,8 @@
         <span class="match-team-name">{{match.teamA.teamName}}</span>
     </div>
     <div class="match-info">
-        <span class="match-info__1">{{match.matchStartTime | date :'medium'}}</span>
-        <span class="match-info__2"><span *ngIf="match.displayMatchNo">Match No. {{match.matchNo}},</span> Group {{match.group}}</span>
+        <span class="match-info__1">{{ match.matchStartTime | date :'d MMMM, HH:mm' }}</span>
+        <span class="match-info__2"><span *ngIf="match.displayMatchNo">Match {{match.matchNo}}, </span> Group {{match.group}}</span>
         <span class="match-info__3"><mat-icon>pin_drop</mat-icon>{{match.stadium}}</span>
     </div>
     <div class="match-team--B">

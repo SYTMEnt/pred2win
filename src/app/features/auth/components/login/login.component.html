@@ -19,7 +19,12 @@
             <button class="login-form-submit" color="primary" type="submit" (click)="onLogin()" [class.button-spinner]="isAuthLoading$ | async" mat-raised-button>
                 Submit
             </button>
-            <a routerLink="/auth/signup">Become a member</a>
+            <span>
+                <a routerLink="/auth/password">Change Password</a>
+            </span>
+            <span>
+                <a routerLink="/auth/signup">Become a member</a>
+            </span>
         </div>
     </form>
 </section>

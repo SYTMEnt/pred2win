@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { Login, Signup, User } from "../../../store/auth/types";
+import { Login, Signup, User, Password } from "../../../store/auth/types";
 
 @Injectable({
     providedIn: 'root'
@@ -26,5 +26,7 @@ export class AuthService {
         return this.http.get<User>(`/user`)
     }
 
-
+    password(user: Password): Observable<User> {
+        return this.http.post<User>(`/user/changePassword`, user)
+    }
 }

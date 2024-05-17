@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from "@angular/common/http";
 import { createAction, props } from "@ngrx/store";
-import { Signup, Login, User } from "./types";
+import { Signup, Login, User, Password } from "./types";
 
 export const signup = createAction('[User] Sign Up', props<Signup>());
 export const signupSuccess = createAction('[User] Sign Up Success');
@@ -13,6 +13,10 @@ export const loginHttpError = createAction('[User] Login Http Error', props<{htt
 export const getUser = createAction('[User] Get');
 export const getUserSuccess = createAction('[User] Get Success', props<User>());
 export const getUserError = createAction('[User] Get User Error', props<{httpError: HttpErrorResponse}>())
+
+export const password = createAction('[User] Password', props<Password>());
+export const passwordSuccess = createAction('[User] Password Change Success');
+export const passwordHttpError = createAction('[User] Password Change Error', props<{httpError: HttpErrorResponse}>())
 
 export const logout = createAction('[User] Logout')
 export const reset = createAction('[User] Reset');

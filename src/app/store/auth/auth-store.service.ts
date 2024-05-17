@@ -1,10 +1,11 @@
 import { Injectable } from "@angular/core";
 import { select, Store } from "@ngrx/store";
-
+import { Observable } from "rxjs";
+import { ofType } from "@ngrx/effects";
 import { AuthState } from "./state";
 import * as authSelectors from "./selectors";
 import * as authActions from "./actions";
-import { Signup, Login, User } from "./types";
+import { Signup, Login, User, Password } from "./types";
 
 @Injectable()
 export class AuthStoreService {
@@ -28,5 +29,9 @@ export class AuthStoreService {
 
     getUser(): void {
         this.store$.dispatch(authActions.getUser());
+    }
+
+    password(user: Password): void {
+        this.store$.dispatch(authActions.password(user));
     }
 }

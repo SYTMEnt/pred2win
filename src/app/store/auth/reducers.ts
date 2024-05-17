@@ -52,6 +52,30 @@ const authReducer = createReducer(
             success: false
         }
     })),
+    on(authActions.password, (currentState, actionData) => ({
+        ...currentState,
+        actions: {
+            processing: true,
+            success: false,
+            httpError: undefined
+        }
+    })),
+    on(authActions.passwordSuccess, (currentState, actionsData) => ({
+        ...currentState,
+        actions: {
+            processing: false,
+            httpError: undefined,
+            success: true
+        }
+    })),
+    on(authActions.passwordHttpError, (currentState, { httpError }) => ({
+        data: undefined,
+        actions: {
+            processing: false,
+            httpError,
+            success: false
+        }
+    })),
     on(authActions.getUser, (currentState, actionsData) => ({
         ...currentState,
         actions: {

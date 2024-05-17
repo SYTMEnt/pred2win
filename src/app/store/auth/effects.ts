@@ -53,6 +53,26 @@ export class AuthEffects {
         })
     ))
 
+    password$ = createEffect(() => this.actions$.pipe(
+        ofType(authActions.password),
+        switchMap((action) => {
+            const user = {
+                userId: action.userId,
+                password: action.password
+            };
+            return this.authService.password(user).pipe(
+                map((data: any) => {
+                    this.tokenService.saveToken(data.token)
+                    return authActions.passwordSuccess()
+                }),
+                catchError((httpError: HttpErrorResponse) => {
+                    this.notificationService.notify(httpError.message)
+                    return of(authActions.passwordHttpError({httpError}))
+                })
+            )
+        })
+    ))
+
     user$ = createEffect(() => this.actions$.pipe(
         ofType(authActions.getUser, authActions.loginSuccess, authActions.signupSuccess),
         switchMap(() => {

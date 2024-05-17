@@ -75,14 +75,11 @@ export class TournamentsComponent implements OnInit, OnDestroy {
             this.route.navigate(['trivia', 'Euro Cup']);
           } else if (filter === 'history') {
             this.route.navigate(['history', 'Euro Cup']);
-          } else if (filter === 'archive') {
-            tournamentStatus = TournamentStatus.ARCHIVED;
-            this.tournamentStoreService.tournaments({ userId: memberId, tournamentStatus });
-          }
+          } 
         });
       }
   
-
+      
     ngOnDestroy(): void {
         this.tournamentStoreService.reset()
         this.destroy$.next(true);

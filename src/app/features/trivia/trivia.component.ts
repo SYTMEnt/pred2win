@@ -25,7 +25,6 @@ export class TriviaComponent implements OnDestroy  {
     private triviaService: TriviaService,
     private route: ActivatedRoute,
     private router: Router,
-    private location: Location
     ) {
         this.route.params.pipe(
             map(params => params['tournamentName']),

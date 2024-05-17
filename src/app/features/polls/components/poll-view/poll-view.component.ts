@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { Voting, Option} from "ng-voting"
 import { Poll, PollOption } from "../../../../store/polls/types";
+import { Router } from '@angular/router';               
 
 @Component({
     selector: 'poll-view',
@@ -8,10 +9,13 @@ import { Poll, PollOption } from "../../../../store/polls/types";
     styleUrls: ['poll-view.component.scss']
 })
 export class PollViewComponent {
+    @Input() userId: string | undefined;
     __poll?: Poll;
     __isLoading = false;
     selectedOption?: string;
 
+
+    constructor(private router: Router) {}
     // TODO - Create type for data
     @Output() submitted = new EventEmitter<{poll: Poll, selectedOption: string, type: 'submit' | 'retract'}>()
     @Input() 
@@ -76,5 +80,17 @@ export class PollViewComponent {
         return this.__poll?.status !== 'active' ||
         (this.__poll.submitted.status && !this.__poll.pollFeatures.retractable)
     }
+
+    showMembers(): boolean {
+        return !!(
+            !this.__poll?.pollFeatures.anonymous && 
+            this.__poll?.submitted?.status
+        );
+    }
+
+    openMemberPage(pollId: string): void {
+        this.router.navigate([`/polls/poll-members/${pollId}`]); 
+    }
+    
     
 }
