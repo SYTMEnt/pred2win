@@ -4,7 +4,7 @@
     <form class="login-form" [formGroup]="form">
         <mat-form-field>
             <mat-label>Username</mat-label>
-            <input formControlName="userName" type="text" matInput placeholder="Display Name / Email">
+            <input formControlName="userName" type="text" matInput placeholder="User Name / Email">
             <mat-error *ngIf="getFormControlErrors('userName')">{{getFormControlErrors('userName')}}</mat-error>
         </mat-form-field>
         <mat-form-field>

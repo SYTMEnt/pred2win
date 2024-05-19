@@ -3,7 +3,6 @@
   <mat-spinner class="loader" color="accent" *ngIf="loading"></mat-spinner>
 </div>
 
-
 <div class="awards" *ngIf="!loading">
   <div class="award-cards">
     <div *ngFor="let award of awardDetails" class="award-card">
@@ -15,7 +14,7 @@
           {{ award.condition }}
         </div>
         <div class="coins-info" >
-            Coins to be won: <strong>{{ award.coinsAllocated }}</strong> 
+            Coins to be won: <strong>{{ award.coinsAllocated }}</strong>
         </div>  
         <hr class="horizontal-line">
       </div>
@@ -29,12 +28,10 @@
               <div class="user-info">
                 <div class="display-name">{{ winner.displayName }}</div>
                 <div class="coins-earned">{{ winner.coinsEarned }}
-                  <img [src]="winner.coinPic" alt="Coins" class="coin-pic">
+                  <img class="coin-pic" [src]="'assets/sytmcoin.png'" alt="coin">
                 </div>
               </div>
             </div>
-            
-         
           </div>
       </div>
     </div>

@@ -26,18 +26,18 @@ const routes: Routes = [
     path: "awards",
     loadChildren: () => import('./features/awards/awards.module').then(m => m.AwardsModule)
   },
-    {
-      path:  'userstats/:userId',
-      loadChildren: () => import('./features/userstats/userstats.module').then(m => m.UserstatsModule)
-    },
-    {
-      path: "history/:tournamentName",
-      loadChildren: () => import('./features/history/history.module').then(m => m.HistoryModule)
-    },
-    {
-      path: "trivia/:tournamentName",
-      loadChildren: () => import('./features/trivia/trivia.module').then(m => m.TriviaModule)
-    },
+  {
+    path:  'userstats/:userId',
+    loadChildren: () => import('./features/userstats/userstats.module').then(m => m.UserstatsModule)
+  },
+  {
+    path: "history/:tournamentName",
+    loadChildren: () => import('./features/history/history.module').then(m => m.HistoryModule)
+  },
+  {
+    path: "trivia/:tournamentName",
+    loadChildren: () => import('./features/trivia/trivia.module').then(m => m.TriviaModule)
+  },
   {
     path: "",
     redirectTo: "auth/login",

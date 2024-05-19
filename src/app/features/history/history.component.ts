@@ -1,10 +1,9 @@
 import { Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Location } from '@angular/common';
 import { map, takeUntil } from 'rxjs/operators';
 import { Subject, of } from 'rxjs';
 import { HistoryService } from './services/historyservices';
-import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 import { finalize, catchError } from 'rxjs/operators';
 
 @Component({
@@ -43,7 +42,6 @@ export class HistoryComponent implements OnDestroy {
         private historyService: HistoryService,
         private route: ActivatedRoute,
         private router: Router,
-        private location: Location
     ) {
         this.route.params.pipe(
             map(params => params['tournamentName']),
@@ -94,7 +92,6 @@ export class HistoryComponent implements OnDestroy {
       }
 
     onFilterSelect(filter: string): void {
-
           if (filter === 'tournaments') {
             this.router.navigate(['tournaments']);
           } else if (filter === 'trivia') {

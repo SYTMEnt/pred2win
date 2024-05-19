@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Location } from '@angular/common';
-import { map, take } from 'rxjs';
 import { Awards } from 'src/app/store/awards/types';
 import { AwardsService } from './services/awards.service';
 import { AwardsMaterialModule } from './awards-material.module';

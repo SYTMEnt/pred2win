@@ -2,8 +2,8 @@
     <h3 class="signup-header">Sign up</h3>
     <form class="signup-form" [formGroup]="form">
         <mat-form-field>
-            <mat-label>Name</mat-label>
-            <input formControlName="displayName" type="text" matInput placeholder="Display Name">
+            <mat-label>User Name</mat-label>
+            <input formControlName="displayName" type="text" matInput placeholder="User Name">
             <mat-error *ngIf="getFormControlErrors('displayName')">{{getFormControlErrors('displayName')}}</mat-error>
         </mat-form-field>
         <mat-form-field>
