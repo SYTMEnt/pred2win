@@ -1,6 +1,6 @@
 .footer {
-    background: linear-gradient(#454545, #1f1f1f);
-    color: greenyellow;
+    background: linear-gradient(#454545, #000000);
+    color: #ffea30;
     width: 50%;
     height: 6rem;
     position: fixed;
@@ -51,7 +51,7 @@
         }
 
         &-link {
-            color: greenyellow;
+            color: #ffea30;
 
             &-icon {
                 font-size: 2.5rem;

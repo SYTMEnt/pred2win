@@ -7,10 +7,11 @@
         <div class="option-header">
           <img [src]="option.valueImage" alt="{{ option.valueString }}" class="option-image">
           <div class="option-details">
-            <h3 class="option-title">{{ option.valueString }}</h3>
+            <h4 class="option-title">{{ option.valueString }}</h4>
             <p class="predicted-count">Total: {{ option.predictedCount }}</p>
           </div>
         </div>
+        <hr>
         <div *ngIf="option.predictedMembers && option.predictedMembers.length > 0" class="predicted-members">
           <div *ngFor="let member of option.predictedMembers" class="predicted-member">
             <img [src]="member.pic" alt="{{ member.displayName }}" class="member-image">

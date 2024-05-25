@@ -4,18 +4,18 @@
     justify-content: space-evenly;
     flex-direction: row;
     margin-bottom: 20px;
-    height: 10rem;
+    background-color: #fff;
 }
 
 .match-details {
     flex: 1;
     padding: 10px;
-    border: 1px solid #ccc;
+    background: linear-gradient(#454545, #000000);
     border-radius: 5px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 100%;
+    color: yellow;
 }
 
 .match-details img {
@@ -23,13 +23,19 @@
 }
 
 .match-details p {
+    margin-top: 5px;
     font-family: "Lato", sans-serif;
-    font-size: small;
+    font-size: smaller;
 }
 
 .date {
     font-family: "Lato", sans-serif;
-    font-size: small;
+    font-size: smaller;
+}
+
+.team {
+    font-family: "Lato", sans-serif;
+    font-size: smaller;
 }
 
 .team-flag {
@@ -42,7 +48,6 @@
     flex: 1;
     padding: 10px;
     border: 1px solid #ccc; 
-    height: 100%;
 }
 
 .poll-question {
@@ -55,14 +60,13 @@
     font-size: small;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     margin : 10px;
 }
-.poll-option {
-    margin-right: 10px;
-}
+
 
 .won {
-    background-color: rgb(167, 231, 154);
+    background-color: rgb(137, 227, 119);
 }
 
 

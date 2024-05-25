@@ -10,9 +10,9 @@
 
     &-info {
         width: 65%;
-        background-color: purple;
+        background: linear-gradient(135deg, #2c003e, #6a0dad);
         clip-path: polygon(0 0, 100% 0, 80% 100vh, 0 100%);
-        color: greenyellow;
+        color: #ffea30;
         backface-visibility: hidden;
         
         @media (max-width: 1024px) {

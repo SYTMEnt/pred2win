@@ -5,6 +5,41 @@
 $p2w-primary: mat.define-palette(mat.$purple-palette, 500);
 $p2w-accent: mat.define-palette(mat.$lime-palette, A200, A100, A400);
 
+$p2w-dark-purple-palette: (
+  50: #e0b3ff,
+  100: #c780ff,
+  200: #ae4dff,
+  300: #9500ff,
+  400: #7e00e6,
+  500: #6a0dad, 
+  600: #5e009d,
+  700: #50008a,
+  800: #420077,
+  900: #2c003e,
+  A100: #d4bbff,
+  A200: #b380ff,
+  A400: #9040ff,
+  A700: #8000e6,
+);
+
+$p2w-yellow-palette: (
+  50: #fffde7,
+  100: #fff9c4,
+  200: #fff59d,
+  300: #fff176,
+  400: #ffee58,
+  500: #ffff00,
+  600: #fdd835,
+  700: #fbc02d,
+  800: #f9a825,
+  900: #f57f17,
+  A100: #ffff8d,
+  A200: #ffff00,
+  A400: #ffea00,
+  A700: #ffd600,
+);
+
+
 $p2w-theme: mat.define-light-theme((
  color: (
    primary: $p2w-primary,

@@ -5,19 +5,24 @@
     height: 100%;
   }
   
-  .transaction-header, .transaction-body {
-    border: 1px solid #ccc;
+  .transaction-header {
+    border: 1px solid #ffb6c1;
     margin-bottom: 10px;
     padding: 10px;
     border-radius: 5px;
-    background-color: #f9f9f9;
-  }
-  
-  .transaction-header {
+    background: linear-gradient(135deg, #2c003e, #6a0dad);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     height: 10%;
+  }
+
+  .transaction-body {
+    border: 1px solid #ffb6c1;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #ffffff;
   }
   
   .transaction-header p {
@@ -25,7 +30,7 @@
     font-family: "Roboto", sans-serif;
     font-size: small;
     text-transform: uppercase;
-    color: purple;
+    color: yellow;
   }
   
   .transaction-header .header-content {
@@ -38,6 +43,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    color:#ffffff;
   }
 
   .account-balance{

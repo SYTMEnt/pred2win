@@ -2,15 +2,12 @@
   width: 100%;
   margin-top: -5%;
   padding: 10%;
-  background-color: purple;
-  height: 110vh;
-  @media (max-width: 600px) {
-    margin-top: -10%;
-  }
+  background: linear-gradient(215deg, #2c003e, #6a0dad);
+  min-height: 100vh;
 }
 
 .user-stats-card {
-  background-color: #fff;
+  background: linear-gradient(135deg, #ffffff, #f5eb98); 
   border-radius: 10px;
   padding: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -39,7 +36,7 @@
   flex: 1 1 calc(50% - 10px);
   padding: 10px;
   border-radius: 5px;
-  background-color: #f0f0f0;
+  background: #fff;
 }
 
 .user-stats-detail h3 {
@@ -55,7 +52,7 @@
 
 .stat-header {
   font-family: "Roboto", sans-serif;
-  color: purple;
+  color: #44025e;
   text-transform: uppercase;
 }
 
@@ -63,7 +60,7 @@
   display: flex;
   flex-direction: column;
   margin: 10px;
-  border: 1px solid #c956c1;
+  border: 1px solid #ffb6c1;
   border-radius: 10px;
   padding: 10px;
   text-align: center;
@@ -89,7 +86,7 @@
   display: flex;
   flex-direction: column;
   margin: 10px;
-  border: 1px solid #c956c1;
+  border: 1px solid #ffb6c1;
   border-radius: 10px;
   padding: 10px;
   text-align: center;
@@ -113,5 +110,15 @@
 @media screen and (max-width: 768px) {
   .user-stats-detail {
       flex: 1 1 calc(100% - 10px);
+  }
+}
+
+.userStats-close-btn {
+  position: absolute;
+  top: 5rem;
+  right: 1rem;
+
+  mat-icon {
+      font-weight: bold;
   }
 }

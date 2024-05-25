@@ -71,15 +71,16 @@
             flex-grow: 1;
             display: flex;
             flex-direction: column;
+            border-radius: 1rem;
             align-items: center;
             justify-content: center;
             gap: 1rem;
-            background: #444444;
+            background: linear-gradient(135deg, #2c003e, #6a0dad);
             margin-top: 3rem;
-            border-left: 1px solid gray;
+            border-left: 1px solid #ffb6c1;
             
             mat-icon {
-                color: #fff500
+                color: yellow;
             }
         }
     }
@@ -96,7 +97,6 @@
 
 .link {
     color: blue; 
-    text-decoration: underline; 
     cursor: pointer; 
   }
   

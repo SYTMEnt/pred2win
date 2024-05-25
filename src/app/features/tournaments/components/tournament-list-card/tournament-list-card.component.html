@@ -2,8 +2,8 @@
     <div class="tournament-card">
         <img class="tournament-card-image" [src]="data.tournamentLogo" [alt]="data.tournamentName">
         <div class="tournament-card-details">
-            <span>{{data.tournamentCategory}}</span>
-            <span>{{data.tournamentName}}, {{data.tournamentYear}}</span>
+            <span>{{data.tournamentName}},  {{data.tournamentYear}}</span>
+            <span>{{data.tournamentCategory}}'s</span>
             <div>
                 <ng-container *ngFor="let country of data.tournamentLocation">
                     <span>{{country}} </span>
@@ -11,8 +11,7 @@
             </div>
         </div>
         <div class="tournament-card-actions">
-            <span>Members</span>
-            <span>{{data.tournamentMembers || 0}}</span>
+            <span>Members : {{data.tournamentMembers || 0}}</span>
             <button class="tournament-card-actions-btn" mat-fab extended 
                 [color]="data.joined ? 'accent' : 'primary'"
                 (click)="onClick()">

@@ -9,11 +9,11 @@
         </div>        
         <div class="leaderboard-user-val">
             <p> {{user.correctPredictions}} of {{user.totalPredictions}} ({{user.predictionAccuracy | number: '1.0-0'}}%) </p>
-            <p class="small-text">match predictions</p>
+            <p class="small-text">match</p>
         </div>
         <div class="leaderboard-user-val">
             <p> {{user.correctBonusPredictions}} of {{user.bonusPredictions}} ({{user.bonusAccuracy| number: '1.0-0'}}% ) </p>
-            <p class="small-text">bonus predictions</p>
+            <p class="small-text">bonus</p>
         </div>
         <div class="rank-change">
             <span *ngIf="user.rankChange.indicator === 'u'" class="material-icons" style="color: green;">arrow_upward</span>

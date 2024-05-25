@@ -1,6 +1,5 @@
-
 .awards {
-  background-color: purple;
+  background: linear-gradient(135deg, #2c003e, #6a0dad);
   font-family: 'Roboto', sans-serif;
   color: #000; 
   padding: 20px;
@@ -12,20 +11,15 @@
   overflow-y: auto;
 }
 
-
-.awards h1 {
-  text-align: center;
-}
-
-
 .award-cards {
   display: flex;
   flex-wrap: wrap; 
   justify-content: center;
 }
 
+
 .award-card {
-  background-color: #fff; 
+  background: linear-gradient(135deg, #ffffff, #f5eb98); 
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
   margin: 10px;
@@ -34,6 +28,7 @@
   width: 200px;
   transition: transform 0.3s ease-in-out; 
 }
+
 
 .award-card:hover {
   transform: translateY(-5px); 
@@ -46,21 +41,15 @@
   max-width: 100%;
 }
 
+
 .award-details h2 {
   font-size: medium;
   font-family: "Roboto", sans-serif;
-  color: purple;
+  color: #44025e;
   margin-bottom: 10px;
   text-transform: uppercase; 
 }
 
-.award-info{
-  font-family: "Lato", sans-serif;
-  color: rgb(47, 47, 47);
-  font-size: small;
-  font-style: italic;
-  margin-bottom: 10px;
-}
 
 .coins-info {
   font-family: "Roboto", sans-serif;
@@ -88,7 +77,6 @@
     width: calc(100% - 20px); 
   }
 }
-
 
 
 .user-details {

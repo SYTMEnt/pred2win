@@ -3,15 +3,16 @@
     width: 100%;
     display: flex;
     justify-content: space-around;
-    min-height: 12rem;
+    min-height: 10rem;
+    font-size: 1.1rem;  
     align-items: center;
-    color: greenyellow;
-    background: linear-gradient(#454545, #1f1f1f);
+    color: yellow;
+    background: linear-gradient(#454545, #000000);
     border-radius: 1rem;
     
     @media (max-width: 600px) {
         font-size: 1rem;  
-        min-height: 9rem;  
+        min-height: 8rem;  
     }
 
     &-volatility {
