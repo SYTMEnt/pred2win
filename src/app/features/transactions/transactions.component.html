@@ -1,4 +1,4 @@
-<div class ="transactions">
+<div class ="transactions" *ngIf="transactions">
     <div class = "transaction-header">
         <div class ="header-content">
             <div class ="account-balance">
@@ -23,7 +23,6 @@
         <table>
         <thead>
             <tr>
- 
             <th>Time</th>
             <th>Event</th>
             <th>Coins added</th>
@@ -34,7 +33,7 @@
         <tbody>
             <tr *ngFor="let transaction of transactions.transactions">
 
-            <td>{{ transaction.transactionTime}}</td>
+            <td>{{ transaction.transactionTime | date: 'dd-MM-yyyy'}}, {{ transaction.transactionTime | date: 'HH:mm' }}</td>
             <td>{{ transaction.eventDescription }} {{ transaction.pollDescription }}</td>
             <td>{{ transaction.debitAmount }}</td>
             <td>{{ transaction.creditAmount }}</td>
@@ -42,5 +41,4 @@
         </tbody>
         </table>
     </div>
-      
 </div>

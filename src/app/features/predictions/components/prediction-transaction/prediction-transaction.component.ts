@@ -8,4 +8,5 @@ import { Predictions } from 'src/app/store/predictions/types';
 })
 export class PredictionTransactionComponent {
     @Input() prediction!: Predictions;
+
 }

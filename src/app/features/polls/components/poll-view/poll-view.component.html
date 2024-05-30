@@ -1,5 +1,10 @@
 <article *ngIf="__poll" class="poll">
-    <div class="poll-grid">
+    <div class="poll-grid"
+    [ngClass]="{
+        'matchOutcome': __poll.pollType === 'matchOutcome', 
+        'bonus': __poll.pollType === 'bonus', 
+        'tournament': __poll.pollType === 'tournament'
+      }">
         <div class="poll-info poll-info--left" *ngIf="__poll.status === 'active'">
             <span class="poll-info-time">{{__poll.pollEndTime| date: 'HH:mm' }}</span>
         </div>

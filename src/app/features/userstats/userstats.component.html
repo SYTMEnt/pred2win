@@ -1,7 +1,8 @@
 <button mat-icon-button class="userStats-close-btn" (click)="onClose()">
   <mat-icon color="accent">close</mat-icon>
 </button>
-<div class="user-stats">
+
+<div class="user-stats" *ngIf="userStats">
     <div class="user-stats-card">
       <div class="user-stats-details">
         <div class="user-stats-detail">
@@ -32,8 +33,8 @@
             </div>
           </div>
           <hr class="horizontal-line">
-          <div class="accuracy-container">
-            <div class ="favorite-team">
+          <div class="accuracy-container-top">
+            <div class = "team-info">
               <div class ="stat-header">
                 <h4>Supporting</h4>
               </div>
@@ -43,6 +44,16 @@
                     <img [src]="userStats.favoriteTeam.teamFlag"  alt="team"  class="user-team-image">
                   </div>
                   <p>{{ userStats.favoriteTeam.teamName}}</p>
+                </div>
+              </div>
+            </div>
+            <div class = "coin-info">
+              <div class ="stat-header">
+                <h4>Balance</h4>
+              </div>
+              <div class ="user-stat">
+                <div class = "team-container">
+                  <p>{{ userStats.coinsEarned.total}}</p><img [src]="userStats.coinsEarned.icon"  alt="team"  class="coin-image">
                 </div>
               </div>
             </div>

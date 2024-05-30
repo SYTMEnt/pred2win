@@ -16,6 +16,7 @@
 .leaderboard-user-rank {
     font-size: 20px; 
     font-weight: bold; 
+    text-align: center;
     color: #44025e;
     margin-right: 10px; 
 }
@@ -44,8 +45,7 @@
 .leaderboard-user-val {
     flex-basis: 0;
     flex-grow: 1;
-    min-width: 0; 
-    margin-left: 20px;
+    margin-left: 10px;
     font-size: 16px;
     color: #2c003e;
 }
@@ -55,7 +55,6 @@
 }
 
 .rank-change {
-    margin-left: 10px;
     font-size: 14px;
     color: #666; 
 }

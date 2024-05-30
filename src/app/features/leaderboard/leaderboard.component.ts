@@ -29,7 +29,6 @@ export class LeaderboardComponent {
    );
 
    openDrawer(userId: string) {
-        console.log('Opening drawer for user ID:', userId);
        this.drawerOpen = true;
        this.router.navigate(['/userstats', userId]);
        document.querySelector('.drawer')?.classList.add('open');

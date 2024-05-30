@@ -25,7 +25,7 @@ export interface Predictions {
     teamB: Team;
     tournamentId: string;
     tournamentLogo: string;
-    won:string;
+    won:boolean;
 }
 
 

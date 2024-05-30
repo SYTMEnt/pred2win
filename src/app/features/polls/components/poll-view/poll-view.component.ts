@@ -92,5 +92,5 @@ export class PollViewComponent {
         this.router.navigate([`/polls/poll-members/${pollId}`]); 
     }
     
-    
+
 }

@@ -2,8 +2,7 @@ import { Time } from "@angular/common";
 
 interface EventTransaction {
     transactionId: string;
-    transactionDate :Date;
-    transactionTime: Time;
+    transactionTime: string;
     eventDescription: string;
     pollDescription: string;
     debitAmount: number;

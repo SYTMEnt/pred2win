@@ -1,15 +1,12 @@
 <div class="prediction-transaction">
     <div class="match-details row">
-        <!-- Tournament Logo -->
         <div class="col-auto">
             <img [src]="prediction.tournamentLogo" alt="Tournament Logo" class="tournament-logo">
         </div>
-    
-        <!-- Date and Time -->
         <div class="date">
             <p>Match {{ prediction.matchNo }}</p>
             <p>{{ prediction.matchStartTime | date: 'dd-MM-yyyy'}}</p>
-            <p>{{ prediction.matchStartTime | date: 'shortTime' }}</p>
+            <p>{{ prediction.matchStartTime | date: 'HH:mm' }}</p>
         </div>
 
         <div class="team">
@@ -23,13 +20,12 @@
         </div>
     </div>
     
-    <div class="poll-details" [ngClass]="{'won': prediction.won}">
+    <div class="poll-details" [ngClass]="{'won': prediction.won, 'lost': prediction.won === false}">
         <div class = "poll-question">
             <p>{{prediction.pollQuestion}}</p>
         </div>
         <hr class="horizontal-line">
         <div class="poll-options" >
-
                 <p>{{prediction.finalPollOption.valueString}}</p>
                 <p>{{prediction.finalPollOption.time | date: 'dd-MM-yyyy'}} {{ prediction.finalPollOption.time | date: 'HH:mm' }}</p>
 

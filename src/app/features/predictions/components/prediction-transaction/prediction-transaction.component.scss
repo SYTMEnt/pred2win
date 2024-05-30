@@ -66,9 +66,12 @@
 
 
 .won {
-    background-color: rgb(137, 227, 119);
+    background-color: rgb(144, 244, 124);
 }
 
+.lost {
+    background-color: rgb(252, 167, 162);
+}
 
 @media screen and (max-width: 768px) {
     .prediction-transaction {

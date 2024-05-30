@@ -4,15 +4,35 @@
   padding: 10%;
   background: linear-gradient(215deg, #2c003e, #6a0dad);
   min-height: 100vh;
+
+  &-card {
+    background: linear-gradient(135deg, #ffffff, #f5eb98); 
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  &-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  &-detail {
+    flex: 1 1 calc(50% - 10px);
+    padding: 10px;
+    border-radius: 5px;
+    background: #fff;
+  }
+
+  @media screen and (max-width: 768px) {
+    .user-stats-detail {
+        flex: 1 1 calc(100% - 10px);
+    }
+  }
+
 }
 
-.user-stats-card {
-  background: linear-gradient(135deg, #ffffff, #f5eb98); 
-  border-radius: 10px;
-  padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
 .user-team-image {
   width: 60px;
@@ -21,27 +41,11 @@
   margin-right: 10px;
 }
 
-.user-stats-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+.coin-image {
+  width: 40px;
+  height: auto;
 }
 
-.user-stats-details {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.user-stats-detail {
-  flex: 1 1 calc(50% - 10px);
-  padding: 10px;
-  border-radius: 5px;
-  background: #fff;
-}
-
-.user-stats-detail h3 {
-  margin-top: 0;
-}
 
 .user-stat {
   display: flex;
@@ -80,6 +84,13 @@
 
 .accuracy-container {
   margin-top: 10px;
+
+  &-top{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 }
 
 .streak-details{
@@ -106,12 +117,6 @@
   font-family: "Roboto", sans-serif;
 }
 
-/* Responsive design for smaller screens */
-@media screen and (max-width: 768px) {
-  .user-stats-detail {
-      flex: 1 1 calc(100% - 10px);
-  }
-}
 
 .userStats-close-btn {
   position: absolute;

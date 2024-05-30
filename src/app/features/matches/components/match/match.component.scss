@@ -4,14 +4,14 @@
     display: flex;
     justify-content: space-around;
     min-height: 10rem;
-    font-size: 1.1rem;  
+    font-size: 1.2rem;  
     align-items: center;
     color: yellow;
     background: linear-gradient(#454545, #000000);
     border-radius: 1rem;
     
     @media (max-width: 600px) {
-        font-size: 1rem;  
+        font-size: 1.1rem;  
         min-height: 8rem;  
     }
 
