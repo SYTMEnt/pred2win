@@ -21,11 +21,12 @@
         text-align: left;
         margin-left: 2rem;
         color: black;
+        line-height: 1.5;
     }
 
     @media screen and (max-width: 768px) {
         .forum-container  {
-            width: 90%;
+            width: 100%;
         }
       }
 
@@ -50,6 +51,11 @@
   
   .links {
     margin: 10px;
+  }
+
+  .forum-list hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   
   .join-link {

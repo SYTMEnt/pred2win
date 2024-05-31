@@ -1,0 +1,61 @@
+.about-us {
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: small;
+    font-family: "Roboto", sans-serif;
+    line-height: 1.5;
+    max-height: 100vh;
+    overflow-y: auto;
+
+    h2 {
+        color: #44025e;
+        margin-bottom: 10px;
+    }
+
+    h4 {
+        color: #44025e;
+    }
+
+    hr {
+        margin-bottom: 10px;
+    }
+
+    &-history{
+        margin-top: 8px;
+        margin-bottom: 10px;
+    }
+
+    &-members{
+        display:flex;
+        flex-wrap: wrap;
+        border-radius: 10px;
+        margin-top: 10px;
+        border: 1px solid #2c003e;
+        box-shadow: 0 2px 2px #333;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    &-credits {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+}
+
+.member-description p {
+    font-family: 'lato', sans-serif;
+    font-size: small;
+}
+
+.credits-people {
+    margin-top: 10px;
+}
+
+.credits-system{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}

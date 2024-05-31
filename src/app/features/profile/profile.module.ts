@@ -7,6 +7,7 @@ import { ProfileComponent } from "./profile.component";
 import { AccountComponent } from './account/account.component';
 import { PasswordComponent } from './password/password.component';
 import { ContactComponent } from './contact/contact.component';
+import { AboutUsComponent } from "./about-us/about-us.component";
 import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
 import { ReactiveFormsModule } from "@angular/forms";
 
@@ -16,6 +17,7 @@ import { ReactiveFormsModule } from "@angular/forms";
         AccountComponent,
         PasswordComponent,
         ContactComponent,
+        AboutUsComponent,
         TermsConditionsComponent
     ],
     imports: [

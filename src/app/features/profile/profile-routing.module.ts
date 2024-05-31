@@ -4,7 +4,7 @@ import { AccountComponent } from './account/account.component';
 import { ContactComponent } from './contact/contact.component';
 import { PasswordComponent } from './password/password.component';
 import { ProfileComponent } from './profile.component';
-import { PredictionsComponent } from '../predictions/predictions.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
 
 const routes: Routes = [
@@ -23,6 +23,10 @@ const routes: Routes = [
       {
         path: "contact",
         component: ContactComponent
+      },
+      {
+        path: "about-us",
+        component: AboutUsComponent
       },
       {
         path: "transactions",
