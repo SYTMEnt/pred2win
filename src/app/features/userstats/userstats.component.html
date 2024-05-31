@@ -2,8 +2,8 @@
   <mat-icon color="accent">close</mat-icon>
 </button>
 
-<div class="user-stats" *ngIf="userStats">
-    <div class="user-stats-card">
+<article class="user-stats"  *ngIf="userStats; else loadingTpl">
+    <div class="user-stats-card" >
       <div class="user-stats-details">
         <div class="user-stats-detail">
           <div class ="stat-header">
@@ -161,5 +161,11 @@
         </div>
       </div>
     </div>
-</div>
+  </article>
+
+  <ng-template #loadingTpl>
+    <div class="loader-container">
+      <mat-spinner class="loader" color="accent"></mat-spinner>
+    </div>
+  </ng-template>
   

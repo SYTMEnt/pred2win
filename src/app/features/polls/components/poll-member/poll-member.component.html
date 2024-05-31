@@ -1,7 +1,7 @@
-<div class="poll-member-container">
-    <button mat-icon-button class="polls-close-btn" (click)="onClose()">
-      <mat-icon color="accent">close</mat-icon>
-    </button>
+<button mat-icon-button class="polls-close-btn" (click)="onClose()">
+  <mat-icon color="accent">close</mat-icon>
+</button>
+<article class="poll-member-container">
     <ng-container *ngIf="!loading; else loadingTpl">
       <div *ngFor="let option of pollOptions" class="poll-option">
         <div class="option-header">
@@ -20,7 +20,7 @@
         </div>
       </div>
     </ng-container>
-  </div>
+</article>
   
   <ng-template #loadingTpl>
     <div class="loader-container">

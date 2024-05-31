@@ -53,3 +53,13 @@
   margin-right: 10px;
   border-radius: 50%; 
 }
+
+.polls-close-btn {
+  position: absolute;
+  top: 5rem;
+  right: 1rem;
+
+  mat-icon {
+      font-weight: bold;
+  }
+}
