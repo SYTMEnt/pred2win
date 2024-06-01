@@ -2,6 +2,7 @@
     background: white;
     border-radius: 10px;
     padding: 10px;
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -13,7 +14,6 @@
 
     h2 {
         color: #44025e;
-        margin-bottom: 10px;
     }
 
     h4 {
@@ -21,12 +21,12 @@
     }
 
     hr {
+        margin-top: 10px;
         margin-bottom: 10px;
     }
 
-    &-history{
-        margin-top: 8px;
-        margin-bottom: 10px;
+    &-content {
+        margin-top: 10px;
     }
 
     &-members{
@@ -38,11 +38,11 @@
         box-shadow: 0 2px 2px #333;
         gap: 10px;
         padding: 10px;
+        margin-bottom: 10px;
     }
 
     &-credits {
-        margin-top: 10px;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
     }
 }
 

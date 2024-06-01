@@ -8,8 +8,10 @@ import { AccountComponent } from './account/account.component';
 import { PasswordComponent } from './password/password.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutUsComponent } from "./about-us/about-us.component";
+import { RulesComponent } from "./rules/rules.component";
 import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
 import { ReactiveFormsModule } from "@angular/forms";
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
     declarations: [
@@ -18,6 +20,7 @@ import { ReactiveFormsModule } from "@angular/forms";
         PasswordComponent,
         ContactComponent,
         AboutUsComponent,
+        RulesComponent,
         TermsConditionsComponent
     ],
     imports: [
@@ -25,7 +28,8 @@ import { ReactiveFormsModule } from "@angular/forms";
         ProfileRoutingModule,
         ProfileMaterialModule,
         RouterModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MatExpansionModule
     ]
 })
 export class ProfileModule {
