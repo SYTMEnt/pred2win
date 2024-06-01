@@ -25,12 +25,6 @@
     background: #fff;
   }
 
-  @media screen and (max-width: 768px) {
-    .user-stats-detail {
-        flex: 1 1 calc(100% - 10px);
-    }
-  }
-
 }
 
 
@@ -84,13 +78,6 @@
 
 .accuracy-container {
   margin-top: 10px;
-
-  &-top{
-    margin-top: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
 }
 
 .streak-details{
@@ -117,6 +104,12 @@
   font-family: "Roboto", sans-serif;
 }
 
+
+@media screen and (max-width: 768px) {
+  .user-stats-detail {
+      flex: 1 1 calc(100% - 10px);
+  }
+}
 
 .userStats-close-btn {
   position: absolute;
