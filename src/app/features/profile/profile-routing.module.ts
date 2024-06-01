@@ -7,6 +7,7 @@ import { ProfileComponent } from './profile.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { RulesComponent } from './rules/rules.component';
 import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
+import { DisclaimerComponent } from './disclaimer/disclaimer.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
       {
         path: "about-us",
         component: AboutUsComponent
+      },
+      {
+        path: "disclaimer",
+        component: DisclaimerComponent
       },
       {
         path: "rules",

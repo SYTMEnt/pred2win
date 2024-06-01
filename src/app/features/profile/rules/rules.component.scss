@@ -1,10 +1,14 @@
 .rules {
     background: white;
-    border-radius: 10px;
-    padding: 10px;
-    margin-top: 10px;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-top: 1rem;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+    font-size: small;
+    font-family: "Roboto", sans-serif;
+    line-height: 1.5;
     max-height: 100vh;
     overflow-y: auto;
 
@@ -14,8 +18,13 @@
         line-height: 1.5;
     }
 
+    &-container h4 {
+        margin-top: 2rem;
+    }
+
 }
 
 mat-panel-title {
     color: #44025e;
+
 }

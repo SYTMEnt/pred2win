@@ -1,8 +1,8 @@
 .about-us {
     background: white;
-    border-radius: 10px;
-    padding: 10px;
-    margin-top: 10px;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-top: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -13,6 +13,7 @@
     overflow-y: auto;
 
     h2 {
+        font-size: medium;
         color: #44025e;
     }
 

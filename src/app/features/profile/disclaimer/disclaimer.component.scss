@@ -1,4 +1,4 @@
-.legal {
+.disclaimer {
     background: white;
     border-radius: 1rem;
     padding: 2rem;
@@ -27,14 +27,17 @@
         margin-bottom: 1rem;
     }
 
-    & > ul {
-        margin: 2rem 0;
-        margin-left: 4rem;
-        font-size: small;
+    h4 {
+        color: #44025e;
+        margin-bottom: 1rem;
+    }
 
-        @media (max-width: 600px) {
-            margin-left: 2rem;
-        }
+    &-content {
+        margin-bottom: 10px;
+    }
+
+    &-conclusion {
+        margin-top: 20px;
     }
 }
 

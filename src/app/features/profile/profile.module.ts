@@ -9,6 +9,7 @@ import { PasswordComponent } from './password/password.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutUsComponent } from "./about-us/about-us.component";
 import { RulesComponent } from "./rules/rules.component";
+import { DisclaimerComponent } from "./disclaimer/disclaimer.component";
 import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -21,6 +22,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
         ContactComponent,
         AboutUsComponent,
         RulesComponent,
+        DisclaimerComponent,
         TermsConditionsComponent
     ],
     imports: [
