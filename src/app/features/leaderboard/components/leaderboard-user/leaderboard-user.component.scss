@@ -1,7 +1,7 @@
 .leaderboard-user {
     display: flex;
     justify-content: space-evenly;
-    background: linear-gradient(135deg, #ffffff, #f5eb98); 
+    background: linear-gradient(135deg, #ffffff, #f4edb0); 
     border-radius: 8px;
     padding: 15px;
     margin-bottom: 6px;
@@ -47,7 +47,7 @@
     flex-grow: 1;
     margin-left: 10px;
     font-size: 16px;
-    color: #2c003e;
+    color: #000000;
 }
 
 .leaderboard-user-val:last-child {

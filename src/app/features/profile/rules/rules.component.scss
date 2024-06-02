@@ -32,6 +32,13 @@ mat-panel-title {
 
 }
 
+mat-expansion-panel {
+    li{
+        margin-left: 2rem ;
+        font-size: small;
+    }
+}
+
 .poll-pic {
     width: 90%; 
     height: 90%;
@@ -56,3 +63,6 @@ mat-panel-title {
     display: block;
   }
   
+.links-to-move {
+    color: #44025e;
+}

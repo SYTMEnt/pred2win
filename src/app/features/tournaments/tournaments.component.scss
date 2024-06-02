@@ -7,10 +7,10 @@
     z-index: -1;
 
     &-list {
-        height: 70vh;
+        height: 60vh;
         width: 70%;
         margin: auto;
-        margin-top: 15vh;
+        margin-top: 20vh;
         overflow-y: scroll;
         -ms-overflow-style: none;
         scrollbar-width: none;
@@ -21,13 +21,34 @@
 
         @media (max-width: 1024px) {
             width: 95%;
-            margin-top: 8vh;
-            height: 85vh;
+            margin-top: 10vh;
+            height: 60vh;
         }
 
         @media screen and (max-height: 600px) {
-            height: 70vh;
-            margin-top: 15vh;
+            height: 50vh;
+            margin-top: 20vh;
         }
     }
+}
+
+.welcome-info {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    padding: 2rem;
+    margin: auto;
+    background-color: white;
+    color:#2c003e;
+    line-height: 1.5;
+    font-size: small;
+    font-family: "Roboto", sans-serif;
+    border-radius: 1rem;
+    filter: drop-shadow(2px 4px 6px black);
+
+    @media screen and (max-height: 600px) {
+           width: 50%;
+
+    }
+
 }

@@ -13,19 +13,21 @@
             </mat-expansion-panel-header>
             <h4>Setup your profile</h4>
             <p>Congratulations! You just registered with SYTM pred2win.</p>
-            <p>Please make a note of the memberId from <a href="../account/account.component.html">Profile>Account</a> section. MemberId is needed for password reset or for extraordinary circumstances.</p>
+            <p>Please make a note of the memberId from <a class="links-to-move">Profile>Account</a> section. MemberId is needed for password reset or in extraordinary circumstances.</p>
             <p>Updating rest of the details on Account section is optional, but recommended for better communication.</p>
-            <p>Also it is recommended to join the <a href ="../../forum/forum.component.html" target="_blank">SYTM Forum</a> to stay connected with other predictors and get important announcements from SYTM Admin.</p>
+            <p>Also it is recommended to join the SYTM <a class="links-to-move">Forum</a> to stay connected with other predictors and get important announcements from SYTM Admin.</p>
+            <h4>Not happy with your avatar?</h4>
+            <p>We know, but that's the best we can offer at the moment. We promise to get you better ones soon!</p>
             <h4>Participate in the Tournament</h4>
             <p>Join the UEFA Euro 2024 tournament and start predicting on the allocated matches.</p>
-            <p>Check your prediction performance on the tournament leaderboard.</p>
+            <p>Check your prediction performance on the tournament <a class="links-to-move">leaderboard</a> (icon on the right side of the tournament).</p>
             <h4>Eligibility for Awards</h4>
-            <p>As soon as you join a tournament, you become eligible for the tournament awards and streaks. These are automatically calculated after each match based on predictions. Check more details below.</p>
+            <p>As soon as you join a tournament, you become eligible for the tournament awards and streaks. These are automatically calculated after each match based on predictions. Get more details below.</p>
             <h4>Prediction on Polls</h4>
             <p>Match-specific polls start 24 hours before the match start time.</p>
-            <p>You can start predicting on tournament polls, which are available even before the tournament begins. If you are join in the middle of a tournament, some of the tournament polls might have been closed already.</p>
+            <p><a>Tournament polls</a> are available even before the tournament starts, and accessible from Awards board. If you joined in the middle of a tournament, some of the tournament polls might have been closed already.</p>
             <p>Ensure you have enough coins in your balance to make any predictions.</p>
-            <h4>But first...</h4>
+            <h4>So first...</h4>
             <p>To get started with your predictions, you need to get verified by the SYTM Admin!</p>
         </mat-expansion-panel>
           <mat-expansion-panel>
@@ -37,9 +39,9 @@
             <h4>Building Trust and Harmony</h4>
             <p>Member Verification is a crucial step to ensure trust and harmony within the SYTM community. It helps to maintain the integrity of the platform and ensures that all members are genuine sports enthusiasts.</p>
             <h4>Current Verification Process</h4>
-            <p>In the current phase, with a limited number of members, verification is conducted by the Admin through a quick background check.
+            <p>In the current phase, with a limited number of members, verification is conducted by SYTM Admin through a quick background check.
                 This phase primarily involves existing members, making the process straightforward and efficient.</p>
-                <p>Please ping on Whatsapp community group or drop a mail to pred2win@gmail.com to get verified.</p>
+                <p>Please join <a class="links-to-move">SYTM forum</a> or drop a mail to <a class="links-to-move">pred2win@gmail.com</a> to get verified.</p>
             <h4>Future Verification Process</h4>
             <p>As the community grows, the verification process may evolve to include the uploading of personal identification documents.
                 This will help maintain high standards of security and trust within an expanding member base.</p>
@@ -59,10 +61,10 @@
                   Coins
                 </mat-panel-title>
               </mat-expansion-panel-header>
-              <p>Member's account is created upon joining pred2win.com. Account is debited with 1000 SYTM coins upon verification.</p>
+              <p>Member's account is created upon joining pred2win.com. In current phase, member's account is debited with 1000 SYTM coins upon verification.</p>
               <p>Coins are required to submit prediction on polls. Rate of each poll is given on the poll section.</p>
-              <p>All coin transaction details are recorded on the <a href="../../transactions/transactions.component.html">Passbook</a> section of Account.</p>
-              <p>Please check more details of SYTM coins on the <a href="../disclaimer/disclaimer.component.html">SYTM Coins</a> section of Account>Disclaimer.</p>
+              <p>All coin transaction details are recorded on the <a class="links-to-move">Profile>Passbook</a> section.</p>
+              <p>Please check more details of SYTM coins on the <a class="links-to-move">SYTM Coins</a> section of Profile>Disclaimer.</p>
             </mat-expansion-panel>
 
           <mat-expansion-panel>
@@ -81,7 +83,7 @@
                 Matches
               </mat-panel-title>
             </mat-expansion-panel-header>
-            <p>The Matches section inside a tournament is divided into four tabs to help you navigate through different stages of match predictions efficiently.</p>
+            <p>The <a class="links-to-move">Matches</a> section inside a tournament is divided into four tabs to help you navigate through different stages of match predictions efficiently.</p>
             <h4>Allocated</h4>
             <p>This tab displays all the matches that have been allocated for predictions.</p>
             <p>Matches are allocated 24 hours before their start time, and moved to ongoing when they start.</p>
@@ -105,7 +107,7 @@
               </mat-panel-title>
             </mat-expansion-panel-header>
             <div class="poll-pic">
-              <img class="poll-pic-img" [src]="'/assets/Poll.png'" alt="poll pic">
+              <img class="poll-pic-img" [src]="'/assets/poll.png'" alt="poll pic">
             </div>
             <br>
             <p>There are 3 types of polls in the current version of pred2win.com</p>
@@ -122,16 +124,20 @@
             <p>These are the blue polls for events at a tournament level.</p>
             <hr>
             <h4>Poll Value</h4>
-            <p>Coins required to predict on the poll (Cost) and coins won if the poll prediction matches with actual match events/result (Win) are indicated on the top section of each poll.</p>
+            <p>Coins required to predict on poll (Cost) and coins won if poll prediction matches with actual match result/events (Win) are indicated at the top section of each poll.</p>
             <p>Coins of Cost value are credited from member's account upon submitting the prediction on the poll.</p>
             <p>Coins of Win value are debited to member's account after the match is calculated, if prediction was right.</p>
-            <p>For tournament polls, these are debited to member's account mostly after the tournament or when the poll is calculated.</p>
-            <p>Poll Value chart for match polls for Euro 2024 is given here. For tournament poll, check each polls before prediction.</p>
+            <p>For tournament polls, coins are debited to the winning members' accounts mostly after the tournament, or when the poll is calculated.</p>
+            <p>As a good practice, please check poll values and features before prediction.</p>
+            <p>Poll Value chart for match polls for Euro 2024 is given here.</p>
             <div class="poll-pic">
               <img class="poll-pic-img" [src]="'/assets/poll-rate.png'" alt="poll-rate pic">
             </div>
             <h4>Poll end time</h4>
             <p>The end time of each poll is indicated at the top left corner of the poll until the poll closes.</p>
+            <h4>Poll Submission</h4>
+            <p>Submit button will appear once an option is selected. Poll submission will credit your account with poll cost value. Also a record will appear on Predbook.</p>
+            <p>Note: On polls where poll feature 'Retractable' is disabled, submission of a poll is an irreversible action.</p>
           </mat-expansion-panel>
       
           <mat-expansion-panel>
@@ -141,20 +147,22 @@
               </mat-panel-title>
             </mat-expansion-panel-header>
             <div class="poll-pic">
-              <img class="poll-pic-img" [src]="'/assets/Poll.png'" alt="poll pic">
+              <img class="poll-pic-img" [src]="'/assets/poll-features.png'" alt="poll pic">
             </div>
             <h4>Poll Features</h4>
             <p>The features of each poll is indicated at the right side.</p>
             <br>
-            <p>Retractable : Ability to retract a submitted poll. When disabled, the retract button will not appear on the poll, after an option is submitted.</p>
-            <p>Show Trend : Ability to view the voting ratio on the poll options even before submitting the prediction.</p>
-            <p>Anonymous : Ability to view list of members on the poll option selected on a poll, if disabled. When enabled, the 'View predictions' feature is not available on the poll.</p>
+            <ul>
+              <li>Retractable : Ability to retract a submitted poll. When disabled, the retract button will not appear on the poll, after an option is submitted.</li>
+              <li>Anonymous : Ability to view list of members on the poll options predicted on a poll, if 'Anonymous' is disabled. When enabled, the 'View predictions' feature is not available on the poll.</li>
+              <li>Show Trend : Ability to view the voting ratio on poll options even before submitting the prediction.</li>
+            </ul>
             <br>
             <p>How does it affect predictions?</p>
             <h4>View Predictions</h4>
             <p>The total count of predictions on a poll is always displayed.</p>
             <p>Additionally, if the poll feature 'Anonymous' is disabled, members can view the predictions and predicted members after submitting prediction on the poll. 'View predictions' link will be available.</p>
-            <p>The ratio of predictions on the poll options are also indicated after submitting prediction on poll. This is called PP - prediction probability. If poll feature 'Show Trend' is enabled, then this is shown even before prediction submission.</p>
+            <p>The ratio of predictions on the poll options are also indicated after submitting prediction on poll. This is called PP - prediction probability. If poll feature 'Show Trend' is enabled, then the ratio is shown even before prediction submission.</p>
             <p></p>
             <h4>Retract Button</h4>
             <p>If poll feature 'Retractable' is enabled, a retract button will appear after a prediction is submitted on a poll. Members can revoke their prediction from such polls. Coins that were credited from member's account get debited back immediately.</p>
@@ -168,7 +176,7 @@
               </mat-panel-title>
             </mat-expansion-panel-header>
             <p>All predictions remain on polls, available to be seen even after matches are calculated.</p>
-            <p>You can also view all your prediction records on match polls in <a href="../../predictions/predictions.component.html" target="="_blank>Account>Predbook.</a></p>
+            <p>You can also view all your prediction records on match polls in <a class="links-to-move">Account>Predbook.</a></p>
             <p>Prediction statistics of other members can be viewed by clicking on their name on leaderboard.</p>
           </mat-expansion-panel>
 
@@ -179,8 +187,17 @@
               </mat-panel-title>
             </mat-expansion-panel-header>
             <p>Match polls are calculated after each match and records are updated on leaderboard, passbook, predbook, awards and streaks dashboard.</p>
-            <p>So if you joined in the middle of the tournament, please wait till the score calculation of the next match to view your name on the leaderbaord.</p>
-            <p>Rank change indicator is based on single match.</p>
+            <p>So if you joined in the middle of a tournament, please wait till the score calculation of the next match to view your name on the leaderbaord.</p>
+            <p>Ranking is done with a sorting of the members based on in order: </p>
+              <ul>
+                <li>Highest correct match outcome predictions</li>
+                <li>Highest prediction accuracy</li>
+                <li>Highest bonus accuracy</li>
+                <li>User Name (A->Z)</li>
+              </ul>
+              <br>
+            <p>Please check the awards section for 'tie at top' situation.</p>
+            <p>Rank change indicator is based on a single match.</p>
           </mat-expansion-panel>
 
           <mat-expansion-panel>
@@ -189,15 +206,17 @@
                 Awards
               </mat-panel-title>
             </mat-expansion-panel-header>
-            <p>For Champion / Dark Knight/ Fighter Awards, the rank 1, 2, 3 of the leaderboard at the end of the tournament are considered. Coins are debited to respective members once leaderboard is locked for the tournament.</p>
-            <p>If total predictions, prediction accuracy and bonus accuracy is exactly same for any of the top three members of the leaderboard, the higher award is given to those members.</p> 
+            <p>Based on the prediction performances, the <a href = "../../awards/awards.component.html">Awards</a> board will display the nominations of each category. Coins are debited to the winning members at the end of the tournament.</p>
+            <h4>Rank Awards</h4>
+            <p>For Champion / Dark Knight/ Fighter Awards, the rank 1, 2, 3 of the leaderboard at the end of the tournament are considered. </p>
+            <p>If total correct predictions, prediction accuracy and bonus accuracy is exactly same for any of the top three members of the leaderboard, the higher award is given to those members.</p> 
             <p>e.g – Member1 finishes at Champion position and Member2 finishes at Dark Knight position, both predicting 51 matches with accuracy n%, and bonus accuracy with m% (does not depend on total bonus predicted), then both Member1 and Member2 win coins allocated for Champion.</p>    
             <p>Award nominees for these will be shown on Awards board, after Match 6.</p>   
-            <br>
-            <p>For Predictor Precise, member should predict atleast 75% of the matches in the tournament. Award nominees will be shown after Match 26 (50% of the tournament matches). Coins are awarded after tournament completion.</p>     
+            <h4>Precise Awards</h4>
+            <p>For Predictor Precise, member should predict atleast 75% of the matches in the tournament. Award nominees will be shown after Match 26 (50% of the tournament matches).</p>     
             <p>In case multiple members are tied for the award, the coins won are split between them.</p>    
-            <br>
-            <p>For Predictor Improbable, only match outcome polls are considered, and not bonus polls. Award nominees are shown from match 2. Coins are awarded after tournament completion.</p>
+            <h4>Improbable Awards</h4>
+            <p>For Predictor Improbable, only match outcome polls are considered, and not bonus polls. Award nominees are shown from match 2.</p>
             <p>In case multiple members are tied for the award, the coins won are split between them.</p>
           </mat-expansion-panel>
 
@@ -208,12 +227,12 @@
                 Streaks
               </mat-panel-title>
             </mat-expansion-panel-header>
-            <p>Coins are debited to member’s account after a match where member has achieved a streak.</p>
+            <p>Based on the prediction performances, the <a href = "../../awards/awards.component.html">Streaks</a> board will display the winners of each category.</p>
+            <p>Coins are debited to member’s account after a match is calculated where member has achieved a streak.</p>
             <p>Streaks for correct match outcome predictions in a row gets reset if a match is unpredicted.</p>
             <p>For Bonus king streak, unpredicted matches are not counted.</p>
           </mat-expansion-panel>
         </mat-accordion>
       </div>
       
-
 </article>

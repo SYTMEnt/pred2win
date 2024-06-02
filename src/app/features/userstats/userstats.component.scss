@@ -27,7 +27,6 @@
 
 }
 
-
 .user-team-image {
   width: 60px;
   height: auto;
@@ -78,6 +77,12 @@
 
 .accuracy-container {
   margin-top: 10px;
+
+  &-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 .streak-details{
