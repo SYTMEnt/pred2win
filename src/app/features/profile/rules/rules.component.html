@@ -1,8 +1,6 @@
 <article class="rules">
     <div class="rules-container">
         <mat-accordion>
-            <p>Make predictions on upcoming matches for Euro 2024 on pred2win.com. Follow the tournament leaderboard to see where you rank among other predictors!</p>
-            <p></p>
             <p>There is a world to discover when you become part of the SYTM prediction community. So keep predicting!</p>
             <br>
             <mat-expansion-panel>
@@ -19,8 +17,8 @@
             <h4>Not happy with your avatar?</h4>
             <p>We know, but that's the best we can offer at the moment. We promise to get you better ones soon!</p>
             <h4>Participate in the Tournament</h4>
-            <p>Join the UEFA Euro 2024 tournament and start predicting on the allocated matches.</p>
-            <p>Check your prediction performance on the tournament <a class="links-to-move">leaderboard</a> (icon on the right side of the tournament).</p>
+            <p>Join the UEFA Euro 2024 tournament and make predictions on upcoming matches for Euro 2024 on pred2win.com.</p>
+            <p>Follow the tournament <a class="links-to-move">leaderboard</a> (icon on the right side of the tournament) to see where you rank among other predictors!</p>
             <h4>Eligibility for Awards</h4>
             <p>As soon as you join a tournament, you become eligible for the tournament awards and streaks. These are automatically calculated after each match based on predictions. Get more details below.</p>
             <h4>Prediction on Polls</h4>
@@ -107,7 +105,7 @@
               </mat-panel-title>
             </mat-expansion-panel-header>
             <div class="poll-pic">
-              <img class="poll-pic-img" [src]="'/assets/poll.png'" alt="poll pic">
+              <img class="poll-pic-img" [src]="'https://sytm-dev.s3.amazonaws.com/rules/poll.png'" alt="poll pic">
             </div>
             <br>
             <p>There are 3 types of polls in the current version of pred2win.com</p>
@@ -123,16 +121,7 @@
             <h4>Tournament Polls</h4>
             <p>These are the blue polls for events at a tournament level.</p>
             <hr>
-            <h4>Poll Value</h4>
-            <p>Coins required to predict on poll (Cost) and coins won if poll prediction matches with actual match result/events (Win) are indicated at the top section of each poll.</p>
-            <p>Coins of Cost value are credited from member's account upon submitting the prediction on the poll.</p>
-            <p>Coins of Win value are debited to member's account after the match is calculated, if prediction was right.</p>
-            <p>For tournament polls, coins are debited to the winning members' accounts mostly after the tournament, or when the poll is calculated.</p>
-            <p>As a good practice, please check poll values and features before prediction.</p>
-            <p>Poll Value chart for match polls for Euro 2024 is given here.</p>
-            <div class="poll-pic">
-              <img class="poll-pic-img" [src]="'/assets/poll-rate.png'" alt="poll-rate pic">
-            </div>
+            <p>As a good practice, always check poll value and features before prediction.</p>
             <h4>Poll end time</h4>
             <p>The end time of each poll is indicated at the top left corner of the poll until the poll closes.</p>
             <h4>Poll Submission</h4>
@@ -143,11 +132,28 @@
           <mat-expansion-panel>
             <mat-expansion-panel-header>
               <mat-panel-title>
+                Poll Value
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>Coins required to predict on poll (Cost) and coins won if poll prediction matches with actual match result/events (Win) are indicated at the top section of each poll.</p>
+            <p>Coins of Cost value are credited from member's account upon submitting the prediction on the poll.</p>
+            <p>Coins of Win value are debited to member's account after the match is calculated, if prediction was right.</p>
+            <p>For tournament polls, coins are debited to the winning members' accounts mostly after the tournament, or when the poll is calculated.</p>
+            
+            <p>Poll Value/Rate chart for match polls for Euro 2024 is given here.</p>
+            <div class="poll-pic">
+              <img class="poll-pic-img" [src]="'https://sytm-dev.s3.amazonaws.com/rules/poll-rate.png'" alt="poll-rate pic">
+            </div>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
                 Poll Features
               </mat-panel-title>
             </mat-expansion-panel-header>
             <div class="poll-pic">
-              <img class="poll-pic-img" [src]="'/assets/poll-features.png'" alt="poll pic">
+              <img class="poll-pic-img" [src]="'https://sytm-dev.s3.amazonaws.com/rules/poll-features.png'" alt="poll pic">
             </div>
             <h4>Poll Features</h4>
             <p>The features of each poll is indicated at the right side.</p>
