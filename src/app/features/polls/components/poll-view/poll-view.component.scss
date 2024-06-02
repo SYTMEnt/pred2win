@@ -75,7 +75,7 @@
             align-items: center;
             justify-content: center;
             gap: 1rem;
-            background: linear-gradient(135deg, #2c003e, #6a0dad);
+            background: rgba(0, 0, 0, 0.8);
             margin-top: 3rem;
             border-left: 1px solid #ffb6c1;
             
@@ -111,19 +111,17 @@
   } 
 
   .matchOutcome {
-    background: linear-gradient(135deg, #f23532, #b91004);
-    filter: drop-shadow(2px 2px 4px rgb(81, 2, 2));
+    background: linear-gradient(135deg,  #b91004, #ffffff);
     border-radius: 8px;
   }
 
   .bonus {
-    background: linear-gradient(135deg, #f4e734, #be9f04);
-    filter: drop-shadow(2px 2px 2px rgb(81, 75, 2));
+    background: linear-gradient(135deg, #be9f04, #ffffff);
     border-radius: 8px;
   }
 
   .tournament {
-    background: linear-gradient(135deg, #3560eb, #020f86);
-    filter: drop-shadow(2px 2px 4px rgb(2, 3, 81));
+    background: linear-gradient(135deg, #020f86, #ffffff);
+
     border-radius: 8px;
   }
