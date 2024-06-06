@@ -3,7 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { map } from 'rxjs/operators';
 import { AuthStoreService } from '../../../../store/auth/auth-store.service';
 import { Signup } from '../../../../store/auth/types';
-import { passwordValidator } from '../../../../shared/services/password-validator.service'
+import { passwordValidator, passwordMatchValidator } from '../../../../shared/services/password-validator.service'
 
 @Component({
   selector: 'app-signup',
@@ -14,15 +14,18 @@ export class SignupComponent {
     form = this.fb.group({
         displayName: ['', [Validators.required, Validators.minLength(3)]],
         email: ['', [Validators.required, Validators.email]],
-        password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(16), passwordValidator]]
-    })
+        password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(16), passwordValidator]],
+        confirmPassword: ['', [Validators.required]]
+    }, { validators: passwordMatchValidator('password', 'confirmPassword') })
     hidePassword = true;
+    hideConfirmPassword = true;
 
     isAuthLoading$ = this.authStoreService.userProfileActions$.pipe(
         map(data => data.processing)
     )
 
-  constructor(private fb: FormBuilder, private authStoreService: AuthStoreService) {}
+  constructor(private fb: FormBuilder, private authStoreService: AuthStoreService) {
+  }
 
     onSubmit() {
         if(this.form.valid) {

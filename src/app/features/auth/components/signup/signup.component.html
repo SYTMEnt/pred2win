@@ -19,6 +19,14 @@
             </button>
             <mat-error *ngIf="getFormControlErrors('password')">{{getFormControlErrors('password')}}</mat-error>
         </mat-form-field>
+        <mat-form-field>
+            <mat-label>Confirm Password</mat-label>
+            <input formControlName="confirmPassword" [type]="hideConfirmPassword ? 'password' : 'text'" matInput placeholder="Confirm Password">
+            <button mat-icon-button matSuffix (click)="hideConfirmPassword = !hideConfirmPassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideConfirmPassword">
+                <mat-icon>{{hideConfirmPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <mat-error *ngIf="form.errors && form.errors['passwordsMismatch'] && (form.get('confirmPassword')?.dirty || form.get('confirmPassword')?.touched)">Passwords don't match.</mat-error>
         <div class="signup-actions">
             <button class="signup-form-submit" color="primary" type="submit" (click)="onSubmit()" [class.button-spinner]="isAuthLoading$ | async" mat-raised-button>
                 Submit 
