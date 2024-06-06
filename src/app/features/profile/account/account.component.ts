@@ -3,18 +3,21 @@ import { FormBuilder } from '@angular/forms';
 import { take } from 'rxjs';
 import { AuthStoreService } from '../../../store/auth/auth-store.service';
 import { User } from '../../../store/auth/types';
+import { AccountService } from './account.service';
 
 @Component({
   selector: 'app-account',
   templateUrl: './account.component.html',
-  styleUrls: ['./account.component.scss']
+  styleUrls: ['./account.component.scss'],
+  providers: [AccountService]
 })
 export class AccountComponent implements OnInit {
 
     currentUserData?: User
 
-    constructor(private fb: FormBuilder, private authStoreService: AuthStoreService) {
+    constructor(private fb: FormBuilder, private authStoreService: AuthStoreService, private accountService: AccountService) {
         this.form.controls.memberId.disable()
+        this.form.controls.displayName.disable()
     }
 
     form = this.fb.group({
@@ -54,9 +57,11 @@ export class AccountComponent implements OnInit {
             this.currentUserData?.mobile === this.form.value.mobile &&
             this.currentUserData?.location === this.form.value.location
         ) {
-            alert("Not Edited")
+            alert('Form not updated')
         } else {
-            alert("Edited")
+            this.accountService.updateAccount(this.currentUserData!!).subscribe(() => {
+                alert('Updated successfully')
+            })
         }
     }
 }
