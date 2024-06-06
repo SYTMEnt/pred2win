@@ -19,7 +19,7 @@ export class MatchesEffects {
                     return matchesActions.matchesSuccess({matches})
                 }),
                 catchError((httpError: HttpErrorResponse) => {
-                    this.notifactionService.notify(httpError.message)
+                    this.notifactionService.notify(httpError.error.message || httpError.message)
                     return of(matchesActions.matchesError({httpError}))}
                 )
             )

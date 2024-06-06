@@ -25,7 +25,7 @@ export class TournamentsEffects {
                     return tournamentActons.tournamentsSuccess({tournaments})
                 }),
                 catchError((httpError: HttpErrorResponse) => {
-                    this.notificationService.notify(httpError.message)
+                    this.notificationService.notify(httpError.error.message || httpError.message)
                     return of(tournamentActons.tournamentsError({httpError}))
                 })
             )
@@ -46,7 +46,7 @@ export class TournamentsEffects {
                     return tournamentActons.joinSuccess({tournamentId: params.tournamentId});
                 }),
                 catchError((httpError: HttpErrorResponse) => {
-                    this.notificationService.notify(httpError.message)
+                    this.notificationService.notify(httpError.error.message || httpError.message)
                     return of(tournamentActons.joinError({httpError}))
                 })
             )

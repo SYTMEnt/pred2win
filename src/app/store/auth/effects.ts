@@ -26,7 +26,7 @@ export class AuthEffects {
                     return authActions.signupSuccess()
                 }),
                 catchError((httpError: HttpErrorResponse) => {
-                    this.notificationService.notify(httpError.message)
+                    this.notificationService.notify(httpError.error.message || httpError.message)
                     return of(authActions.signupHttpError({httpError}))
                 })
             )
@@ -46,7 +46,7 @@ export class AuthEffects {
                     return authActions.loginSuccess()
                 }),
                 catchError((httpError: HttpErrorResponse) => {
-                    this.notificationService.notify(httpError.message)
+                    this.notificationService.notify(httpError.error.message || httpError.message)
                     return of(authActions.loginHttpError({httpError}))
                 })
             )
@@ -66,7 +66,7 @@ export class AuthEffects {
                     return authActions.passwordSuccess()
                 }),
                 catchError((httpError: HttpErrorResponse) => {
-                    this.notificationService.notify(httpError.message)
+                    this.notificationService.notify(httpError.error.message || httpError.message)
                     return of(authActions.passwordHttpError({httpError}))
                 })
             )
@@ -81,7 +81,7 @@ export class AuthEffects {
                     return authActions.getUserSuccess(user)
                 }),
                 catchError((httpError: HttpErrorResponse) => {
-                    this.notificationService.notify(httpError.message)
+                    this.notificationService.notify(httpError.error.message || httpError.message)
                     return of(authActions.getUserError({httpError}))
                 })
             )
@@ -97,7 +97,7 @@ export class AuthEffects {
                     return authActions.reset()
                 }),
                 catchError((httpError) => {
-                    this.notificationService.notify(httpError.message)
+                    this.notificationService.notify(httpError.error.message || httpError.message)
                     return of(authActions.reset())
                 })
             )

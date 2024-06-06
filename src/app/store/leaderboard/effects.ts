@@ -19,7 +19,7 @@ export class LeaderboardEffects {
                     return leaderboardActions.leaderboardSuccess({leaderboard})
                 }),
                 catchError((httpError: HttpErrorResponse) => {
-                    this.notificationService.notify(httpError.message)
+                    this.notificationService.notify(httpError.error.message || httpError.message)
                     return of(leaderboardActions.leaderboardError({httpError}))}
                 )
             )
