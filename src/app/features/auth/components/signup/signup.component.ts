@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
-import { map } from 'rxjs/operators';
+import { AbstractControl, AsyncValidatorFn, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { catchError, debounceTime, distinctUntilChanged, map, switchMap } from 'rxjs/operators';
 import { AuthStoreService } from '../../../../store/auth/auth-store.service';
 import { Signup } from '../../../../store/auth/types';
 import { passwordValidator, passwordMatchValidator } from '../../../../shared/services/password-validator.service'
+import { EMPTY, Observable, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -24,12 +27,30 @@ export class SignupComponent {
         map(data => data.processing)
     )
 
-  constructor(private fb: FormBuilder, private authStoreService: AuthStoreService) {
-  }
+    constructor(private fb: FormBuilder, private authStoreService: AuthStoreService, private authService: AuthService) {
+        this.form.get('displayName')?.valueChanges.pipe(
+            debounceTime(500),
+            distinctUntilChanged(),
+            switchMap(value => {
+                if(value) {
+                    return this.authService.checkDisplayName(value)
+                } else {
+                    return EMPTY
+                }
+            })
+          ).subscribe(data => {
+            const displayNameControl = this.form.get('displayName');
+            if (data.userNameExist) {
+              displayNameControl?.setErrors({ displayNameTaken: true });
+            } else {
+              displayNameControl?.setErrors(null);
+            }
+          });
+    }
 
     onSubmit() {
         if(this.form.valid) {
-        this.authStoreService.signup(this.form.value as Signup)
+            this.authStoreService.signup(this.form.value as Signup)
         }
     }
 
@@ -48,9 +69,11 @@ export class SignupComponent {
                 return 'A lower case, an upper case, a number and any alphanumeric char from [!,@,#,$] is required.'
             } else if(errors['email']) {
                 return 'The email is invalid.'
+            } else if(errors['displayNameTaken']) {
+                return 'This username is already taken.'
             }
         }
         return ''
     }
-  
+
 }

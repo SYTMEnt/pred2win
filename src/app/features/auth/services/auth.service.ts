@@ -29,4 +29,8 @@ export class AuthService {
     password(user: Password): Observable<User> {
         return this.http.post<User>(`/user/changePassword`, user)
     }
+
+    checkDisplayName(displayName: string): Observable<{userNameExist: boolean, message: string}> {
+        return this.http.get<{userNameExist: boolean, message: string}>('/checkDisplayName', {params: {displayName}})
+    }
 }
