@@ -25,13 +25,14 @@ import { MatTabsModule } from "@angular/material/tabs";
 export class NavTopComponent implements OnInit {
     @Input() show = false;
     @Input() links: string[] = []
+    @Input() active = ''
 
     @Output() clicked = new EventEmitter<string>()
 
     activeLink = ''
     
     ngOnInit() {
-        this.activeLink = this.links[0];
+        this.activeLink = this.active || this.links[0];
     }
 
     onClick(link: string) {
