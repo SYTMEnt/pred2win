@@ -13,7 +13,7 @@ import { TournamentJoinParams, TournamentStatus } from './services/tournaments.s
   styleUrls: ['./tournaments.component.scss']
 })
 export class TournamentsComponent implements OnInit, OnDestroy {
-
+    showTutorialVideo = false
     loggedInUser!: User;
     filters = ['tournaments', 'trivia', 'history'];
     destroy$ = new Subject<boolean>();

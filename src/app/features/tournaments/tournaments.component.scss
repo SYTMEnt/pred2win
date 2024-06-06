@@ -32,6 +32,25 @@
     }
 }
 
+.youtube-player-container {
+    display: flex;
+    background-color: #a766f6bf;
+    height: 100vh;
+    justify-content: center;
+
+    & > * {
+        margin-top: 10%;
+        z-index: 2;
+        opacity: 1;
+    }
+}
+
+.video-button {
+    text-decoration: underline;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 .welcome-info {
     display: flex;
     flex-direction: column;
