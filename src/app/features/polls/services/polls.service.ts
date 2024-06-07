@@ -26,6 +26,14 @@ export class PollsService {
         return this.http.get<PollList>(`/gui/polls`, {params});
     }
 
+    tpolls(tournamentId: string, userId: string, pollType?:string ): Observable<PollList>{
+        let params = new HttpParams().set('tournamentId', tournamentId).set('userId', userId);
+        if(pollType) {
+            params = params.set('pollType', pollType)
+        }
+        return this.http.get<PollList>(`/gui/polls`, {params});
+    }
+
     poll(pollId: string, userId: string): Observable<Poll> {
         const params = new HttpParams()
             .set('pollId', pollId)

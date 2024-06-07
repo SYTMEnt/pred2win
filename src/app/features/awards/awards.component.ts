@@ -11,14 +11,15 @@ import { AwardsMaterialModule } from './awards-material.module';
   styleUrls: ['./awards.component.scss']
 })
 export class AwardsComponent implements OnInit {
-    filters = ['awards', 'streaks', 'boosters'];
+    filters = ['awards', 'streaks', 'tpolls'];
     selectedCategory: string = 'awards';
     tournamentId = 'focomeeuro24';
+    pollType='tournament';
     awardDetails: any;
     loading = false;
     error: string | undefined;
 
-    constructor(private awardsService: AwardsService) {}
+    constructor(private awardsService: AwardsService,private router: Router) {}
 
     ngOnInit(): void {
       this.fetchAwards();
@@ -26,8 +27,13 @@ export class AwardsComponent implements OnInit {
 
     onFilterSelect(category: string) {
       this.selectedCategory = category;
-      this.fetchAwards();
-  }
+      if (category === 'tpolls') {
+        this.router.navigate(['polls', { tournamentId: this.tournamentId, pollType : this.pollType }]);
+      } else {
+        this.fetchAwards();
+      }
+    }
+
 
   fetchAwards() {
 

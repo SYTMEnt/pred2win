@@ -7,6 +7,10 @@ export const polls = createAction('[Polls] Get', props<{matchId: string, userId:
 export const pollsSuccess = createAction('[Polls] Get Success', props<{ polls: PollList }>())
 export const pollsError = createAction('[Polls] Get Error', props<{httpError: HttpErrorResponse}>())
 
+export const tpolls = createAction('[Polls] Get', props<{tournamentId: string, userId: string, pollType?: string}>())
+export const tpollsSuccess = createAction('[Polls] Get Success', props<{ polls: PollList }>())
+export const tpollsError = createAction('[Polls] Get Error', props<{httpError: HttpErrorResponse}>())
+
 export const poll = createAction('[Polls] Get by Id', props<{pollId: string, userId: string}>())
 export const pollSuccess = createAction('[Polls] Get by Id Success', props<{pollId: string, poll: Poll}>())
 export const pollError = createAction('[Polls] Get by Id Error', props<{pollId: string, httpError: HttpErrorResponse}>())

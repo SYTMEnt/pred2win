@@ -50,18 +50,31 @@ export class AccountComponent implements OnInit {
     }
 
     onSubmit() {
-        if(
-            this.currentUserData?.displayName === this.form.value.displayName &&
-            this.currentUserData?.email === this.form.value.email &&
-            this.currentUserData?.name === this.form.value.name &&
-            this.currentUserData?.mobile === this.form.value.mobile &&
-            this.currentUserData?.location === this.form.value.location
-        ) {
-            alert('Form not updated')
-        } else {
-            this.accountService.updateAccount(this.currentUserData!!).subscribe(() => {
-                alert('Updated successfully')
-            })
+        const updatedData: any = {
+            memberId: this.currentUserData?.memberId 
+        };
+    
+        if (this.currentUserData?.email !== this.form.value.email) {
+            updatedData.email = this.form.value.email;
         }
+        if (this.currentUserData?.name !== this.form.value.name) {
+            updatedData.name = this.form.value.name;
+        }
+        if (this.currentUserData?.mobile !== this.form.value.mobile) {
+            updatedData.mobile = this.form.value.mobile;
+        }
+        if (this.currentUserData?.location !== this.form.value.location) {
+            updatedData.location = this.form.value.location;
+        }
+    
+        if (Object.keys(updatedData).length === 1) {
+            alert('No changes made');
+            return;
+        }
+    
+        this.accountService.updateAccount(updatedData).subscribe(() => {
+            alert('Updated successfully');
+        });
     }
+    
 }

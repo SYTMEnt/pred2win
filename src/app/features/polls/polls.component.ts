@@ -16,6 +16,8 @@ import { combineLatest } from "rxjs";
 export class PollsComponent {
 
     matchId: string = '';
+    tournamentId: string = '';
+    pollType: string = '';
 
     constructor(
         private route: ActivatedRoute, 
@@ -30,12 +32,17 @@ export class PollsComponent {
         ).pipe(
             take(1),
         ).subscribe(([param, user]) => {
-            if(!param.has("matchId")) {
-                this.router.navigate(['tournaments'])
+            const userId = user?.memberId as string;
+
+            if (param.has("matchId")) {
+              this.matchId = param.get("matchId") as string;
+              this.pollStoreService.polls(this.matchId, userId);
+            } else if (param.has("tournamentId")) {
+              this.tournamentId = param.get("tournamentId") as string;
+              this.pollType = param.get("pollType") as string;
+              this.pollStoreService.tpolls(this.tournamentId, userId, this.pollType);
             } else {
-                this.matchId = param.get("matchId") as string;
-                const userId = user?.memberId as string;
-                this.pollStoreService.polls(this.matchId, userId);
+              this.router.navigate(['tournaments']);
             }
         })
     }

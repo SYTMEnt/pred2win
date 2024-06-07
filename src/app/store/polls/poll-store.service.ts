@@ -17,6 +17,10 @@ export class PollStoreService {
         this.store$.dispatch(pollsActions.polls({matchId, userId, pollType}))
     }
 
+    tpolls(tournamentId: string, userId: string, pollType?:string){
+        this.store$.dispatch(pollsActions.tpolls({tournamentId, userId, pollType}))
+    }
+
     poll(pollId: string, userId: string) {
         this.store$.dispatch(pollsActions.poll({pollId, userId}))
     }

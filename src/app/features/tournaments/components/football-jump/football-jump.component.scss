@@ -35,29 +35,36 @@
     font-weight: bold;
     cursor: pointer;
 }
-  
+
 @keyframes jump {
   0% {
     transform: translate(0, 0);
   }
-  20% {
-    transform: translate(calc(100% / 3), -150px);
+  12.5% {
+    transform: translate(calc(100% / 4), -150px);
   }
-  40% {
-    transform: translate(calc(200% / 3), 0);
+  25% {
+    transform: translate(calc(200% / 4), 0);
   }
-  60% {
-    transform: translate(calc(300% / 3), -100px);
+  37.5% {
+    transform: translate(calc(300% / 4), -120px);
   }
-  80% {
-    transform: translate(calc(400% / 3), 0);
+  50% {
+    transform: translate(calc(400% / 4), 0);
+  }
+  62.5% {
+    transform: translate(calc(500% / 4), -90px);
+  }
+  75% {
+    transform: translate(calc(600% / 4), 0);
+  }
+  87.5% {
+    transform: translate(calc(700% / 4), -60px);
   }
   100% {
-    transform: translate(calc(500% / 3), -50px);
-  }
-  120% {
-    transform: translate(calc(600% / 3), 0);
+    transform: translate(calc(800% / 4), 0) scale(0);
   }
 }
+
 
 

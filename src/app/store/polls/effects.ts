@@ -27,6 +27,21 @@ export class PollsEffects {
         })
     ))
 
+    tpolls$ = createEffect(() => this.actions$.pipe(
+        ofType(pollActions.tpolls),
+        switchMap((action) => {
+            return this.pollsService.tpolls(action.tournamentId, action.userId, action.pollType).pipe(
+                map((polls) => {
+                    return pollActions.tpollsSuccess({polls})
+                }),
+                catchError((httpError: HttpErrorResponse) => { 
+                    this.notificationService.notify(httpError.error.message || httpError.message)
+                    return of(pollActions.tpollsError({httpError}))
+                })
+            )
+        })
+    ))
+
     pollsSubmit$ = createEffect(() => this.actions$.pipe(
         ofType(pollActions.pollSubmit),
         switchMap((action) => {

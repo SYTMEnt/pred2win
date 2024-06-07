@@ -14,6 +14,7 @@ export interface Poll {
     pollQuestion: PollQuestion,
     pollOptions: PollOption[];
     matchId: string;
+    tournamentId: string;
     status: string;
     winningOption: {
         key: string;
