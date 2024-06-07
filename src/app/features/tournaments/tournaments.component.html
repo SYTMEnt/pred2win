@@ -1,6 +1,6 @@
 <nav-top [links]="filters" [show]="true" (clicked)="onFilterSelect($event)"></nav-top>
 <div class="youtube-player-container" *ngIf="showTutorialVideo">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/e2LqOEyl0P8?autoplay=1;si=0UIRKMSdeXAi0YcF&amp;start=3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/bYpEcnqSerU?si=mlbp5X6PdoGXFTMl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     <button mat-icon-button (click)="showTutorialVideo=false" matTooltip="Basic" aria-label="Close video player">
         <mat-icon color="accent">close</mat-icon>
       </button>
@@ -21,8 +21,12 @@
     </section>
     <router-outlet></router-outlet>
     <article class="welcome-info">
-        <h4>New to pred2win.com?</h4>
-        <p>It's easy! <a class="video-button" (click)="showTutorialVideo = true">Click me to see a walkthrough video</a>, or please check out the Rules from the Profile section and you can join the Forum from below.</p>
+        <section class = welcome-info-video>
+            <p>Watch this <a class="video-button" (click)="showTutorialVideo = true"><img class="youtube-icon" [src]="'assets/youtube.png'" alt="yt"></a> to get started!</p>
+        </section>
+        <section>
+            <app-football-jump></app-football-jump>
+        </section>
     </article>
 </div>
 

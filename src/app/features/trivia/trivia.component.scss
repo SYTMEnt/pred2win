@@ -2,14 +2,12 @@
     margin: 0 auto;
     background: linear-gradient(135deg, #2c003e, #6a0dad);
     display: flex;
-    align-items: flex-start;
-    padding-top: 80px;
     min-height: 100vh;
 }
 
 .card-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     flex-direction: column;
@@ -36,7 +34,7 @@
 
 .trivia-category p {
     font-family: 'Roboto', sans-serif;
-    font-size: 12px;
+    font-size: small;
     text-shadow: #333;
     font-style: italic;
     color: white; 
@@ -49,7 +47,7 @@
 
 .card-header {
     font-family: 'Roboto', sans-serif; 
-    font-size: 18px; 
+    font-size: medium; 
     color: #44025e;
     padding: 20px;
     text-align: left;
@@ -58,7 +56,7 @@
 
 .trivia-card-body {
     font-family: 'Lato', sans-serif;
-    font-size: 16px;
+    font-size: medium;
     color: black;
     padding: 10px;
     text-align: center;

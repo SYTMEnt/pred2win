@@ -10,11 +10,13 @@ import { TournamentsEffects } from "../../store/tournaments/effects";
 import { reducer as tournamentReducer} from "../../store/tournaments/reducer"
 import { TournamentStoreService } from "../../store/tournaments/tournament-store.service";
 import { NavTopComponent } from "../../shared/components/nav-top/nav-top.component";
+import { FootballJumpComponent} from "./components/football-jump/football-jump.component";
 
 @NgModule({
     declarations: [    
         TournamentsComponent,
         TournamentListCardComponent,
+        FootballJumpComponent,
     ],
     imports: [
         CommonModule,

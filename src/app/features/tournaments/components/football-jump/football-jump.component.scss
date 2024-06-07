@@ -1,0 +1,63 @@
+.container {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 12 rem;
+    padding: 3 rem;
+  }
+  
+  .words {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .word {
+    font-size: small;
+    position: relative;
+    margin: 3 rem;
+  }
+  
+  .football {
+    position: absolute;
+    top: 0;
+    left : 0;
+    animation: jump 6s ease-in-out infinite;
+  }
+  
+  .football img {
+    width: 50px;
+  }
+
+  .video-button {
+    text-decoration: underline;
+    font-weight: bold;
+    cursor: pointer;
+}
+  
+@keyframes jump {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(calc(100% / 3), -150px);
+  }
+  40% {
+    transform: translate(calc(200% / 3), 0);
+  }
+  60% {
+    transform: translate(calc(300% / 3), -100px);
+  }
+  80% {
+    transform: translate(calc(400% / 3), 0);
+  }
+  100% {
+    transform: translate(calc(500% / 3), -50px);
+  }
+  120% {
+    transform: translate(calc(600% / 3), 0);
+  }
+}
+
+
