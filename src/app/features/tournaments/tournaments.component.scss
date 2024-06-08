@@ -65,7 +65,7 @@
 .welcome-info {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 40%;
     padding: 2rem;
     margin: auto;
     background-color: white;
@@ -76,10 +76,10 @@
     border-radius: 1rem;
     filter: drop-shadow(2px 4px 6px black);
 
-    @media screen and (max-height: 600px) {
-           width: 60%;
-
+    @media screen and (max-width: 600px) {
+        width: 60%;
     }
+
 
     &-video{
         display: flex;

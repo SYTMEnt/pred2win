@@ -57,10 +57,10 @@
 .stat-detail {
   display: flex;
   flex-direction: column;
-  margin: 10px;
+  margin: 1rem;
   border: 1px solid #ffb6c1;
   border-radius: 10px;
-  padding: 10px;
+  padding: 1rem;
   text-align: center;
 }
 
@@ -71,43 +71,81 @@
 }
 
 .stat-detail h2 {
-  margin-top: 5px;
+
   font-family: "Roboto", sans-serif;
   font-size: medium;
 }
 
 .accuracy-container {
-  margin-top: 10px;
+  margin-top: 1rem;
 
   &-top {
     display: flex;
+    margin-top: 1rem;
     flex-direction: row;
     justify-content: space-between;
   }
 }
 
+.team-info, .coin-info {
+  flex: 1; 
+  margin: 0 10px; 
+}
+
+.no-image-container {
+  white-space: nowrap; 
+  width: 50%; 
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+
+  & > p {
+    font-size: small;
+  }
+}
+
+.no-image-container .message {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  font-size: small;
+  color: #44025e;
+  cursor: pointer;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.no-image-container .message:hover {
+  color: #fff; 
+  background-color: #0d8602; 
+  border-radius: 4px; 
+  padding: 2px 5px; 
+}
+
+.coin-info .team-container {
+  display: flex; 
+  align-items: center; 
+}
+
 .streak-details{
   display: flex;
   flex-direction: column;
-  margin: 10px;
+  margin: 1rem;
   border: 1px solid #ffb6c1;
   border-radius: 10px;
-  padding: 10px;
+  padding: 1rem;
   text-align: center;
 }
 
 
 .team-container {
-  margin-top: 10px;
+  width: auto;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
 
-.team-container p {
-  margin-left: 10px;
-  font-family: "Roboto", sans-serif;
+  & > p {
+    margin-left: 1rem;
+    font-family: "Roboto", sans-serif;
+  }
 }
 
 

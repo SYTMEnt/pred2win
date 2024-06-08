@@ -20,8 +20,8 @@
     background: linear-gradient(135deg, #ffffff, #f5eb98); 
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    padding: 20px;
+    margin: 1rem;
+    padding: 2rem;
     width: 100%;
 }
 
@@ -31,6 +31,7 @@
     padding: 10px;
     text-align: left;
     font-family: 'Roboto', sans-serif; 
+    font-size: medium;
 }
 
 .horizontal-line {
@@ -49,7 +50,8 @@
 .runner-up-details {
     display: flex; 
     flex-direction: column;
-    margin: 10px;
+    margin: 1rem;
+    font-size: medium;
     align-items: center;
     flex: 1;
 }

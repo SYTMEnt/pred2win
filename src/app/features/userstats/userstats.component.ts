@@ -1,5 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { map, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
@@ -12,6 +12,7 @@ import { UserstatService } from './services/userstatservices';
 })
 export class UserstatsComponent implements OnDestroy {
     tournamentId = 'focomeeuro24';
+    pollType = 'tournament'
     userStats: any;
     loading = false;
     error: string | undefined;
@@ -21,7 +22,8 @@ export class UserstatsComponent implements OnDestroy {
     constructor(
         private userstatService: UserstatService,
         private route: ActivatedRoute,
-        private location: Location
+        private location: Location,
+        private router: Router
     ) {
         this.route.params.pipe(
             map(params => params['userId']),
@@ -50,6 +52,10 @@ export class UserstatsComponent implements OnDestroy {
                     this.loading = false;
                 }
             );
+    }
+
+    openTPoll(): void {
+        this.router.navigate(['polls', { tournamentId: this.tournamentId, pollType: this.pollType }]);
     }
 
     ngOnDestroy(): void {

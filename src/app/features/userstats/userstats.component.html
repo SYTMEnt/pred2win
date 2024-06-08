@@ -34,30 +34,41 @@
           </div>
           <hr class="horizontal-line">
           <div class="accuracy-container-top">
-            <div class = "team-info">
-              <div class ="stat-header">
+            <div class="team-info">
+              <div class="stat-header">
                 <h4>Supporting</h4>
               </div>
-              <div class ="user-stat">
-                <div class = "team-container">
-                  <div>
-                    <img [src]="userStats.favoriteTeam.teamFlag"  alt="team"  class="user-team-image">
+              <div class="user-stat">
+                <div class="team-container">
+                  <div *ngIf="userStats.favoriteTeam.teamFlag; else noImage">
+                    <div class="image-container">
+                      <img [src]="userStats.favoriteTeam.teamFlag" alt="team" class="user-team-image">
+                    </div>
+                    <p>{{ userStats.favoriteTeam.teamName }}</p>
                   </div>
-                  <p>{{ userStats.favoriteTeam.teamName}}</p>
+                  <ng-template #noImage>
+                    <div class="no-image-container">
+                      <p>No team yet!</p>
+                      <br>
+                      <a (click)="openTPoll()"><p class="message">Support my team</p></a>
+                    </div>
+                  </ng-template>
                 </div>
               </div>
             </div>
-            <div class = "coin-info">
-              <div class ="stat-header">
+            <div class="coin-info">
+              <div class="stat-header">
                 <h4>Balance</h4>
               </div>
-              <div class ="user-stat">
-                <div class = "team-container">
-                  <p>{{ userStats.coinsEarned.total}}</p><img [src]="userStats.coinsEarned.icon"  alt="team"  class="coin-image">
+              <div class="user-stat">
+                <div class="team-container">
+                  <p>{{ userStats.coinsEarned.total }}</p>
+                  <img [src]="userStats.coinsEarned.icon" alt="team" class="coin-image">
                 </div>
               </div>
             </div>
           </div>
+          
         </div>
         <div class="user-stats-detail">
             <div class ="stat-header">
