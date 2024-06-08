@@ -11,7 +11,7 @@ import { AwardsMaterialModule } from './awards-material.module';
   styleUrls: ['./awards.component.scss']
 })
 export class AwardsComponent implements OnInit {
-    filters = ['awards', 'streaks', 'tpolls'];
+    filters = ['awards', 'streaks', 't Polls'];
     selectedCategory: string = 'awards';
     tournamentId = 'focomeeuro24';
     pollType='tournament';
@@ -27,7 +27,7 @@ export class AwardsComponent implements OnInit {
 
     onFilterSelect(category: string) {
       this.selectedCategory = category;
-      if (category === 'tpolls') {
+      if (category === 't Polls') {
         this.router.navigate(['polls', { tournamentId: this.tournamentId, pollType : this.pollType }]);
       } else {
         this.fetchAwards();

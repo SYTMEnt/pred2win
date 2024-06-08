@@ -1,8 +1,17 @@
 <div class="leaderboard">
     <ng-container *ngIf="leaderboard$ | async as leaderboard">
-        <div class="leaderboard-body">
+        <div class="leaderboard-body" *ngIf = "leaderboard.length; else emptyTpl ">
             <app-leaderboard-user *ngFor="let user of leaderboard" [user]="user"></app-leaderboard-user>
         </div>
     </ng-container>
     <router-outlet></router-outlet>
 </div>
+<ng-template #emptyTpl>
+    <div class="empty-data">
+        <img class="ball" src="assets/ball.png" alt="">
+        <div class="ball-shadow"></div>
+        <h1 class="empty-data-header">
+            No one joined yet !
+        </h1>
+    </div>
+</ng-template>

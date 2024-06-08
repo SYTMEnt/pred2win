@@ -5,7 +5,7 @@
         'bonus': __poll.pollType === 'bonus', 
         'tournament': __poll.pollType === 'tournament'
       }">
-        <div class="poll-info poll-info--left" *ngIf="__poll.status === 'active'">
+        <div class="poll-info poll-info--left" *ngIf="__poll.status === 'active' && __poll.pollType !== 'tournament'">
             <span class="poll-info-time">{{__poll.pollEndTime| date: 'HH:mm' }}</span>
         </div>
         <div class="poll-info poll-info--right">

@@ -50,6 +50,52 @@ const pollsReducer = createReducer(
             }
         }
     })),
+    on(pollActions.tpolls, (currentState, actionData) => ({
+        ...currentState,
+        polls: {
+          data: undefined,
+          actions: {
+            processing: true,
+            success: false,
+            httpError: undefined
+          }
+        }
+      })),
+    on(pollActions.tpollsSuccess, (currentState, actionsData) => ({
+    ...currentState,
+        polls: {
+            data: actionsData.polls.reduce((accumulator, currentPoll) => {
+                accumulator = {
+                    ...accumulator, 
+                    [currentPoll.pollId]: {
+                        data: currentPoll,
+                        actions: {
+                            processing: false,
+                            success: false,
+                            httpError: undefined
+                        }
+                    }
+                }
+            return accumulator;
+            }, {}),
+            actions: {
+            processing: false,
+            httpError: undefined,
+            success: true
+            }
+        }
+        })),
+      on(pollActions.tpollsError, (currentState, { httpError }) => ({
+        ...currentState,
+        polls: {
+          data: undefined,
+          actions: {
+            processing: false,
+            success: false,
+            httpError
+          }
+        }
+      })),
     on(pollActions.poll, (currentState, { pollId }) => ({
         ...currentState,
         polls: {
