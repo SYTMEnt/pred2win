@@ -9,6 +9,7 @@
   flex-direction: row;
   flex-wrap: wrap; 
   justify-content: center;
+
 }
 
 .award-cards {
@@ -58,6 +59,14 @@
   font-family: "Roboto", sans-serif;
   color: black;
   font-size: small;
+}
+
+.match-details {
+  margin-bottom: 10px;
+  font-family: "Roboto", sans-serif;
+  color: #44025e;
+  font-size: small;
+  text-align: center;
 }
 
 

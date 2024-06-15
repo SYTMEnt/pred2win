@@ -5,9 +5,11 @@
         'bonus': __poll.pollType === 'bonus', 
         'tournament': __poll.pollType === 'tournament'
       }">
-        <div class="poll-info poll-info--left" *ngIf="__poll.status === 'active' && __poll.pollType !== 'tournament'">
+<!--
+         <div class="poll-info poll-info--left" *ngIf="__poll.status === 'active' && __poll.pollType !== 'tournament'">
             <span class="poll-info-time">{{__poll.pollEndTime| date: 'HH:mm' }}</span>
         </div>
+-->    
         <div class="poll-info poll-info--right">
             <div class="poll-info-container">Cost: <span class="poll-info-text">{{__poll.pollInputCoin}} <img class="coin-pic" [src]="'assets/sytmcoin.png'" alt="coin"></span></div>
             <div class="poll-info-container">Win: <span class="poll-info-text">{{__poll.pollOutputCoin}} <img class="coin-pic" [src]="'assets/sytmcoin.png'" alt="coin"></span></div>

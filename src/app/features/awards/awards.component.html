@@ -30,6 +30,10 @@
                 </div>
               </div>
             </div>
+            <hr>
+            <div class="match-details" *ngIf="award.id==='award007'">
+              <p>{{award.winnerChars.value}} in Match {{ award.winnerChars.matchNo }}</p>
+            </div>
           </div>
       </div>
     </div>
