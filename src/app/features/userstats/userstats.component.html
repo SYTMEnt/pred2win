@@ -160,12 +160,12 @@
                     <p>Highest Streak : {{ userStats.highestStreak }}</p>
                   <hr class="horizontal-line">
                   <div *ngFor="let streak of userStats.streaksWon" class = "stat-detail">
-                    <span>
+                    <div *ngIf="streak.category">
                       <p>{{ streak.category }} ({{ streak.count }})</p>
                       <hr class="horizontal-line">
                       <p>Match No: {{ streak.matchNo }}</p>
                       <p>{{ streak.date | date: 'mediumDate' }}</p>
-                    </span>
+                    </div>
                 </div>
                 </div>
             </div>

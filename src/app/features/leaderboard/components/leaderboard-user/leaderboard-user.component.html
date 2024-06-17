@@ -8,12 +8,12 @@
             <a>{{ user.displayName }}</a> 
         </div>        
         <div class="leaderboard-user-val">
-            <p> {{user.correctPredictions}} of {{user.totalPredictions}} ({{user.predictionAccuracy | number: '1.0-0'}}%) </p>
-            <p class="small-text">match</p>
+            <p> {{user.correctPredictions}} of {{user.totalPredictions}} | {{user.predictionAccuracy | number: '1.0-0'}}% </p>
+            <p class="small-text">match prediction</p>
         </div>
         <div class="leaderboard-user-val">
-            <p> {{user.correctBonusPredictions}} of {{user.bonusPredictions}} ({{user.bonusAccuracy| number: '1.0-0'}}%) </p>
-            <p class="small-text">bonus</p>
+            <p> {{user.correctBonusPredictions}} of {{user.bonusPredictions}} | {{user.bonusAccuracy| number: '1.0-0'}}% </p>
+            <p class="small-text">bonus prediction</p>
         </div>
         <div class="rank-change">
             <span *ngIf="user.rankChange.indicator === 'u'" class="material-icons" style="color: green;">arrow_upward</span>
