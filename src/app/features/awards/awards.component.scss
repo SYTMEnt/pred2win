@@ -7,7 +7,7 @@
   min-height: 100vh; 
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap; 
+  flex-wrap: none; 
   justify-content: center;
 
 }
@@ -129,6 +129,11 @@
   font-family: 'Lato', sans-serif; 
 }
 
+.red-sup {
+  color: red;
+  font-size: smaller;
+  font-style: italic;
+}
 
 
 @media screen and (max-width: 576px) {
