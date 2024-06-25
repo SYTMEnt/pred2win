@@ -1,5 +1,5 @@
 <nav-top [links]="filters" [show]="true" (clicked)="onFilterSelect($event)"></nav-top>
-<div class = "awards" *ngIf="loading">
+<div *ngIf="loading">
   <mat-spinner class="loader" color="accent" *ngIf="loading"></mat-spinner>
 </div>
 
@@ -24,15 +24,23 @@
                 <img [src]="winner.pic" alt="Member" class="user-pic">
               </div>
               <div class="user-info">
-                <div class="display-name">{{ winner.displayName }}</div>
+                <div class="display-name">{{ winner.displayName }} <sup *ngIf="award.changedFromLast" class="red-sup">new</sup></div>
                 <div class="coins-earned">{{ winner.coinsEarned }}
                   <img class="coin-pic" [src]="'assets/sytmcoin.png'" alt="coin">
                 </div>
               </div>
             </div>
             <hr>
-            <div class="match-details" *ngIf="award.id==='award007'">
-              <p>{{award.winnerChars.value}}% in Match {{ award.winnerChars.matchNo }}</p>
+            <div class="match-details">
+              <div *ngIf="award.id==='award001' || award.id==='award002' || award.id==='award003'">
+                <p>{{winner.matchesAtTop}} matches at top</p>
+              </div>
+              <div *ngIf="award.id==='award005'">
+                <p>{{winner.predictions}} predictions</p>
+              </div>
+              <div *ngIf="award.id==='award007' || award.id==='award008'">
+                <p>{{winner.value}}% in Match {{winner.matchNo }}</p>
+              </div>
             </div>
           </div>
       </div>

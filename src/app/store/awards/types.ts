@@ -5,6 +5,10 @@ export interface WinnerList {
     coinsEarned: number;
     coinPic: string;
     final: string;
+    matchesAtTop: number;
+    predictions: number;
+    value: string;
+    matchNo: number;
     _id: string;
 }
 
