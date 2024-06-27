@@ -61,6 +61,18 @@ export class TournamentsComponent implements OnInit, OnDestroy {
     onShowLeaderboard(tournamentId: string) {
         this.route.navigate(['leaderboard', {tournamentId}])
     }
+
+    onShowTPoll(tournamentId : string) {
+      this.route.navigate(['polls', { tournamentId: tournamentId, pollType : 'tournament' }]);
+    }
+
+    onShowOPoll(tournamentId : string) {
+      this.route.navigate(['polls', { tournamentId: tournamentId, pollType : 'opinion' }]);
+    }
+
+    onShowAwards(tournamentId : string) {
+      this.route.navigate(['awards', { tournamentId: tournamentId}]);
+    }
  
     onFilterSelect(filter: string): void {
         this.authStoreService.userProfile$.pipe(

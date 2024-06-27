@@ -1,29 +1,51 @@
 <ng-container *ngIf="data">
     <div class="tournament-card">
-        <img class="tournament-card-image" [src]="data.tournamentLogo" [alt]="data.tournamentName">
-        <div class="tournament-card-details">
-            <span>{{data.tournamentName}},  {{data.tournamentYear}}</span>
-            <span>{{data.tournamentCategory}}'s</span>
-            <div>
-                <ng-container *ngFor="let country of data.tournamentLocation">
-                    <span>{{country}} </span>
-                </ng-container>
+        <div class="tournament-card-container">
+            <div class="tournament-card-left-section">
+                <img class="tournament-card-image" [src]="data.tournamentLogo" [alt]="data.tournamentName">
+            </div>
+            <div class="tournament-card-right-section">
+                <div class="tournament-details-upper-container">
+                    <div class="tournament-card-details">
+                        <p >{{data.tournamentName}} {{data.tournamentYear}}</p>
+                        <div>
+                            <ng-container *ngFor="let country of data.tournamentLocation">
+                                <span>{{country}} </span>
+                            </ng-container>
+                        </div>
+                    </div>
+                    <div class="tournament-card-details">
+                        <span>Members : {{data.tournamentMembers || 0}}</span>
+                        <button class="tournament-card-actions-btn" mat-fab extended
+                            [color]="data.joined ? 'accent' : 'primary'" (click)="onClick()">
+                            {{ data.joined ? 'Predict' : 'Join'}}
+                        </button>
+                    </div>
+                </div>
+                <div class="tournament-details-lower-container">
+                    
+                    <div class="tournament-card-actions">
+                        <button mat-icon-button class="tournament-details-lower-container-btn" (click)="showLeaderboard.emit(data.tournamentId)">
+                            <mat-icon>leaderboard</mat-icon>
+                            <p class="tournament-details-lower-container-p">Ranks</p>
+                        </button>
+                        <button mat-icon-button class="tournament-details-lower-container-btn" (click)="showAwards.emit(data.tournamentId)">
+                            <mat-icon>emoji_events</mat-icon>
+                            <p class="tournament-details-lower-container-p">Awards</p>
+                        </button>
+                        <button mat-icon-button class="tournament-details-lower-container-btn" (click)="showTPoll.emit(data.tournamentId)">
+                            <mat-icon>poll</mat-icon>
+                            <p class="tournament-details-lower-container-p">TPoll</p>
+                        </button>
+                        <button mat-icon-button class="tournament-details-lower-container-btn" (click)="showOPoll.emit(data.tournamentId)">
+                            <mat-icon>lightbulb-c</mat-icon>
+                            <p class="tournament-details-lower-container-p">OPoll</p>
+                        </button>
+                    </div>
+
+                </div>
             </div>
         </div>
-        <div class="tournament-card-actions">
-            <span>Members : {{data.tournamentMembers || 0}}</span>
-            <button class="tournament-card-actions-btn" mat-fab extended 
-                [color]="data.joined ? 'accent' : 'primary'"
-                (click)="onClick()">
-                {{ data.joined ? 'Predict' : 'Join'}}
-            </button>
-        </div>
-        <div class="tournament-card-actions">
-            <button mat-icon-button (click)="showLeaderboard.emit(data.tournamentId)" >
-                <mat-icon>leaderboard</mat-icon>
-            </button>
-        </div>
     </div>
-    
-    
+
 </ng-container>

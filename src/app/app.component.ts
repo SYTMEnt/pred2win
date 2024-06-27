@@ -24,10 +24,7 @@ export class AppComponent implements OnInit {
     //   route: 'leaderboard',
     //   icon: 'leaderboard'
     // },
-    {
-      route: 'awards',
-      icon: 'emoji_events'
-    },
+
     {
       route: 'forum',
       icon: 'forum'

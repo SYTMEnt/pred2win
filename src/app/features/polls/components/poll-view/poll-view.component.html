@@ -3,7 +3,8 @@
     [ngClass]="{
         'matchOutcome': __poll.pollType === 'matchOutcome', 
         'bonus': __poll.pollType === 'bonus', 
-        'tournament': __poll.pollType === 'tournament'
+        'tournament': __poll.pollType === 'tournament',
+        'opinion': __poll.pollType === 'opinion'
       }">
 <!--
          <div class="poll-info poll-info--left" *ngIf="__poll.status === 'active' && __poll.pollType !== 'tournament'">

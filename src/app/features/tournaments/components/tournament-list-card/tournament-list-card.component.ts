@@ -12,6 +12,9 @@ export class TournamentListCardComponent {
   @Output() join = new EventEmitter<string>();
   @Output() continue = new EventEmitter<string>()
   @Output() showLeaderboard = new EventEmitter<string>()
+  @Output() showTPoll = new EventEmitter<string>()
+  @Output() showOPoll = new EventEmitter<string>()
+  @Output() showAwards = new EventEmitter<string>()
 
   onClick(): void {
     if(this.data.joined) {

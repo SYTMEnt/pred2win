@@ -13,7 +13,10 @@
                     [data]="tournament" 
                     (join)="join($event)" 
                     (continue)="continue($event)"
-                    (showLeaderboard)="onShowLeaderboard($event)">
+                    (showLeaderboard)="onShowLeaderboard($event)"
+                    (showTPoll)="onShowTPoll($event)" 
+                    (showOPoll)="onShowOPoll($event)"
+                    (showAwards)="onShowAwards($event)">
                 </app-tournament-list-card>
             </ng-container>
         </ng-container>
