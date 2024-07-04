@@ -1,0 +1,36 @@
+<div class="tournament-card">
+  <div class="tournament-header">
+    <img [src]="tournament.tournament.tournamentLogo" alt="{{tournament.tournament.tournamentName}}" class="tournament-logo">
+    <div class="tournament-info">
+      <h2>{{ tournament.tournament.tournamentName }} ({{ tournament.tournament.tournamentYear }})</h2>
+      <p>{{ tournament.tournament.tournamentOrg }} {{ tournament.tournament.tournamentCategory }}'s {{ tournament.tournament.eventType }}</p>
+      <p> <mat-icon>pin_drop</mat-icon>{{ tournament.tournament.tournamentLocation.join(', ') }}</p>
+    </div>
+  </div>
+  <hr>
+  <div class="tournament-winner">
+    <p><b>Winner: </b>{{ tournament.tournament.tournamentWinner}}</p>
+    <img [src]="tournament.tournament.tournamentWinnerFlag" alt="{{tournament.tournament.tournamentWinner}}" class="winner-flag">
+  </div>
+  <hr>
+  <div class="tournament-stats" *ngIf = "tournament.tournamentStat.predictionAccuracy!=0">
+    <p>Average Prediction Accuracy : {{tournament.tournamentStat.predictionAccuracy}}%</p>
+    <p>Least probable : {{tournament.tournamentStat.leastProbablePrediction}}% in match no {{tournament.tournamentStat.leastppmatch}}</p>
+  </div>
+  <hr>
+  <div class="awards-section">
+    <div class="league" [ngClass]="{ 'prediction-league': tournament.league === 'prediction', 'gamble-league': tournament.league === 'gamble'}" >
+      <h6>{{tournament.room.name}} : {{tournament.tournament.tournamentMembers}} members</h6>
+      <div *ngFor="let award of tournament.awards" class="award-card">
+        <img [src]="award.icon" alt="{{award.category}}" class="award-icon">
+        <div class="award-info">
+          <h4>{{ award.category }}</h4>
+          <div *ngFor="let winner of award.winner" class="winner-info">
+            <img [src]="winner.pic" alt="{{winner.displayName}}" class="winner-pic">
+            <p>{{ winner.displayName }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -20,10 +20,10 @@ export class AppComponent implements OnInit {
       route: 'tournaments',
       icon: 'sports_soccer'
     },
-    // {
-    //   route: 'leaderboard',
-    //   icon: 'leaderboard'
-    // },
+    {
+       route: 'halloffame',
+       icon: 'auto_graph'
+    },
 
     {
       route: 'forum',

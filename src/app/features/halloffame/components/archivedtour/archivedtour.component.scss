@@ -1,0 +1,101 @@
+  .tournament-card {
+    border: 1px solid #ccc;
+    border-radius: 2rem;
+    padding: 4rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .tournament-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .tournament-logo {
+    width: 80px;
+    height: 80px;
+    margin-right: 2rem;
+  }
+  
+  .tournament-info h2 {
+    margin: 0;
+    font-size: 1.2em;
+    font-family: 'lato', sans-serif;
+    color: #44025e;
+  }
+  
+  
+  .tournament-winner {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+  }
+  
+  .winner-flag {
+    height: 30px;
+    margin-left: 10px;
+  }
+  
+  .awards-section {
+    margin-top: 20px;
+  }
+  
+  .award-card {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+  
+  .award-icon {
+    height: 60px;
+    margin-right: 10px;
+  }
+  
+  .award-info h4 {
+    margin: 0;
+    font-size: 1em;
+    font-family: 'lato', sans-serif;
+    color: #44025e;
+  }
+
+  .tournament-stats {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: .8em;
+    font-family: 'Roboto', sans-serif;
+  } 
+
+  .league h6 {
+    font-size: .8em;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 2rem;
+  }
+
+  .winner-info {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+  }
+  
+  .winner-pic {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    border-radius: 50%;
+  }
+
+  .prediction-league {
+    background-color: #f0f8ff; 
+    border-color: #0000ff; 
+    border-radius: 3rem;
+    padding: 2rem;
+  }
+
+  .gamble-league {
+    background-color: #fff0f0; 
+    border-color: #ff0000; 
+    border-radius: 3rem;
+    padding: 2rem;
+  }

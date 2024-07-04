@@ -27,6 +27,10 @@ const routes: Routes = [
     loadChildren: () => import('./features/leaderboard/leaderboard.module').then(m => m.LeaderboardModule)
   },
   {
+    path: "halloffame",
+    loadChildren: () => import('./features/halloffame/halloffame.module').then(m => m.HallOfFameModule)
+  },
+  {
     path: "awards",
     loadChildren: () => import('./features/awards/awards.module').then(m => m.AwardsModule)
   },

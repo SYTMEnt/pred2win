@@ -1,0 +1,20 @@
+<div class="halloffame-container">
+    <ng-container *ngIf="halloffameDetails">
+        <div class="halloffame-body" *ngIf="halloffameDetails.length; else emptyTpl">
+            <div class="halloffame" *ngFor="let archivedtour of halloffameDetails">
+                <app-archived-tournament [tournament]="archivedtour"></app-archived-tournament>
+            </div>
+        </div>
+    </ng-container>
+    <mat-spinner class="loader" color="accent" *ngIf="loading"></mat-spinner>
+</div>
+
+<ng-template #emptyTpl>
+    <div class="empty-data">
+        <img class="ball" src="assets/ball.png" alt="">
+        <div class="ball-shadow"></div>
+        <h1 class="empty-data-header">
+            We are busy in reforming this!
+        </h1>
+    </div>
+</ng-template>
