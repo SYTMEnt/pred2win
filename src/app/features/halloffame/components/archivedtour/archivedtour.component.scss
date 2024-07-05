@@ -5,6 +5,19 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     background-color: #fff;
     font-family: 'Roboto', sans-serif;
+
+    &::-webkit-scrollbar {
+      display: none;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 2rem;
+  }
+
+  @media screen and (max-height: 600px) {
+    padding: 2rem;
+  }
+
   }
   
   .tournament-header {
