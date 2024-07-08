@@ -4,7 +4,7 @@
 </div>
 
 <div class="awards" *ngIf="!loading">
-  <div class="award-cards">
+  <div class="award-cards" *ngIf="awardDetails; else emptyTpl">
     <div *ngFor="let award of awardDetails" class="award-card">
       <img *ngIf="award.icon" [src]="award.icon" class="award-icon" alt="Award Icon">
       <div class="award-details">
@@ -47,3 +47,13 @@
     </div>
   </div>
 </div>
+
+<ng-template #emptyTpl>
+  <div class="empty-data">
+      <img class="ball" src="assets/ball.png" alt="">
+      <div class="ball-shadow"></div>
+      <h1 class="empty-data-header">
+          No awards here !
+      </h1>
+  </div>
+</ng-template>
