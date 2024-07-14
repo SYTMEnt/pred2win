@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    apiUrl: 'https://be.pred2win.com:6060'
+    apiUrl: 'https://dev.pred2win.com:6060'
 };
